@@ -1,0 +1,13 @@
+<p>email-form-component works!</p>
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <input [(ngModel)]="to" name="to" placeholder="To" class="form-control">
+  </div>
+  <div class="form-group">
+    <input [(ngModel)]="subject" name="subject" placeholder="Subject" class="form-control">
+  </div>
+  <div class="form-group">
+    <textarea [(ngModel)]="body" name="body" placeholder="Body" class="form-control"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Send</button>
+</form>
