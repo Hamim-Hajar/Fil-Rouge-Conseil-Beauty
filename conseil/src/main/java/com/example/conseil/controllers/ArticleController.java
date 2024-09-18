@@ -1,10 +1,13 @@
 package com.example.conseil.controllers;
 
+import com.example.conseil.dto.ArticleDto;
 import com.example.conseil.entities.Article;
+import com.example.conseil.entities.User;
 import com.example.conseil.services.ArticleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -13,26 +16,32 @@ import java.util.List;
 @RequestMapping("/api/articles")
 @CrossOrigin(origins = "http://localhost:4200")
 public class ArticleController {
+
     @Autowired
     private ArticleService articleService;
 
+//    @PostMapping("/add")
+//    public ResponseEntity<ArticleDto> addArticle(@RequestBody ArticleDto articleDto) {
+//        ArticleDto addedArticle = articleService.addArticle(articleDto);
+//        return new ResponseEntity<>(addedArticle, HttpStatus.CREATED);
+//    }
     @PostMapping("/add")
-    public ResponseEntity<Article> addArticle(
-            @RequestBody Article article,
-            @RequestParam Long specialistId) {
-        Article newArticle = articleService.addArticle(article, specialistId);
-        return new ResponseEntity<>(newArticle, HttpStatus.CREATED);
+    // Or whatever role is appropriate
+    public ResponseEntity<ArticleDto> addArticle(@RequestBody ArticleDto articleDto,@RequestParam Long specialist_id) {
+        ArticleDto addedArticle = articleService.addArticle(articleDto,specialist_id);
+        return new ResponseEntity<>(addedArticle, HttpStatus.CREATED);
     }
 
+
     @GetMapping
-    public ResponseEntity<List<Article>> getAllArticles() {
-        List<Article> articles = articleService.getAllArticles();
+    public ResponseEntity<List<ArticleDto>> getAllArticles() {
+        List<ArticleDto> articles = articleService.getAllArticles();
         return new ResponseEntity<>(articles, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Article> getArticleById(@PathVariable Long id) {
-        Article article = articleService.getArticleById(id);
+    public ResponseEntity<ArticleDto> getArticleById(@PathVariable Long id) {
+        ArticleDto article = articleService.getArticleById(id);
         return new ResponseEntity<>(article, HttpStatus.OK);
     }
 

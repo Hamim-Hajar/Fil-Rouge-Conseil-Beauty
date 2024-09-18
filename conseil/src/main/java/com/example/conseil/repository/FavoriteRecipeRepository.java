@@ -2,11 +2,9 @@ package com.example.conseil.repository;
 
 import com.example.conseil.entities.FavoriteRecipe;
 import com.example.conseil.entities.Recipe;
-import com.example.conseil.entities.User;
 import com.example.conseil.entities.Visiteur;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
 import java.util.Optional;
 

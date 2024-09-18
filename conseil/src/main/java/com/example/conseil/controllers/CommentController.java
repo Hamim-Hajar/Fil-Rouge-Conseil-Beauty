@@ -1,5 +1,6 @@
 package com.example.conseil.controllers;
 
+import com.example.conseil.dto.CommentDto;
 import com.example.conseil.entities.Comment;
 import com.example.conseil.services.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,21 +15,22 @@ import java.util.List;
 @CrossOrigin(origins = "http://localhost:4200")
 public class CommentController {
 
+
     @Autowired
     private CommentService commentService;
 
     @PostMapping("/add")
-    public ResponseEntity<Comment> addComment(
+    public ResponseEntity<CommentDto> addComment(
             @RequestParam Long recipeId,
             @RequestParam Long userId,
             @RequestParam String content) {
-        Comment comment = commentService.addComment(recipeId, userId, content);
-        return new ResponseEntity<>(comment, HttpStatus.CREATED);
+        CommentDto commentDto = commentService.addComment(recipeId, userId, content);
+        return new ResponseEntity<>(commentDto, HttpStatus.CREATED);
     }
 
     @GetMapping("/recipe/{recipeId}")
-    public ResponseEntity<List<Comment>> getCommentsByRecipe(@PathVariable Long recipeId) {
-        List<Comment> comments = commentService.getCommentsByRecipe(recipeId);
+    public ResponseEntity<List<CommentDto>> getCommentsByRecipe(@PathVariable Long recipeId) {
+        List<CommentDto> comments = commentService.getCommentsByRecipe(recipeId);
         return new ResponseEntity<>(comments, HttpStatus.OK);
     }
 

@@ -7,13 +7,10 @@ import com.example.conseil.entities.User;
 import com.example.conseil.enums.UserRole;
 import com.example.conseil.services.AuthenticationService;
 import com.example.conseil.services.JwtService;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
 @RestController
 @RequestMapping("/api/auth")
 @CrossOrigin(origins = "http://localhost:4200")
@@ -36,8 +33,10 @@ public class AuthenticationController {
     public ResponseEntity<LoginResponse> authenticate(@RequestBody LoginUserDto loginUserDto) throws Exception {
         User authenticatedUser = authenticationService.authenticate(loginUserDto);
         UserRole userrole = authenticatedUser.getRole();
+        Long user = authenticatedUser.getId();
+
         System.out.println(userrole);
-        String jwtToken = jwtService.generateToken(authenticatedUser, userrole);
+        String jwtToken = jwtService.generateToken(authenticatedUser, userrole,user);
 
         LoginResponse loginResponse = new LoginResponse();
         loginResponse.setToken(jwtToken);

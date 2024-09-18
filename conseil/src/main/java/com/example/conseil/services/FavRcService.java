@@ -1,11 +1,13 @@
 package com.example.conseil.services;
 
+import com.example.conseil.dto.FavoriteRecipeDto;
 import com.example.conseil.entities.FavoriteRecipe;
 import com.example.conseil.entities.Recipe;
 import com.example.conseil.entities.Visiteur;
 import com.example.conseil.exception.RatingNotFoundException;
 import com.example.conseil.exception.RecipeNotFoundException;
 import com.example.conseil.exception.UserNotFoundException;
+import com.example.conseil.mapper.FavoriteRecipeMapper;
 import com.example.conseil.repository.FavoriteRecipeRepository;
 import com.example.conseil.repository.RecipeRepository;
 import com.example.conseil.repository.VisiteurRepository;
@@ -23,7 +25,10 @@ public class FavRcService {
     @Autowired
     private VisiteurRepository visiteurRepository;
 
-    public FavoriteRecipe addRating(Long recipeId, Long visiteurId, int value) {
+    @Autowired
+    private FavoriteRecipeMapper favoriteRecipeMapper;
+
+    public FavoriteRecipeDto addRating(Long recipeId, Long visiteurId, int value) {
         Recipe recipe = recipeRepository.findById(recipeId)
                 .orElseThrow(() -> new RecipeNotFoundException("Recipe not found with id: " + recipeId));
         Visiteur visiteur = visiteurRepository.findById(visiteurId)
@@ -36,7 +41,8 @@ public class FavRcService {
         rating.setValue(value);
         rating.setRecipeName(recipe.getName());
 
-        return favoriteRecipeRepository.save(rating);
+        FavoriteRecipe savedRating = favoriteRecipeRepository.save(rating);
+        return favoriteRecipeMapper.toDto(savedRating);
     }
 
     public double getAverageRating(Long recipeId) {
@@ -45,10 +51,11 @@ public class FavRcService {
         return favoriteRecipeRepository.getAverageRatingForRecipe(recipe);
     }
 
-    public void updateRating(Long ratingId, int newValue) {
+    public FavoriteRecipeDto updateRating(Long ratingId, int newValue) {
         FavoriteRecipe rating = favoriteRecipeRepository.findById(ratingId)
                 .orElseThrow(() -> new RatingNotFoundException("Rating not found with id: " + ratingId));
         rating.setValue(newValue);
-        favoriteRecipeRepository.save(rating);
+        FavoriteRecipe updatedRating = favoriteRecipeRepository.save(rating);
+        return favoriteRecipeMapper.toDto(updatedRating);
     }
 }

@@ -5,6 +5,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.sql.Date;
+import java.time.LocalDateTime;
+
+
 @Entity
 @Getter
 @Setter
@@ -12,11 +16,15 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Article {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false)
      private String titre;
+    @Column(nullable = false)
      private String contenu;
-     private String datePublication;
-
+    @Column(nullable = false)
+     private Date datePublication;
+     private String image;
      @ManyToOne(fetch = FetchType.LAZY)
      @JoinColumn(name = "specialist_id")
      private Specialist specialist;

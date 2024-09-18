@@ -1,5 +1,6 @@
 package com.example.conseil.controllers;
 
+import com.example.conseil.dto.RecipeDto;
 import com.example.conseil.entities.Recipe;
 import com.example.conseil.services.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,32 +19,29 @@ public class RecipeController {
 private RecipeService recipeService;
 
     @PostMapping("/add")
-    public ResponseEntity<Recipe> addRecipe(@RequestBody Recipe recipe) {
-        Recipe newRecipe = recipeService.addRecipe(recipe);
+    public ResponseEntity<RecipeDto> addRecipe(@RequestBody RecipeDto recipeDto) {
+        RecipeDto newRecipe = recipeService.addRecipe(recipeDto);
         return ResponseEntity.ok(newRecipe);
     }
-
     @GetMapping("/{id}")
-    public ResponseEntity<Recipe> getRecipeById(@PathVariable Long id) {
-        Recipe recipe = recipeService.getRecipeById(id);
-        return ResponseEntity.ok(recipe);
+    public ResponseEntity<RecipeDto> getRecipeById(@PathVariable Long id) {
+        RecipeDto recipeDto = recipeService.getRecipeById(id);
+        return ResponseEntity.ok(recipeDto);
     }
-
     @GetMapping("/all")
-    public ResponseEntity<List<Recipe>> getAllRecipes() {
-        List<Recipe> recipes = recipeService.getAllRecipes();
-        return ResponseEntity.ok(recipes);
+    public ResponseEntity<List<RecipeDto>> getAllRecipes() {
+        List<RecipeDto> recipeDtos = recipeService.getAllRecipes();
+        return ResponseEntity.ok(recipeDtos);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Recipe> updateRecipe(@PathVariable Long id, @RequestBody Recipe updatedRecipe) {
-        Recipe recipe = recipeService.updateRecipe(id, updatedRecipe);
-        return ResponseEntity.ok(recipe);
+    public ResponseEntity<RecipeDto> updateRecipe(@PathVariable Long id, @RequestBody RecipeDto updatedRecipeDto) {
+        RecipeDto updatedRecipe = recipeService.updateRecipe(id, updatedRecipeDto);
+        return ResponseEntity.ok(updatedRecipe);
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteRecipe(@PathVariable Long id) {
         recipeService.deleteRecipe(id);
         return ResponseEntity.noContent().build();
-    }
-}
+    }}

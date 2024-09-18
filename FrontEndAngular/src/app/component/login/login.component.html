@@ -1,0 +1,33 @@
+<div class="overlay">
+  <div class="overlay-content">
+
+    <div class="containerr">
+      <div class="signin-signup">
+        <form (ngSubmit)="login()" class="sign-in-form">
+          <h2 class="title">Sign in</h2>
+          <div class="input-field">
+            <i class="fas fa-user"></i>
+            <input type="text" placeholder="UserName" [(ngModel)]="userName" name="userName" required>
+          </div>
+          <div class="input-field">
+            <i class="fas fa-lock"></i>
+            <input type="password" placeholder="Password" [(ngModel)]="password" name="password" required>
+          </div>
+          <button type="submit" class="btn">Login</button>
+        </form>
+        <div style="width: 350px;"></div>
+      </div>
+      <div class="panels-container">
+        <div style="width: 350px;"></div>
+        <div class="panel right-panel">
+          <div class="content">
+            <h3>New to Brand?</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque accusantium dolor, eos incidunt minima iure?</p>
+            <button class="btn" id="sign-up-btn" (click)="openSignUp()">Sign up</button>
+          </div>
+          <img src="/assets/img/register.png" alt="Sign up" class="image">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

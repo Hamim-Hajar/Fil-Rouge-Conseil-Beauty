@@ -1,9 +1,8 @@
 package com.example.conseil.controllers;
 
+import com.example.conseil.dto.FavoriteRecipeDto;
 import com.example.conseil.entities.FavoriteRecipe;
-import com.example.conseil.entities.Recipe;
 import com.example.conseil.services.FavRcService;
-import com.example.conseil.services.RecipeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,15 +12,16 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/api/recipe")
 @CrossOrigin(origins = "http://localhost:4200")
 public class FavoriteRecipeCotroller {
-  @Autowired
-   private FavRcService favRcService;
+
+    @Autowired
+    private FavRcService favRcService;
 
     @PostMapping("/{recipeId}/ratings")
-    public ResponseEntity<FavoriteRecipe> addRating(
+    public ResponseEntity<FavoriteRecipeDto> addRating(
             @PathVariable Long recipeId,
             @RequestParam Long visiteurId,
             @RequestParam int value) {
-        FavoriteRecipe rating = favRcService.addRating(recipeId, visiteurId, value);
+        FavoriteRecipeDto rating = favRcService.addRating(recipeId, visiteurId, value);
         return new ResponseEntity<>(rating, HttpStatus.CREATED);
     }
 
@@ -32,10 +32,10 @@ public class FavoriteRecipeCotroller {
     }
 
     @PutMapping("/ratings/{ratingId}")
-    public ResponseEntity<FavoriteRecipe> updateRating(
+    public ResponseEntity<FavoriteRecipeDto> updateRating(
             @PathVariable Long ratingId,
             @RequestParam int newValue) {
-        favRcService.updateRating(ratingId, newValue);
-        return new ResponseEntity<>(HttpStatus.OK);
+        FavoriteRecipeDto updatedRating = favRcService.updateRating(ratingId, newValue);
+        return new ResponseEntity<>(updatedRating, HttpStatus.OK);
     }
 }
