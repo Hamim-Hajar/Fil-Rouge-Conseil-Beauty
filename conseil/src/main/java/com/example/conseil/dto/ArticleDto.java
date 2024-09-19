@@ -19,5 +19,6 @@ public class ArticleDto {
     private String contenu;
     private Date datePublication;
     private Long specialistId; // Pour représenter la relation avec Specialist
+    private String image;
 }
 

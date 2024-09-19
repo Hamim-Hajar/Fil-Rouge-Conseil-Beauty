@@ -1,8 +1,15 @@
-<mat-toolbar color="primary">
+<mat-toolbar class="custom-toolbar">
+  <img src="assets/images/beautb.png" alt="Icon" style="width: 74px; height: 74px; margin-right: 8px;">
   <button mat-icon-button>
     <mat-icon>menu</mat-icon>
   </button>
+
+  <h2>
+    <span style="color: black;">Your</span>
+    <span style="color: #D562F2;">Beauty</span>
+  </h2>
 <span style="flex: auto"></span>
+
   <button mat-button>Home</button>
   <button mat-button>profile</button>
   <button mat-button [matMenuTriggerFor]="importMenu">
@@ -14,31 +21,54 @@
     <button mat-menu-item>load Recipes</button>
   </mat-menu>
 
-  <button mat-raised-button color="accent" (click)="logout(true)">Logout</button>
+
+  <button mat-raised-button  style="background-color: #D562F2;color: white">
+    <mat-icon>add</mat-icon>
+    Creat Article</button>
+  <mat-icon>notifications_none</mat-icon>
 </mat-toolbar>
 <mat-drawer-container>
   <mat-drawer opened="true" mode="side" position="start">
     <mat-list>
+
       <mat-list-item>
-        <button mat-button routerLink="/article">
+        <button mat-raised-button  style="background-color: #D562F2;color: white">
           <mat-icon>dashboard</mat-icon>
-          Article</button>
-
+          Dashboard</button>
       </mat-list-item>
       <mat-list-item>
-        <mat-icon>dashboard</mat-icon>
-        <button mat-button>Recipes</button>
+        <button mat-button (click)="loadComponent('article')">
+          <mat-icon>book</mat-icon>
+          Article
+        </button>
       </mat-list-item>
       <mat-list-item>
-        <mat-icon>dashboard</mat-icon>
-        <button mat-button>Searche</button>
-      </mat-list-item>
 
+        <button mat-button>
+          <mat-icon>receipt</mat-icon>
+          Recipes</button>
+      </mat-list-item>
+      <mat-list-item>
+
+        <button mat-button>
+          <mat-icon>home</mat-icon>
+          Home</button>
+      </mat-list-item>
+      <mat-list-item>
+        <button mat-button>
+          <mat-icon> message</mat-icon>
+          Contact Specialist</button>
+      </mat-list-item>
+      <mat-list-item>
+      <button mat-button (click)="logout()">
+        <mat-icon>launch</mat-icon>
+        Logout</button>
+      </mat-list-item>
     </mat-list>
   </mat-drawer>
   <mat-drawer-content>
     <div style="min-height: 600px">
-      <router-outlet></router-outlet>
+      <ng-container #componentContainer></ng-container>
     </div>
   </mat-drawer-content>
 </mat-drawer-container>

@@ -1,28 +1,36 @@
-import {Component, OnInit} from '@angular/core';
-import {Router} from "@angular/router";
+import {AfterViewInit, Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
+import { Router } from "@angular/router";
+import { AddArticlComponent } from "../add-articl/add-articl.component"; // Assurez-vous que le chemin d'importation est correct
 
 @Component({
   selector: 'app-dashboardspecialist',
   templateUrl: './dashboardspecialist.component.html',
   styleUrls: ['./dashboardspecialist.component.css']
 })
-export class DashboardspecialistComponent implements OnInit {
+export class DashboardspecialistComponent implements AfterViewInit {
+  @ViewChild('componentContainer', { read: ViewContainerRef }) componentContainer!: ViewContainerRef;
 
+  constructor(
+    private router: Router
+  ) {}
 
-  constructor(private router: Router) {
+  ngAfterViewInit(): void {
+    // Le ViewChild est garanti d'être initialisé ici
   }
 
-  check = false
+  logout(): void {
+    localStorage.removeItem("token");
+    this.router.navigateByUrl('/login');
+  }
 
-  logout(check: boolean) {
+  loadComponent(componentName: string): void {
+    if (!this.componentContainer) return;
 
-    if (check) {
-      localStorage.removeItem("token")
-      this.router.navigateByUrl('/login')
+    this.componentContainer.clear();
+
+    if (componentName === 'article') {
+      this.componentContainer.createComponent(AddArticlComponent);
     }
-
-  }
-
-  ngOnInit(): void {
+    // Vous pouvez ajouter d'autres conditions ici pour charger d'autres composants
   }
 }
