@@ -29,6 +29,11 @@ import {MatListModule} from "@angular/material/list";
 import { LeftSidebarComponent } from './component/left-sidebar/left-sidebar.component';
 import {CommonModule} from "@angular/common";
 import { MainComponent } from './component/main/main.component';
+import { FooterComponent } from './component/footer/footer.component';
+import { ArticlListComponent } from './component/articl-list/articl-list.component';
+import { RegisterComponent } from './component/register/register.component';
+import {MatTableModule} from "@angular/material/table";
+import { AddrecipeComponent } from './component/addrecipe/addrecipe.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +45,11 @@ import { MainComponent } from './component/main/main.component';
     DashboardspecialistComponent,
     LeftSidebarComponent,
     MainComponent,
+    FooterComponent,
+    ArticlListComponent,
+    RegisterComponent,
+    AddrecipeComponent,
+
 
   ],
   imports: [
@@ -55,7 +65,7 @@ import { MainComponent } from './component/main/main.component';
     MatIconModule,
     MatMenuModule,
     MatSidenavModule,
-    MatListModule,RouterModule, CommonModule,
+    MatListModule, RouterModule, CommonModule, MatTableModule,
 
   ],
   providers: [

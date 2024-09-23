@@ -13,8 +13,8 @@ import {jwtDecode} from "jwt-decode";
 export class AddArticlComponent {
 
   formArticle !: FormGroup
-  specialist_id!:number
-
+  specialistId!:number
+  selectedImage!: File;
 
   constructor(
     private fb: FormBuilder,
@@ -37,8 +37,8 @@ addArticle(){
 getId(){
     const token : any = localStorage.getItem("token")
    const decodeToken :any = jwtDecode(token)
-  this.specialist_id = decodeToken.id
-  console.log(decodeToken)
+  this.specialistId = decodeToken.id
+  console.log(this.specialistId)
 
 }
   onSubmit(){
@@ -46,8 +46,14 @@ getId(){
 
     if(valid){
       const value=  this.formArticle.value
-      this.articleService.addArticle(value,this.specialist_id).subscribe()
+      this.articleService.addArticle(value,this.specialistId,this.selectedImage).subscribe()
       console.log(value)
+    }
+  }
+
+  onFileChange(event: any) {
+    if (event.target.files.length > 0) {
+      this.selectedImage = event.target.files[0]; // Get the actual File object
     }
   }
 }

@@ -1,0 +1,33 @@
+
+
+
+
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="username">Username:</label>
+    <input id="username" formControlName="username" type="text" />
+  </div>
+
+  <div>
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email" type="email" />
+  </div>
+
+  <div>
+    <label for="password">Password:</label>
+    <input id="password" formControlName="password" type="password" />
+  </div>
+
+  <div>
+    <label for="role">Role:</label>
+    <select id="role" formControlName="role">
+      <option value="VISITEUR">Visiteur</option>
+      <option value="SPECIALIST">Specialist</option>
+
+    </select>
+  </div>
+
+  <button type="submit" [disabled]="loading">Register</button>
+
+  <div *ngIf="error" class="error">{{ error }}</div>
+</form>

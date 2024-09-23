@@ -15,7 +15,7 @@ export class RecipeService {
 
   // Add a new recipe
   addRecipe(recipe: Recipe): Observable<Recipe> {
-    return this.http.post<Recipe>(`${this.apiUrl}`, recipe)
+    return this.http.post<Recipe>(`${this.apiUrl}/add`, recipe)
       .pipe(catchError(this.handleError));
   }
 

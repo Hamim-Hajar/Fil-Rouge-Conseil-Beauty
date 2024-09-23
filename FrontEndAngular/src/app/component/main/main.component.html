@@ -1,2 +1,182 @@
-<p>main works!</p>
 
+<mat-toolbar class="custom-toolbar">
+  <img src="assets/images/beautb.png" alt="Icon" style="width: 74px; height: 74px; margin-right: 8px;">
+  <h2>
+    <span style="color: black;">Your</span>
+    <span style="color: #D562F2;">Beauty</span>
+  </h2>
+  <span style="flex: auto"></span>
+
+  <button mat-raised-button routerLink="/login" style="background-color: #D562F2;color: white">
+    <mat-icon>add</mat-icon>
+    Login</button>
+
+  <button mat-raised-button routerLink="/login" style="background-color: #D562F2;color: white">
+    <mat-icon>add</mat-icon>
+    Signup</button>
+</mat-toolbar>
+
+<section class="image-container">
+  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9eb7c3518f9f29c52dc1d1fc22fe3406a03f02d5487abfeb752f61798aee398f?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" class="full-width-image" alt="Description of the image" />
+</section>
+<section class="events-container">
+  <div class="events-wrapper">
+    <div class="events-content">
+      <header class="events-header">
+        <div class="events-title-wrapper">
+          <h2 class="events-title">Our recipe</h2>
+          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/74bb04fc422bd2bb08a82342baa004d8ca97b0b11c70f292c37262f0360e991a?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="events-icon" />
+        </div>
+        <button class="view-more-btn">View more</button>
+      </header>
+      <nav class="events-menu">
+        <div class="menu-item menu-item-active">All</div>
+        <div class="menu-item menu-item-inactive">Hair</div>
+        <div class="menu-item menu-item-inactive">Face</div>
+        <div class="menu-item menu-item-inactive">Face Caire</div>
+        <div class="menu-item menu-item-inactive">Health Food</div>
+        <div class="menu-item menu-item-inactive" routerLink="/login">log in</div>
+        <div class="menu-item menu-item-inactive"></div>
+      </nav>
+      <div class="events-list">
+        <div class="events-grid">
+          <article class="event-column">
+            <div class="event-card">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/af53f75507cb528fe538d64550277fb0f98cb759b03cb6777e3ffa91e150b12f?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="Urban Jungle Marathon event" class="event-image" />
+              <div class="event-details">
+                <div class="event-header">
+                  <h3 class="event-name">Urban Jungle Marathon</h3>
+                  <p class="event-price">From $10</p>
+                </div>
+                <div class="event-date">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a9a339a244ae4c563f954c857f559c29096daa1b246650c40c38b64a67f6ef14?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="event-icon" />
+                  <time class="event-datetime">Monday, June 06 | 06:00 AM</time>
+                </div>
+                <div class="event-location">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e04f61ad266c350081e91d774eef506b848cb34ff4626d66aeed595043e00347?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="event-icon" />
+                  <p class="event-venue">New York, NY</p>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="event-column">
+            <div class="event-card">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/821e16390029d2c7260bc26e84a5d0bb15c570c09272bbd13e7b3d9c6e7b2d63?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="Rockin' the Stage event" class="event-image" />
+              <div class="event-details">
+                <div class="event-header">
+                  <h3 class="event-name">"Rockin' the Stage</h3>
+                  <p class="event-price">From $100</p>
+                </div>
+                <div class="event-date">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a9a339a244ae4c563f954c857f559c29096daa1b246650c40c38b64a67f6ef14?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="event-icon" />
+                  <time class="event-datetime">Monday, March 14 | 04:00 PM</time>
+                </div>
+                <div class="event-location">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e04f61ad266c350081e91d774eef506b848cb34ff4626d66aeed595043e00347?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="event-icon" />
+                  <p class="event-venue">New York, NY</p>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="event-column">
+            <div class="event-card">
+              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/62ed9e9e0fb0df17f21225356f37a9292e1bcfc88cd80b07ba46bbe5c33ee80e?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="Melody Mania event" class="event-image" />
+              <div class="event-details">
+                <div class="event-header">
+                  <h3 class="event-name">Melody Mania</h3>
+                  <p class="event-price">Free ticket</p>
+                </div>
+                <div class="event-date">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a9a339a244ae4c563f954c857f559c29096daa1b246650c40c38b64a67f6ef14?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="event-icon" />
+                  <time class="event-datetime">Wednesday, June 24 | 07:00 PM</time>
+                </div>
+                <div class="event-location">
+                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e04f61ad266c350081e91d774eef506b848cb34ff4626d66aeed595043e00347?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="event-icon" />
+                  <p class="event-venue">New York, NY</p>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="articles-section">
+  <div class="articles-container">
+    <div class="articles-wrapper">
+      <header class="articles-header">
+        <h2 class="articles-title">Our Articles</h2>
+        <button class="view-more-btn">View more</button>
+      </header>
+      <div class="articles-grid">
+        <div class="articles-row">
+          <article class="article-column">
+            <div class="article-card">
+              <div class="article-image-wrapper">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/16409f2d35fc0695300c564beab4e656325b4c1f9de1336bcbf239b897da844d?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" class="article-image" alt="Musical Fusion Festival" />
+                <div class="article-tag">
+                  <div class="tag-frame">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6f91fd363793fb3dca3d3e8d3d6dd8177a08e64a757ce7659a62a95e61d15fc6?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" class="tag-icon" alt="" />
+                    <span>20% OFF</span>
+                  </div>
+                </div>
+              </div>
+              <div class="article-content">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7f9ae2f3a631928d903ff359422f04c66d5877305a8a657fa8579fc068250c28?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" class="article-icon" alt="" />
+                <div class="article-details">
+                  <div class="article-info">
+                    <h3 class="article-title">Musical Fusion Festival</h3>
+                    <div class="article-date">
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b5fc9075404bce4218ee9e407c15c5414c6ebd032d5b0dbfd0734c3734cfa6a6?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" class="date-icon" alt="" />
+                      <span class="date-text">Monday, June 06 | 06:00 PM</span>
+                    </div>
+                    <div class="article-location">
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/66ea058dbfec45d64fe10cd9803d34639d767d394f1d3cbbcc8d5bdddc2d02d7?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" class="location-icon" alt="" />
+                      <span>New York, NY</span>
+                    </div>
+                  </div>
+                  <span class="article-price">From $80</span>
+                </div>
+              </div>
+            </div>
+          </article>
+          <article class="article-column">
+            <div class="article-card">
+              <div class="article-image-wrapper">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/4cf92032728ea589f69874c6a437a853ecf857f0250b561226ebf58263ca7496?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" class="article-image" alt="Metropolis Marathon" />
+                <div class="article-tag">
+                  <div class="tag-frame">
+                    <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/6f91fd363793fb3dca3d3e8d3d6dd8177a08e64a757ce7659a62a95e61d15fc6?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" class="tag-icon" alt="" />
+                    <span>Buy 2 get 1 free</span>
+                  </div>
+                </div>
+              </div>
+              <div class="article-content">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/7f9ae2f3a631928d903ff359422f04c66d5877305a8a657fa8579fc068250c28?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" class="article-icon" alt="" />
+                <div class="article-details">
+                  <div class="article-info">
+                    <h3 class="article-title">Metropolis Marathon</h3>
+                    <div class="article-date">
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/b5fc9075404bce4218ee9e407c15c5414c6ebd032d5b0dbfd0734c3734cfa6a6?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" class="date-icon" alt="" />
+                      <span class="date-text">Tuesday, June 7 | 06:00 AM</span>
+                    </div>
+                    <div class="article-location">
+                      <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/66ea058dbfec45d64fe10cd9803d34639d767d394f1d3cbbcc8d5bdddc2d02d7?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" class="location-icon" alt="" />
+                      <span>Atlanta</span>
+                    </div>
+                  </div>
+                  <span class="article-price">From $10</span>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="image-container">
+  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d26e84103506ec651905d09a0e384dfdcbc61b32a620562368df28db304c7c04?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" class="full-width-image" alt="Description of the image" />
+</section>
+<app-footer></app-footer>

@@ -13,14 +13,22 @@ export class ArticlService {
   constructor(private http: HttpClient) {}
 
   // Add a new article
-  addArticle(article: ArticleDto,specialist_id : number): Observable<ArticleDto> {
-    return this.http.post<ArticleDto>(`${this.apiUrl}/add?specialist_id=${specialist_id}`, article);
+  addArticle(articleDto: ArticleDto,specialistId : number , image :File): Observable<ArticleDto> {
+
+
+    const formData = new FormData();
+    formData.append('titre', articleDto.titre);
+    formData.append('contenu', articleDto.contenu);
+    formData.append('specialistId', specialistId.toString());
+    formData.append('image', image);
+
+    return this.http.post<ArticleDto>(`${this.apiUrl}/add`, formData,);
   }
 
 
   // Get all articles
   getAllArticles(): Observable<ArticleDto[]> {
-    return this.http.get<ArticleDto[]>(this.apiUrl);
+    return this.http.get<ArticleDto[]>(`${this.apiUrl}/get_all_article`);
   }
 
   // Get an article by ID
@@ -30,6 +38,6 @@ export class ArticlService {
 
   // Delete an article by ID
   deleteArticle(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`);
+    return this.http.delete<void>(`${this.apiUrl}/delete/${id}`);
   }
 }

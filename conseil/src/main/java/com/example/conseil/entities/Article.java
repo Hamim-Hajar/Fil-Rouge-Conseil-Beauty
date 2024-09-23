@@ -24,8 +24,10 @@ public class Article {
      private String contenu;
     @Column(nullable = false)
      private Date datePublication;
-     private String image;
-     @ManyToOne(fetch = FetchType.LAZY)
+    @Lob
+    @Column(length = 1000000)
+    private byte[] image;
+    @ManyToOne(fetch = FetchType.LAZY)
      @JoinColumn(name = "specialist_id")
      private Specialist specialist;
 }

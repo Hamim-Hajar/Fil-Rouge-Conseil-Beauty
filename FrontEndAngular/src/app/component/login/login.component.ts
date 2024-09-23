@@ -44,7 +44,7 @@ export class LoginComponent {
   }
 
   openSignUp() {
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/register']);
   }
 
 }

@@ -26,7 +26,7 @@ public class ArticleService {
     @Autowired
     private ArticleMapper articleMapper;
 
-    public ArticleDto addArticle(ArticleDto articleDto,Long specialistId) {
+    public ArticleDto addArticle(ArticleDto articleDto,Long specialistId, byte[] imageBytes) {
         Article article = articleMapper.articleDtoToArticle(articleDto);
 
         Specialist specialist = specialistRepository.findById(specialistId).orElseThrow(() ->
@@ -34,6 +34,7 @@ public class ArticleService {
        article.setDatePublication(new Date(System.currentTimeMillis()));
 
         article.setSpecialist(specialist);
+        article.setImage(imageBytes);
 
         Article article1 = articleRepository.save(article);
         return  articleMapper.articleToArticleDto(article1);
@@ -60,4 +61,19 @@ public class ArticleService {
                 .orElseThrow(() -> new ResourceNotFoundException("Article not found with id: " + id));
         articleRepository.delete(article);
     }
+    public ArticleDto updateArticle(Long articleId, ArticleDto articleDto, byte[] imageBytes) {
+        Article existingArticle = articleRepository.findById(articleId)
+                .orElseThrow(() -> new ResourceNotFoundException("Article not found with id: " + articleId));
+        existingArticle.setTitre(articleDto.getTitre());
+        existingArticle.setContenu(articleDto.getContenu());
+        if (imageBytes != null && imageBytes.length > 0) {
+            existingArticle.setImage(imageBytes);
+        }
+        existingArticle.setDatePublication(new Date(System.currentTimeMillis()));
+        Article updatedArticle = articleRepository.save(existingArticle);
+        return articleMapper.articleToArticleDto(updatedArticle);
+    }
+
+
+
 }

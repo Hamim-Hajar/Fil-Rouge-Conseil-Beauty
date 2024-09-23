@@ -1,0 +1,31 @@
+<div class="add-recipe-container">
+  <h2>Ajouter une nouvelle recette</h2>
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label for="title">Titre de la recette</label>
+      <input id="title" [(ngModel)]="recipe.name" name="title" required>
+    </div>
+
+    <div>
+      <label for="description">Description</label>
+      <textarea id="description" [(ngModel)]="recipe.description" name="description" required></textarea>
+    </div>
+
+    <div>
+      <label for="ingredients">Ingrédients</label>
+      <textarea id="ingredients" [(ngModel)]="recipe.ingredients" name="ingredients" required></textarea>
+    </div>
+
+    <div>
+      <label for="steps">Étapes</label>
+      <textarea id="steps" [(ngModel)]="recipe.instructions" name="steps" required></textarea>
+    </div>
+
+   <!-- <div>
+      <label for=>Image</label>
+      <input type="file" (change)="onFileSelected($event)">
+    </div>-->
+
+    <button type="submit">Ajouter la recette</button>
+  </form>
+</div>

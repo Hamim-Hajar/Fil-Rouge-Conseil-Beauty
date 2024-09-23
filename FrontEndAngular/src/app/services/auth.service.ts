@@ -18,11 +18,9 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
- /* signup(registerUserDto: RegisterUserDto): Observable<any> {
-     Ajouter le rôle automatiquement avant l'envoi
-    registerUserDto.role = 'USER'; // Vous pouvez définir le rôle en fonction de la logique nécessaire
+  signup(registerUserDto: RegisterUserDto): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/signup`, registerUserDto);
- } */
+ }
 
 
   login(loginUser: Loginuserdto):Observable<any>{

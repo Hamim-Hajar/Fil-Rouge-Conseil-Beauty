@@ -1,6 +1,8 @@
 import {AfterViewInit, Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
 import { Router } from "@angular/router";
-import { AddArticlComponent } from "../add-articl/add-articl.component"; // Assurez-vous que le chemin d'importation est correct
+import { AddArticlComponent } from "../add-articl/add-articl.component";
+import {ArticlListComponent} from "../articl-list/articl-list.component";
+import {AddrecipeComponent} from "../addrecipe/addrecipe.component"; // Assurez-vous que le chemin d'importation est correct
 
 @Component({
   selector: 'app-dashboardspecialist',
@@ -30,6 +32,12 @@ export class DashboardspecialistComponent implements AfterViewInit {
 
     if (componentName === 'article') {
       this.componentContainer.createComponent(AddArticlComponent);
+    }
+    if (componentName === 'artistic') {
+      this.componentContainer.createComponent(ArticlListComponent);
+    }
+    if (componentName === 'recipes') {
+      this.componentContainer.createComponent(AddrecipeComponent);
     }
     // Vous pouvez ajouter d'autres conditions ici pour charger d'autres composants
   }
