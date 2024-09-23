@@ -45,23 +45,27 @@
       <mat-list-item>
         <button mat-button (click)="loadComponent('artistic')">
           <mat-icon>book</mat-icon>
-          Article
+          Article list
         </button>
       </mat-list-item>
       <mat-list-item>
-
         <button mat-button (click)="loadComponent('recipes')">
           <mat-icon>receipt</mat-icon>
           Recipes</button>
       </mat-list-item>
       <mat-list-item>
+        <button mat-button (click)="loadComponent('recipe-list')">
+          <mat-icon>receipt </mat-icon>
+          Recipes list</button>
+      </mat-list-item>
+      <mat-list-item>
 
-        <button mat-button>
+        <button mat-button routerLink="/main">
           <mat-icon>home</mat-icon>
           Home</button>
       </mat-list-item>
       <mat-list-item>
-        <button mat-button>
+        <button mat-button (click)="loadComponent('email')">
           <mat-icon> message</mat-icon>
           Contact Specialist</button>
       </mat-list-item>

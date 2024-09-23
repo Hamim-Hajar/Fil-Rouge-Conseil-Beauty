@@ -3,6 +3,7 @@ import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import {Recipe} from "../models/recipe";
 import {catchError, Observable, throwError} from "rxjs";
 import {RecipeCategory} from "../enums/recipe-category";
+import {RecipeDto} from "../dto/recipe-dto";
 
 @Injectable({
   providedIn: 'root'
@@ -26,9 +27,9 @@ export class RecipeService {
   }
 
   // Get all recipes
-  getAllRecipes(): Observable<Recipe[]> {
-    return this.http.get<Recipe[]>(`${this.apiUrl}`)
-      .pipe(catchError(this.handleError));
+
+  getAllRecipes(): Observable<RecipeDto[]> {
+    return this.http.get<RecipeDto[]>(this.apiUrl); // Le typage doit être RecipeDto[]
   }
 
   // Update a recipe

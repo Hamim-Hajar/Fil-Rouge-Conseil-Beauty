@@ -1,0 +1,95 @@
+.custom-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space between brand, nav and profile */
+  padding: 10px 20px;
+  background-color: white;
+}
+
+.brand-icon {
+  width: 74px;
+  height: 74px;
+  margin-right: 8px;
+}
+
+.toolbar-title {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+}
+
+.brand-name-your {
+  font-size: 20px;
+  line-height: 30px;
+  color: #323842;
+}
+
+.brand-name-beauty {
+  font-size: 20px;
+  line-height: 30px;
+  color: #d562f2;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 25px; /* Adds space between nav items */
+  flex-grow: 1; /* Makes the menu expand */
+  justify-content: center; /* Center the nav items */
+}
+
+.nav-item {
+  color: #9095a0;
+  text-decoration: none;
+  font-size: x-small;
+}
+
+.nav-item-explore {
+  color: black; /* 'Explore' remains black */
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #171a1f;
+}
+
+.notification-icon,
+.profile-picture,
+.dropdown-icon {
+  aspect-ratio: 1;
+  object-fit: contain;
+  object-position: center;
+}
+
+.notification-icon {
+  width: 24px;
+}
+
+.profile-picture {
+  width: 36px;
+  border-radius: 50%;
+}
+
+.dropdown-icon {
+  width: 12px;
+}
+
+@media (max-width: 991px) {
+  .header-container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap; /* Wrap menu items on smaller screens */
+    gap: 10px; /* Reduce gap between nav items */
+  }
+
+}
+.user-name{
+  color: #070606;
+  text-decoration: none;
+  font-size: medium;
+}

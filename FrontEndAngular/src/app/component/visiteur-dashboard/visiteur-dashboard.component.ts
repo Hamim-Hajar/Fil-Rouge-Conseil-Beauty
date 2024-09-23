@@ -1,17 +1,17 @@
-import {AfterViewInit, Component, ComponentFactoryResolver, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
-import { Router } from "@angular/router";
-import { AddArticlComponent } from "../add-articl/add-articl.component";
+import {AfterViewInit, Component, ViewChild, ViewContainerRef} from '@angular/core';
+import {Router} from "@angular/router";
+import {AddArticlComponent} from "../add-articl/add-articl.component";
 import {ArticlListComponent} from "../articl-list/articl-list.component";
 import {AddrecipeComponent} from "../addrecipe/addrecipe.component";
 import {RecipeListComponent} from "../recipe-list/recipe-list.component";
-import {EmailFormComponentComponent} from "../email-form-component/email-form-component.component"; // Assurez-vous que le chemin d'importation est correct
+import {EmailFormComponentComponent} from "../email-form-component/email-form-component.component";
 
 @Component({
-  selector: 'app-dashboardspecialist',
-  templateUrl: './dashboardspecialist.component.html',
-  styleUrls: ['./dashboardspecialist.component.css']
+  selector: 'app-visiteur-dashboard',
+  templateUrl: './visiteur-dashboard.component.html',
+  styleUrls: ['./visiteur-dashboard.component.css']
 })
-export class DashboardspecialistComponent implements AfterViewInit {
+export class VisiteurDashboardComponent implements AfterViewInit {
   @ViewChild('componentContainer', { read: ViewContainerRef }) componentContainer!: ViewContainerRef;
 
   constructor(
@@ -49,4 +49,5 @@ export class DashboardspecialistComponent implements AfterViewInit {
     }
 
   }
+
 }

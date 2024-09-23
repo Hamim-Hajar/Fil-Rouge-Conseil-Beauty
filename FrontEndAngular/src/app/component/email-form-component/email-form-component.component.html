@@ -1,13 +1,33 @@
-<p>email-form-component works!</p>
-<form (ngSubmit)="onSubmit()">
-  <div class="form-group">
-    <input [(ngModel)]="to" name="to" placeholder="To" class="form-control">
+<section class="email-contact-container">
+  <div class="email-form-wrapper">
+    <h1 class="email-title">Send <span class="highlight">Email</span></h1>
+    <p class="email-subtitle">Contact Your Specialist</p>
+
+    <form (ngSubmit)="onSubmit()" class="email-form">
+      <!-- Email TO field -->
+      <div class="input-wrapper">
+        <label for="email-to" class="input-label">TO</label>
+        <input [(ngModel)]="to" name="to" type="email" id="email-to" class="input-placeholder" placeholder="example.email@gmail.com" required>
+        <div class="input-underline"></div>
+      </div>
+
+      <!-- Email Subject field -->
+      <div class="input-wrapper">
+        <label for="email-object" class="input-label">OBJECT</label>
+        <input [(ngModel)]="subject" name="subject" type="text" id="email-object" class="input-placeholder" placeholder="Enter the object" required>
+        <div class="input-underline"></div>
+      </div>
+
+      <!-- Email Body field -->
+      <div class="input-wrapper">
+        <label for="email-text" class="input-label">TEXT</label>
+        <textarea [(ngModel)]="body" name="body" id="email-text" class="input-placeholder" placeholder="Enter your message" required></textarea>
+        <div class="input-underline"></div>
+      </div>
+
+      <!-- Submit button -->
+      <button type="submit" class="submit-button">SEND</button>
+    </form>
+
   </div>
-  <div class="form-group">
-    <input [(ngModel)]="subject" name="subject" placeholder="Subject" class="form-control">
-  </div>
-  <div class="form-group">
-    <textarea [(ngModel)]="body" name="body" placeholder="Body" class="form-control"></textarea>
-  </div>
-  <button type="submit" class="btn btn-primary">Send</button>
-</form>
+</section>

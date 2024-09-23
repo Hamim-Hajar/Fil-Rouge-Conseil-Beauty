@@ -9,6 +9,9 @@ import {FooterComponent} from "./component/footer/footer.component";
 import {ArticlListComponent} from "./component/articl-list/articl-list.component";
 import {RegisterComponent} from "./component/register/register.component";
 import {AddrecipeComponent} from "./component/addrecipe/addrecipe.component";
+import {RecipeListComponent} from "./component/recipe-list/recipe-list.component";
+import {HomeComponent} from "./component/home/home.component";
+import {VisiteurDashboardComponent} from "./component/visiteur-dashboard/visiteur-dashboard.component";
 
 
 const routes: Routes = [
@@ -18,9 +21,13 @@ const routes: Routes = [
   {path: 'article', component: AddArticlComponent},
   {path: 'main', component: MainComponent},
   {path: 'recipes', component: AddrecipeComponent},
+  {path: 'recipe-list', component: RecipeListComponent},
   {path: 'footer', component: FooterComponent},
   {path: 'artistic', component: ArticlListComponent},
   {path: 'register', component: RegisterComponent},
+  {path: 'email', component: EmailFormComponentComponent},
+  {path: 'home', component: HomeComponent},
+  {path: 'visitor-dashboard', component: VisiteurDashboardComponent},
   { path: '', redirectTo: 'main', pathMatch: 'full' },
 
 ];

@@ -1,0 +1,14 @@
+
+.image-container {
+  width: 100%;
+}
+
+.responsive-image {
+  aspect-ratio: 3.21;
+  object-fit: contain;
+  object-position: center;
+  width: 100%;
+}
+.custom-toolbar{
+  background-color: white;
+}

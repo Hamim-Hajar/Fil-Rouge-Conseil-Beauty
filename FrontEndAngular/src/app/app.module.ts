@@ -34,6 +34,9 @@ import { ArticlListComponent } from './component/articl-list/articl-list.compone
 import { RegisterComponent } from './component/register/register.component';
 import {MatTableModule} from "@angular/material/table";
 import { AddrecipeComponent } from './component/addrecipe/addrecipe.component';
+import { RecipeListComponent } from './component/recipe-list/recipe-list.component';
+import { HomeComponent } from './component/home/home.component';
+import { VisiteurDashboardComponent } from './component/visiteur-dashboard/visiteur-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +52,9 @@ import { AddrecipeComponent } from './component/addrecipe/addrecipe.component';
     ArticlListComponent,
     RegisterComponent,
     AddrecipeComponent,
+    RecipeListComponent,
+    HomeComponent,
+    VisiteurDashboardComponent,
 
 
   ],

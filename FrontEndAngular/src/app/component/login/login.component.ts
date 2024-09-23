@@ -29,7 +29,7 @@ export class LoginComponent {
         if (decodedToken.role === 'ADMIN') {
           this.router.navigateByUrl('/dashboard');
         } else if (decodedToken.role === 'VISITEUR') {
-          this.router.navigateByUrl('/home');
+          this.router.navigateByUrl('/visitor-dashboard');
         }else if(decodedToken.role === 'SPECIALIST') {
           this.router.navigateByUrl('/add');
         }
