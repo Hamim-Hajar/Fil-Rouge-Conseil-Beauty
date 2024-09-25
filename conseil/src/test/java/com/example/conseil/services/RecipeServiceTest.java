@@ -1,212 +1,183 @@
 package com.example.conseil.services;
 
-/*import com.example.conseil.dto.RecipeDto;
+import com.example.conseil.dto.RecipeDto;
 import com.example.conseil.entities.Recipe;
 import com.example.conseil.enums.RecipeCategory;
 import com.example.conseil.exception.RecipeNotFoundException;
 import com.example.conseil.mapper.RecipeMapper;
 import com.example.conseil.repository.RecipeRepository;
+import com.example.conseil.services.RecipeService;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.mock;
-import static org.mockito.ArgumentMatchers.any;
-
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.Mockito.when;
 import static org.mockito.Mockito.*;
-class RecipeServiceTest {
 
-    private RecipeService recipeService;
+@ExtendWith(MockitoExtension.class)
+public class RecipeServiceTest {
+
+    @Mock
     private RecipeRepository recipeRepository;
+
+    @Mock
     private RecipeMapper recipeMapper;
 
+    @InjectMocks
+    private RecipeService recipeService;
+
+    private Recipe recipe;
+    private RecipeDto recipeDto;
+
     @BeforeEach
-    void setUp() {
-        recipeRepository = mock(RecipeRepository.class);
-        recipeMapper = mock(RecipeMapper.class);
-        recipeService = new RecipeService(recipeRepository, recipeMapper);  // Utilisation du constructeur
+    public void setUp() {
+        // Setup a sample Recipe and RecipeDto
+        recipe = new Recipe();
+        recipe.setId(1L);
+        recipe.setName("Pasta");
+        recipe.setDescription("Delicious pasta recipe");
+        recipe.setCategory(RecipeCategory.HAIR);
+        recipe.setIngredients("Pasta, Tomatoes, Cheese");
+
+        recipeDto = new RecipeDto();
+        recipeDto.setId(1L);
+        recipeDto.setName("Pasta");
+        recipeDto.setDescription("Delicious pasta recipe");
+        recipeDto.setCategory(RecipeCategory.HAIR);
+        recipeDto.setIngredients("Pasta, Tomatoes, Cheese");
     }
 
+    // Test du succès pour l'ajout d'une recette
     @Test
-    void addRecipe_ShouldReturnSavedRecipeDto() {
-        // Arrange
-        RecipeDto recipeDto = new RecipeDto();
-        Recipe recipe = new Recipe();
-        Recipe savedRecipe = new Recipe();
-        RecipeDto savedRecipeDto = new RecipeDto();
-
+    public void testAddRecipe_Success() {
         when(recipeMapper.toEntity(recipeDto)).thenReturn(recipe);
-        when(recipeRepository.save(recipe)).thenReturn(savedRecipe);
-        when(recipeMapper.toDto(savedRecipe)).thenReturn(savedRecipeDto);
-
-        // Act
-        RecipeDto result = recipeService.addRecipe(recipeDto);
-
-        // Assert
-        assertNotNull(result);
-        verify(recipeRepository).save(recipe);
-        verify(recipeMapper).toDto(savedRecipe);
-    }
-
-    @Test
-    void getRecipeById_ShouldReturnRecipeDto_WhenRecipeExists() {
-        // Arrange
-        Long recipeId = 1L;
-        Recipe recipe = new Recipe();
-        RecipeDto recipeDto = new RecipeDto();
-
-        when(recipeRepository.findById(recipeId)).thenReturn(Optional.of(recipe));
+        when(recipeRepository.save(recipe)).thenReturn(recipe);
         when(recipeMapper.toDto(recipe)).thenReturn(recipeDto);
 
-        // Act
-        RecipeDto result = recipeService.getRecipeById(recipeId);
+        RecipeDto result = recipeService.addRecipe(recipeDto);
 
-        // Assert
         assertNotNull(result);
-        assertEquals(recipeDto, result);
-        verify(recipeRepository).findById(recipeId);
-        verify(recipeMapper).toDto(recipe);
+        assertEquals(recipeDto.getName(), result.getName());
+        verify(recipeRepository, times(1)).save(recipe);
     }
 
+    // Test du succès pour la récupération d'une recette par ID
     @Test
-    void getRecipeById_ShouldThrowRecipeNotFoundException_WhenRecipeDoesNotExist() {
-        // Arrange
-        Long recipeId = 1L;
+    public void testGetRecipeById_Success() {
+        when(recipeRepository.findById(1L)).thenReturn(Optional.of(recipe));
+        when(recipeMapper.toDto(recipe)).thenReturn(recipeDto);
 
-        when(recipeRepository.findById(recipeId)).thenReturn(Optional.empty());
+        RecipeDto result = recipeService.getRecipeById(1L);
 
-        // Act & Assert
+        assertNotNull(result);
+        assertEquals(recipeDto.getName(), result.getName());
+        verify(recipeRepository, times(1)).findById(1L);
+    }
+
+    // Test du cas d'exception lorsque la recette n'est pas trouvée
+    @Test
+    public void testGetRecipeById_NotFound() {
+        when(recipeRepository.findById(1L)).thenReturn(Optional.empty());
+
         RecipeNotFoundException exception = assertThrows(RecipeNotFoundException.class, () -> {
-            recipeService.getRecipeById(recipeId);
+            recipeService.getRecipeById(1L);
         });
 
         assertEquals("Recipe not found with id: 1", exception.getMessage());
     }
 
+    // Test du succès pour la récupération de toutes les recettes
     @Test
-    void getAllRecipes_ShouldReturnListOfRecipeDtos() {
-        // Arrange
-        List<Recipe> recipes = List.of(new Recipe());
-        List<RecipeDto> recipeDtos = List.of(new RecipeDto());
+    public void testGetAllRecipes_Success() {
+        when(recipeRepository.findAll()).thenReturn(Arrays.asList(recipe));
+        when(recipeMapper.toDto(recipe)).thenReturn(recipeDto);
 
-        when(recipeRepository.findAll()).thenReturn(recipes);
-        when(recipeMapper.toDto(any(Recipe.class))).thenReturn(recipeDtos.get(0));
-
-        // Act
         List<RecipeDto> result = recipeService.getAllRecipes();
 
-        // Assert
         assertNotNull(result);
         assertEquals(1, result.size());
-        verify(recipeRepository).findAll();
+        assertEquals(recipeDto.getName(), result.get(0).getName());
+        verify(recipeRepository, times(1)).findAll();
     }
 
+    // Test du succès pour la mise à jour d'une recette
     @Test
-    void updateRecipe_ShouldReturnUpdatedRecipeDto_WhenRecipeExists() {
-        // Arrange
-        Long recipeId = 1L;
-        RecipeDto updatedRecipeDto = new RecipeDto();
-        Recipe existingRecipe = new Recipe();
-        Recipe updatedRecipe = new Recipe();
-        RecipeDto resultRecipeDto = new RecipeDto();
+    public void testUpdateRecipe_Success() {
+        when(recipeRepository.findById(1L)).thenReturn(Optional.of(recipe));
+        when(recipeRepository.save(recipe)).thenReturn(recipe);
+        when(recipeMapper.toDto(recipe)).thenReturn(recipeDto);
 
-        when(recipeRepository.findById(recipeId)).thenReturn(Optional.of(existingRecipe));
-        when(recipeRepository.save(existingRecipe)).thenReturn(updatedRecipe);
-        when(recipeMapper.toDto(updatedRecipe)).thenReturn(resultRecipeDto);
+        RecipeDto result = recipeService.updateRecipe(1L, recipeDto);
 
-        // Act
-        RecipeDto result = recipeService.updateRecipe(recipeId, updatedRecipeDto);
-
-        // Assert
         assertNotNull(result);
-        verify(recipeRepository).findById(recipeId);
-        verify(recipeRepository).save(existingRecipe);
-        verify(recipeMapper).toDto(updatedRecipe);
+        assertEquals(recipeDto.getName(), result.getName());
+        verify(recipeRepository, times(1)).save(recipe);
     }
 
+    // Test du cas d'exception lors de la mise à jour d'une recette non trouvée
     @Test
-    void updateRecipe_ShouldThrowRecipeNotFoundException_WhenRecipeDoesNotExist() {
-        // Arrange
-        Long recipeId = 1L;
-        RecipeDto updatedRecipeDto = new RecipeDto();
+    public void testUpdateRecipe_NotFound() {
+        when(recipeRepository.findById(1L)).thenReturn(Optional.empty());
 
-        when(recipeRepository.findById(recipeId)).thenReturn(Optional.empty());
-
-        // Act & Assert
         RecipeNotFoundException exception = assertThrows(RecipeNotFoundException.class, () -> {
-            recipeService.updateRecipe(recipeId, updatedRecipeDto);
+            recipeService.updateRecipe(1L, recipeDto);
         });
 
         assertEquals("Recipe not found with id: 1", exception.getMessage());
     }
 
+    // Test du succès pour la suppression d'une recette
     @Test
-    void deleteRecipe_ShouldDeleteRecipe_WhenRecipeExists() {
-        // Arrange
-        Long recipeId = 1L;
-        Recipe recipe = new Recipe();
+    public void testDeleteRecipe_Success() {
+        when(recipeRepository.findById(1L)).thenReturn(Optional.of(recipe));
 
-        when(recipeRepository.findById(recipeId)).thenReturn(Optional.of(recipe));
+        recipeService.deleteRecipe(1L);
 
-        // Act
-        recipeService.deleteRecipe(recipeId);
-
-        // Assert
-        verify(recipeRepository).delete(recipe);
+        verify(recipeRepository, times(1)).delete(recipe);
     }
 
+    // Test du cas d'exception lors de la suppression d'une recette non trouvée
     @Test
-    void deleteRecipe_ShouldThrowRecipeNotFoundException_WhenRecipeDoesNotExist() {
-        // Arrange
-        Long recipeId = 1L;
+    public void testDeleteRecipe_NotFound() {
+        when(recipeRepository.findById(1L)).thenReturn(Optional.empty());
 
-        when(recipeRepository.findById(recipeId)).thenReturn(Optional.empty());
-
-        // Act & Assert
         RecipeNotFoundException exception = assertThrows(RecipeNotFoundException.class, () -> {
-            recipeService.deleteRecipe(recipeId);
+            recipeService.deleteRecipe(1L);
         });
 
         assertEquals("Recipe not found with id: 1", exception.getMessage());
     }
 
+    // Test du succès pour la récupération des recettes par catégorie
     @Test
-    void getRecipesByCategory_ShouldReturnListOfRecipes_WhenRecipesExist() {
-        // Arrange
-        RecipeCategory category = RecipeCategory.FACE;
-        List<Recipe> recipes = List.of(new Recipe());
-        List<RecipeDto> recipeDtos = List.of(new RecipeDto());
+    public void testGetRecipesByCategory_Success() {
+        when(recipeRepository.findByCategory(RecipeCategory.HAIR)).thenReturn(Arrays.asList(recipe));
+        when(recipeMapper.toDto(recipe)).thenReturn(recipeDto);
 
-        when(recipeRepository.findByCategory(category)).thenReturn(recipes);
-        when(recipeMapper.toDto(any(Recipe.class))).thenReturn(recipeDtos.get(0));
+        List<RecipeDto> result = recipeService.getRecipesByCategory(RecipeCategory.HAIR);
 
-        // Act
-        List<RecipeDto> result = recipeService.getRecipesByCategory(category);
-
-        // Assert
         assertNotNull(result);
         assertEquals(1, result.size());
-        verify(recipeRepository).findByCategory(category);
+        assertEquals(recipeDto.getCategory(), result.get(0).getCategory());
+        verify(recipeRepository, times(1)).findByCategory(RecipeCategory.HAIR);
     }
 
+    // Test du cas d'exception lorsqu'aucune recette n'est trouvée pour une catégorie donnée
     @Test
-    void getRecipesByCategory_ShouldThrowRecipeNotFoundException_WhenNoRecipesFound() {
-        // Arrange
-        RecipeCategory category = RecipeCategory.FACE;
+    public void testGetRecipesByCategory_NotFound() {
+        when(recipeRepository.findByCategory(RecipeCategory.HAIR)).thenReturn(Arrays.asList());
 
-        when(recipeRepository.findByCategory(category)).thenReturn(Collections.emptyList());
-
-        // Act & Assert
         RecipeNotFoundException exception = assertThrows(RecipeNotFoundException.class, () -> {
-            recipeService.getRecipesByCategory(category);
+            recipeService.getRecipesByCategory(RecipeCategory.HAIR      );
         });
 
-        assertEquals("No recipes found for category: VEGETARIAN", exception.getMessage());
+        assertEquals("No recipes found for category: MAIN_COURSE", exception.getMessage());
     }
-}*/
+}

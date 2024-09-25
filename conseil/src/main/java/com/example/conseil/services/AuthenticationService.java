@@ -40,13 +40,13 @@ public class AuthenticationService {
         User user;
 
         switch (input.getRole()) {
-            case UserRole.VISITEUR:
+            case VISITEUR:
                 user = new Visiteur();
                 break;
-            case UserRole.SPECIALIST:
+            case SPECIALIST:
                 user = new Specialist();
                 break;
-            case UserRole.ADMIN:
+            case ADMIN:
                 user = new Admin();
                 break;
             default:

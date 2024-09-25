@@ -1,5 +1,6 @@
 package com.example.conseil.dto;
 
+import com.example.conseil.enums.RecipeCategory;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,5 +23,6 @@ public class RecipeDto {
     private Long specialistId;
     private List<Long> commentIds;
     private List<Long> favoriteRecipeIds;
+    private RecipeCategory category;
 }
 
