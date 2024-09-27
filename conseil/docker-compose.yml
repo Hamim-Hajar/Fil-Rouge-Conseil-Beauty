@@ -1,75 +1,75 @@
-version: '3.8'
-
-services:
-#  jenkins:
-#    image: jenkins/jenkins:lts
-#    container_name: jenkins
+#version: '3.8'
+#
+#services:
+##  jenkins:
+##    image: jenkins/jenkins:lts
+##    container_name: jenkins
+##    ports:
+##      - "8081:8080" # Port modifié pour éviter les conflits avec Spring Boot
+##      - "50000:50000"
+##    volumes:
+##      - jenkins_home:/var/jenkins_home
+##    networks:
+##      - ci_network
+##    user: root
+#
+#  sonarqube:
+#    image: sonarqube:lts
+#    container_name: sonarqube
 #    ports:
-#      - "8081:8080" # Port modifié pour éviter les conflits avec Spring Boot
-#      - "50000:50000"
-#    volumes:
-#      - jenkins_home:/var/jenkins_home
+#      - "9000:9000"
 #    networks:
 #      - ci_network
-#    user: root
-
-  sonarqube:
-    image: sonarqube:lts
-    container_name: sonarqube
-    ports:
-      - "9000:9000"
-    networks:
-      - ci_network
-    environment:
-      - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
-    depends_on:
-      - postgres
-
-  postgres:
-    image: postgres
-    container_name: postgres
-    environment:
-      POSTGRES_USER: sonar
-      POSTGRES_PASSWORD: sonar
-      POSTGRES_DB: sonarqube
-    networks:
-      - ci_network
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-
-  mysql:
-    image: mysql:8.0
-    container_name: mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: conseilhair
-      MYSQL_USER: juju
-      MYSQL_PASSWORD: jujuRo55
-    ports:
-      - "3306:3306"
-    volumes:
-      - mysql-data:/var/lib/mysql
-    networks:
-      - ci_network
-
-  spring-app:
-    build: .
-    container_name: spring-app
-    ports:
-      - "8080:8080" # Port Spring Boot
-    depends_on:
-      - mysql
-    environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/conseilhair
-      SPRING_DATASOURCE_USERNAME: juju
-      SPRING_DATASOURCE_PASSWORD: jujuRo55
-    networks:
-      - ci_network
-
-volumes:
-  jenkins_home:
-  postgres_data:
-  mysql-data:
-
-networks:
-  ci_network:
+#    environment:
+#      - SONAR_ES_BOOTSTRAP_CHECKS_DISABLE=true
+#    depends_on:
+#      - postgres
+#
+#  postgres:
+#    image: postgres
+#    container_name: postgres
+#    environment:
+#      POSTGRES_USER: sonar
+#      POSTGRES_PASSWORD: sonar
+#      POSTGRES_DB: sonarqube
+#    networks:
+#      - ci_network
+#    volumes:
+#      - postgres_data:/var/lib/postgresql/data
+#
+#  mysql:
+#    image: mysql:8.0
+#    container_name: mysql
+#    environment:
+#      MYSQL_ROOT_PASSWORD: root
+#      MYSQL_DATABASE: conseilhair
+#      MYSQL_USER: juju
+#      MYSQL_PASSWORD: jujuRo55
+#    ports:
+#      - "3306:3306"
+#    volumes:
+#      - mysql-data:/var/lib/mysql
+#    networks:
+#      - ci_network
+#
+#  spring-app:
+#    build: .
+#    container_name: spring-app
+#    ports:
+#      - "8080:8080" # Port Spring Boot
+#    depends_on:
+#      - mysql
+#    environment:
+#      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/conseilhair
+#      SPRING_DATASOURCE_USERNAME: juju
+#      SPRING_DATASOURCE_PASSWORD: jujuRo55
+#    networks:
+#      - ci_network
+#
+#volumes:
+#  jenkins_home:
+#  postgres_data:
+#  mysql-data:
+#
+#networks:
+#  ci_network:

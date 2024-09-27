@@ -9,7 +9,7 @@ import {CommentDto} from "../dto/comment-dto";
 export class CommentService {
 
 
-  private baseUrl = 'http://localhost:8080/api/comments'; // Remplacez par votre URL backend
+  private baseUrl = 'http://localhost:8081/api/comments'; // Remplacez par votre URL backend
 
   constructor(private http: HttpClient) { }
   addComment(recipeId: number, userId: number, content: string): Observable<CommentDto> {

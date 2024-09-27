@@ -1,31 +1,41 @@
-<div class="add-recipe-container">
-  <h2>Ajouter une nouvelle recette</h2>
-  <form (ngSubmit)="onSubmit()">
-    <div>
-      <label for="title">Titre de la recette</label>
-      <input id="title" [(ngModel)]="recipe.name" name="title" required>
+<div class="article-container">
+  <h1>Create an Article</h1>
+  <form [formGroup]="formRecipe" (ngSubmit)="onSubmit()">
+    <h3 class="upload-cover"> <mat-icon class="custom-icon">crop_original</mat-icon> Upload cover</h3>
+    <div class="placeholder">
+      <h6>Upload the Article cover</h6>
     </div>
 
-    <div>
-      <label for="description">Description</label>
-      <textarea id="description" [(ngModel)]="recipe.description" name="description" required></textarea>
+
+    <div class="form-group">
+      <label for="image">Image</label>
+      <input type="file" id="image" (change)="onFileChange($event)" formControlName="image" required />
     </div>
 
-    <div>
-      <label for="ingredients">Ingrédients</label>
-      <textarea id="ingredients" [(ngModel)]="recipe.ingredients" name="ingredients" required></textarea>
+
+
+
+    <hr class="custom-line">
+    <h3 class="upload-cover"> <mat-icon class="custom-icon">info</mat-icon> General information</h3>
+    <div class="form-group">
+      <label for="name"> recipe title </label>
+      <input type="name" id="name" formControlName="name" />
+    </div>
+    <div class="form-group">
+      <label for="description">description</label>
+      <input type="description" id="description" formControlName="description" />
+    </div>
+    <div class="form-group">
+      <label for="ingredients">ingredients</label>
+      <input type="ingredients" id="ingredients" formControlName="ingredients" />
+    </div>
+    <div class="form-group">
+      <label for="instructions">instructions</label>
+      <input type="instructions" id="instructions" formControlName="instructions" />
     </div>
 
-    <div>
-      <label for="steps">Étapes</label>
-      <textarea id="steps" [(ngModel)]="recipe.instructions" name="steps" required></textarea>
-    </div>
 
-   <!-- <div>
-      <label for=>Image</label>
-      <input type="file" (change)="onFileSelected($event)">
-    </div>-->
-
-    <button type="submit">Ajouter la recette</button>
+    <button type="submit" class="btn btn-primary" [disabled]="formRecipe.invalid">Submit Order</button>
   </form>
+
 </div>

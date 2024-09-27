@@ -6,11 +6,47 @@
   <component name="ChangeListManager">
     <list default="true" id="653c835f-ee12-4abc-9832-6951c52113b1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/register/register.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/register/register.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/register/register.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/add-articl/add-articl.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/add-articl/add-articl.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/addrecipe/addrecipe.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/addrecipe/addrecipe.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/addrecipe/addrecipe.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/addrecipe/addrecipe.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/addrecipe/addrecipe.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/addrecipe/addrecipe.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/articl-list/articl-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/articl-list/articl-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/dto/article-dto.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/dto/article-dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/dto/article-dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/dto/recipe-dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/dto/recipe-dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/models/article.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/models/article.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/models/recipe.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/models/recipe.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/models/recipe.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/services/articl.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/services/articl.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/services/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/services/comment.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/services/comment.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/services/email-service.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/services/email-service.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/services/favrecipe.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/services/favrecipe.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/services/image-upload.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/services/image-upload.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/services/recipe.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/services/recipe.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/Jenkinsfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/docker-compose.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conseil/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/services/AuthenticationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/services/AuthenticationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/configs/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/configs/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/RecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/RecipeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/dto/ArticleDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/dto/ArticleDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/dto/RecipeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/dto/RecipeDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/entities/Recipe.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/entities/Recipe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/mapper/RecipeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/mapper/RecipeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/repository/ArticleRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/repository/ArticleRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/services/ArticleService.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/services/ArticleService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/services/RecipeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/services/RecipeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/ArticleServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/ArticleServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/AuthenticationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/AuthenticationServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/CommentServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/CommentServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/FavRcServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/FavRcServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/RecipeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/RecipeServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +57,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
+        <option value="Dockerfile" />
       </list>
     </option>
   </component>
@@ -50,6 +87,8 @@
     "JUnit.ArticleServiceTest.testAddArticle_Success.executor": "Run",
     "JUnit.AuthenticationServiceTest.authenticate.executor": "Run",
     "JUnit.AuthenticationServiceTest.signup.executor": "Run",
+    "Maven.conseil [clean].executor": "Run",
+    "Maven.conseil [install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
@@ -87,7 +126,7 @@
       <recent name="com.example.conseil.services" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ArticleServiceTest.testAddArticle_Success">
+  <component name="RunManager" selected="Spring Boot.ConseilApplication">
     <configuration name="ArticleServiceTest.addArticle" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="conseil" />
       <extension name="coverage">
@@ -215,7 +254,10 @@
       <workItem from="1726841067187" duration="22436000" />
       <workItem from="1727093299817" duration="13724000" />
       <workItem from="1727193426226" duration="2899000" />
-      <workItem from="1727252084688" duration="1063000" />
+      <workItem from="1727252084688" duration="13162000" />
+      <workItem from="1727274422904" duration="2676000" />
+      <workItem from="1727339137034" duration="20627000" />
+      <workItem from="1727469970082" duration="3680000" />
     </task>
     <servers />
   </component>

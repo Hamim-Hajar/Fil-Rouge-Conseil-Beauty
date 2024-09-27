@@ -6,7 +6,7 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class ImageUploadService {
-  private uploadUrl = 'http://localhost:8080/api/upload-image'; // Endpoint de ton API
+  private uploadUrl = 'http://localhost:8081/api/upload-image'; // Endpoint de ton API
 
   constructor(private http: HttpClient) { }
 

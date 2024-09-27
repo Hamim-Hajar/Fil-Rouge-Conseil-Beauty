@@ -40,63 +40,28 @@
       </nav>
       <div class="events-list">
         <div class="events-grid">
-          <article class="event-column">
+          <article class="event-column" *ngFor="let article of listArticle">
             <div class="event-card">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/af53f75507cb528fe538d64550277fb0f98cb759b03cb6777e3ffa91e150b12f?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="Urban Jungle Marathon event" class="event-image" />
+              <div class="product_image">
+                <img [src]="'data:image/png;base64,'+article.image" alt="" style="width: 100%; height: 100%;">
+
+              </div>
               <div class="event-details">
                 <div class="event-header">
-                  <h3 class="event-name">Urban Jungle Marathon</h3>
+                  <h3 class="event-name">{{article.titre}}</h3>
                   <p class="event-price">From $10</p>
                 </div>
                 <div class="event-date">
                   <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a9a339a244ae4c563f954c857f559c29096daa1b246650c40c38b64a67f6ef14?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="event-icon" />
-                  <time class="event-datetime">Monday, June 06 | 06:00 AM</time>
+                  <time class="event-datetime">{{ article.datePublication }} </time>
                 </div>
                 <div class="event-location">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e04f61ad266c350081e91d774eef506b848cb34ff4626d66aeed595043e00347?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="event-icon" />
-                  <p class="event-venue">New York, NY</p>
+                  <button id="read_btn" (click)="showMoreDetails(article.id)">show more</button>
                 </div>
               </div>
             </div>
           </article>
-          <article class="event-column">
-            <div class="event-card">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/821e16390029d2c7260bc26e84a5d0bb15c570c09272bbd13e7b3d9c6e7b2d63?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="Rockin' the Stage event" class="event-image" />
-              <div class="event-details">
-                <div class="event-header">
-                  <h3 class="event-name">"Rockin' the Stage</h3>
-                  <p class="event-price">From $100</p>
-                </div>
-                <div class="event-date">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a9a339a244ae4c563f954c857f559c29096daa1b246650c40c38b64a67f6ef14?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="event-icon" />
-                  <time class="event-datetime">Monday, March 14 | 04:00 PM</time>
-                </div>
-                <div class="event-location">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e04f61ad266c350081e91d774eef506b848cb34ff4626d66aeed595043e00347?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="event-icon" />
-                  <p class="event-venue">New York, NY</p>
-                </div>
-              </div>
-            </div>
-          </article>
-          <article class="event-column">
-            <div class="event-card">
-              <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/62ed9e9e0fb0df17f21225356f37a9292e1bcfc88cd80b07ba46bbe5c33ee80e?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="Melody Mania event" class="event-image" />
-              <div class="event-details">
-                <div class="event-header">
-                  <h3 class="event-name">Melody Mania</h3>
-                  <p class="event-price">Free ticket</p>
-                </div>
-                <div class="event-date">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a9a339a244ae4c563f954c857f559c29096daa1b246650c40c38b64a67f6ef14?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="event-icon" />
-                  <time class="event-datetime">Wednesday, June 24 | 07:00 PM</time>
-                </div>
-                <div class="event-location">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e04f61ad266c350081e91d774eef506b848cb34ff4626d66aeed595043e00347?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="event-icon" />
-                  <p class="event-venue">New York, NY</p>
-                </div>
-              </div>
-            </div>
-          </article>
+
         </div>
       </div>
     </div>

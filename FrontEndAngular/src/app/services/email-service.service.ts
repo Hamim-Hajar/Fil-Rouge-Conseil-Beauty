@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class EmailService {
-  private apiUrl = 'http://localhost:8080/api/email';
+  private apiUrl = 'http://localhost:8081/api/email';
 
   constructor(private http: HttpClient) { }
 

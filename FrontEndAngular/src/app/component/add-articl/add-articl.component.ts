@@ -13,7 +13,7 @@ import {jwtDecode} from "jwt-decode";
 export class AddArticlComponent {
 
   formArticle !: FormGroup
-  specialistId!:number
+  specialist_id= 2;
   selectedImage!: File;
 
   constructor(
@@ -37,17 +37,19 @@ addArticle(){
 getId(){
     const token : any = localStorage.getItem("token")
    const decodeToken :any = jwtDecode(token)
-  this.specialistId = decodeToken.id
-  console.log(this.specialistId)
+  this.specialist_id = decodeToken.id
+  console.log(this.specialist_id)
 
 }
   onSubmit(){
     const valid = this.formArticle.valid
+    console.log(this.specialist_id)
 
     if(valid){
       const value=  this.formArticle.value
-      this.articleService.addArticle(value,this.specialistId,this.selectedImage).subscribe()
+      this.articleService.addArticle(value,this.specialist_id,this.selectedImage).subscribe()
       console.log(value)
+      this.formArticle.reset()
     }
   }
 

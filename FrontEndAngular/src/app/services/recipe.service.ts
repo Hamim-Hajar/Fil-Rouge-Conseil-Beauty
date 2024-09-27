@@ -4,21 +4,29 @@ import {Recipe} from "../models/recipe";
 import {catchError, Observable, throwError} from "rxjs";
 import {RecipeCategory} from "../enums/recipe-category";
 import {RecipeDto} from "../dto/recipe-dto";
+import {ArticleDto} from "../dto/article-dto";
 
 @Injectable({
   providedIn: 'root'
 })
 export class RecipeService {
 
-  private apiUrl = 'http://localhost:8080/api/recipes'; // URL of your Spring Boot API
+  private apiUrl = 'http://localhost:8081/api/recipe'; // URL of your Spring Boot API
 
   constructor(private http: HttpClient) {}
 
   // Add a new recipe
-  addRecipe(recipe: Recipe): Observable<Recipe> {
-    return this.http.post<Recipe>(`${this.apiUrl}/add`, recipe)
-      .pipe(catchError(this.handleError));
+  addRecipe(recipeDto:RecipeDto,specialist_id:number,image:File): Observable<RecipeDto> {
+   const formData=new FormData();
+   formData.append('name',recipeDto.name);
+    formData.append('description',recipeDto.description);
+    formData.append('ingredients',recipeDto.ingredients);
+    formData.append('instructions',recipeDto.instructions);
+    formData.append('specialist_id', specialist_id.toString());
+    formData.append('image', image);
+    return this.http.post<RecipeDto>(`${this.apiUrl}/add`, formData,);
   }
+
 
   // Get recipe by ID
   getRecipeById(id: number): Observable<Recipe> {

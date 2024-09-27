@@ -44,7 +44,7 @@ public class SecurityConfiguration {
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/api/articles/**").hasRole("SPECIALIST")
-                        .requestMatchers("/api/pannes/**").permitAll()
+                        .requestMatchers("/api/recipe/**").hasRole("SPECIALIST")
                         .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session

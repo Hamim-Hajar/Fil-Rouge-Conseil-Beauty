@@ -28,7 +28,7 @@ const routes: Routes = [
   {path: 'email', component: EmailFormComponentComponent},
   {path: 'home', component: HomeComponent},
   {path: 'visitor-dashboard', component: VisiteurDashboardComponent},
-  { path: '', redirectTo: 'main', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
 
 ];
 

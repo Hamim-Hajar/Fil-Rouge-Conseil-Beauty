@@ -4,7 +4,7 @@ export interface ArticleDto {
   contenu: string;
   datePublication: Date; // Use Date for LocalDateTime equivalent
   image?: string; // Optional, as it is nullable in your entity
-  specialistId: number; // Representing the relation with Specialist
+  specialist_id: number; // Representing the relation with Specialist
 
 
 }

@@ -1,14 +1,20 @@
 package com.example.conseil.services;
 
+import com.example.conseil.dto.ArticleDto;
 import com.example.conseil.dto.RecipeDto;
+import com.example.conseil.entities.Article;
 import com.example.conseil.entities.Recipe;
+import com.example.conseil.entities.Specialist;
 import com.example.conseil.enums.RecipeCategory;
 import com.example.conseil.exception.RecipeNotFoundException;
+import com.example.conseil.exception.ResourceNotFoundException;
 import com.example.conseil.mapper.RecipeMapper;
 import com.example.conseil.repository.RecipeRepository;
+import com.example.conseil.repository.SpecialistRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -20,22 +26,35 @@ public class RecipeService {
 
     @Autowired
     private RecipeMapper recipeMapper;
+    @Autowired
+    private SpecialistRepository specialistRepository;
 
-    public RecipeDto addRecipe(RecipeDto recipeDto) {
-        Recipe recipe = recipeMapper.toEntity(recipeDto);
-        Recipe savedRecipe = recipeRepository.save(recipe);
-        return recipeMapper.toDto(savedRecipe);
+    public RecipeDto addRecipe(RecipeDto recipeDto,Long specialist_id, byte[] imageBytes) {
+
+        Recipe recipe = recipeMapper.recipeDtoToRecipe(recipeDto);
+
+        Specialist specialist = specialistRepository.findById(specialist_id
+        ).orElseThrow(() ->
+                new ResourceNotFoundException("Specialist not found with id: " + recipeDto.getSpecialistId()));
+        recipe.setDatePublication(new Date(System.currentTimeMillis()));
+
+        recipe.setSpecialist(specialist);
+        recipe.setImage(imageBytes);
+        Recipe recipe1 = recipeRepository.save(recipe);
+        return  recipeMapper.recipeToRecipeDto(recipe1);
+
     }
+
 
     public RecipeDto getRecipeById(Long id) {
         Recipe recipe = recipeRepository.findById(id)
                 .orElseThrow(() -> new RecipeNotFoundException("Recipe not found with id: " + id));
-        return recipeMapper.toDto(recipe);
+        return recipeMapper.recipeToRecipeDto(recipe);
     }
 
     public List<RecipeDto> getAllRecipes() {
         List<Recipe> recipes = recipeRepository.findAll();
-        return recipes.stream().map(recipeMapper::toDto).toList();
+        return recipes.stream().map(recipeMapper::recipeToRecipeDto).toList();
     }
 
     public RecipeDto updateRecipe(Long id, RecipeDto updatedRecipeDto) {
@@ -47,7 +66,7 @@ public class RecipeService {
         existingRecipe.setIngredients(updatedRecipeDto.getIngredients());
 
         Recipe updatedRecipe = recipeRepository.save(existingRecipe);
-        return recipeMapper.toDto(updatedRecipe);
+        return recipeMapper.recipeToRecipeDto(updatedRecipe);
     }
 
     public void deleteRecipe(Long id) {
@@ -61,6 +80,6 @@ public class RecipeService {
         if (recipes.isEmpty()) {
             throw new RecipeNotFoundException("No recipes found for category: " + category);
         }
-        return recipes.stream().map(recipeMapper::toDto).toList();
+        return recipes.stream().map(recipeMapper::recipeToRecipeDto).toList();
     }
 }

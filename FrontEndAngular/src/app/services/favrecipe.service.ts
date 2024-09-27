@@ -7,7 +7,7 @@ import {HttpClient} from "@angular/common/http";
 })
 export class FavrecipeService {
 
-  private apiUrl = 'http://your-api-url/api';
+  private apiUrl = 'http://localhost:8081/api';
 
   constructor(private http: HttpClient) {}
 

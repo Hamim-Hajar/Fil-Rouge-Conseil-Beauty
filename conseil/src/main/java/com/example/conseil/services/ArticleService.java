@@ -26,11 +26,12 @@ public class ArticleService {
     @Autowired
     private ArticleMapper articleMapper;
 
-    public ArticleDto addArticle(ArticleDto articleDto,Long specialistId, byte[] imageBytes) {
+    public ArticleDto addArticle(ArticleDto articleDto,Long specialist_id, byte[] imageBytes) {
         Article article = articleMapper.articleDtoToArticle(articleDto);
 
-        Specialist specialist = specialistRepository.findById(specialistId).orElseThrow(() ->
-                new ResourceNotFoundException("Specialist not found with id: " + articleDto.getSpecialistId()));
+        Specialist specialist = specialistRepository.findById(specialist_id
+        ).orElseThrow(() ->
+                new ResourceNotFoundException("Specialist not found with id: " + articleDto.getSpecialist_id()));
        article.setDatePublication(new Date(System.currentTimeMillis()));
 
         article.setSpecialist(specialist);

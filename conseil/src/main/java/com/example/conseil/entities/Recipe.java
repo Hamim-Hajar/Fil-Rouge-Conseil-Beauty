@@ -7,8 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
+import java.sql.Date;
+
 import java.util.List;
 
 @Entity
@@ -27,11 +27,12 @@ public class Recipe {
   @Column(nullable = false)
       private String ingredients;
   @Column(nullable = false)
-      private LocalDateTime datePublication;
+      private Date datePublication;
   @Column(nullable = false)
-      private String Instructions;
-  @Column(nullable = false)
-      private String image;
+      private String instructions;
+    @Lob
+    @Column(length = 1000000)
+    private byte[] image;
      @Enumerated(EnumType.STRING)
      private RecipeCategory category;
 

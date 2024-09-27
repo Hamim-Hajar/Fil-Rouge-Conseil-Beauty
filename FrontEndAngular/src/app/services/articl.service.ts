@@ -8,18 +8,18 @@ import {AuthService} from "./auth.service";
   providedIn: 'root'
 })
 export class ArticlService {
-  private apiUrl = 'http://localhost:8080/api/articles'; // Backend API endpoint
+  private apiUrl = 'http://localhost:8081/api/articles'; // Backend API endpoint
 
   constructor(private http: HttpClient) {}
 
   // Add a new article
-  addArticle(articleDto: ArticleDto,specialistId : number , image :File): Observable<ArticleDto> {
+  addArticle(articleDto: ArticleDto,specialist_id : number , image :File): Observable<ArticleDto> {
 
 
     const formData = new FormData();
     formData.append('titre', articleDto.titre);
     formData.append('contenu', articleDto.contenu);
-    formData.append('specialistId', specialistId.toString());
+    formData.append('specialist_id', specialist_id.toString());
     formData.append('image', image);
 
     return this.http.post<ArticleDto>(`${this.apiUrl}/add`, formData,);

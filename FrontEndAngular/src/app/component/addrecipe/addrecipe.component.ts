@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import {Recipe} from "../../models/recipe";
 import {RecipeService} from "../../services/recipe.service";
 import {Router} from "@angular/router";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {jwtDecode} from "jwt-decode";
 
 @Component({
   selector: 'app-addrecipe',
@@ -9,38 +11,51 @@ import {Router} from "@angular/router";
   styleUrls: ['./addrecipe.component.css']
 })
 export class AddrecipeComponent {
-  recipe: Recipe = {} as Recipe; // Déclaration de la recette sans initialisation
-  selectedFile: File | null = null;  // Si tu utilises un champ pour télécharger une image
+  formRecipe !: FormGroup
+  specialist_id= 2;
+  selectedImage!: File;
 
-  constructor(private recipeService: RecipeService, private router: Router) {}
+  constructor(private recipeService: RecipeService, private fb: FormBuilder,) {}
 
-  onFileSelected(event: any): void {
-    this.selectedFile = event.target.files[0];  // Gestion de la sélection d'une image
+  ngOnInit(): void {
+    this.getId()
+    this.addRecipe()
   }
 
-  onSubmit(): void {
-    // Si tu as besoin de gérer l'image avant de soumettre
-    if (this.selectedFile) {
-      const reader = new FileReader();
-      reader.readAsDataURL(this.selectedFile);
-      reader.onload = () => {
-        this.recipe.image = reader.result as string; // Encodage de l'image en base64 si nécessaire
-        this.addRecipe();
-      };
-    } else {
-      this.addRecipe();  // Si pas d'image, soumission directe
+
+  addRecipe(){
+    this.formRecipe=this.fb.group({
+      name:["",Validators.required],
+      description:["",Validators.required],
+      ingredients:["",Validators.required],
+      instructions: ["",Validators.required],
+      image:["",Validators.required]
+
+    })
+  }
+  getId(){
+    const token : any = localStorage.getItem("token")
+    const decodeToken :any = jwtDecode(token)
+    this.specialist_id = decodeToken.id
+    console.log(this.specialist_id)
+
+  }
+
+  onSubmit(){
+    const valid = this.formRecipe.valid
+    console.log(this.specialist_id)
+
+    if(valid){
+      const value=  this.formRecipe.value
+      this.recipeService.addRecipe(value,this.specialist_id,this.selectedImage).subscribe()
+      console.log(value)
+      this.formRecipe.reset()
+    }
+  }
+  onFileChange(event: any) {
+    if (event.target.files.length > 0) {
+      this.selectedImage = event.target.files[0];
     }
   }
 
-  private addRecipe(): void {
-    this.recipeService.addRecipe(this.recipe).subscribe(
-      (response) => {
-        console.log('Recette ajoutée avec succès', response);
-        //this.router.navigate(['/recipes']);  // Redirection après l'ajout
-      },
-      (error) => {
-        console.error('Erreur lors de l\'ajout de la recette :', error);
-      }
-    );
-  }
 }

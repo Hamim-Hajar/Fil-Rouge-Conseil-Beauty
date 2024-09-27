@@ -31,7 +31,7 @@ export class Recipe {
     this.description = description;
     this.ingredients = ingredients;
     this.datePublication = datePublication;
-    this.instructions = instructions;
+    this.instructions= instructions;
     this.image = image;
     this.category = category;
     this.commentList = commentList;
