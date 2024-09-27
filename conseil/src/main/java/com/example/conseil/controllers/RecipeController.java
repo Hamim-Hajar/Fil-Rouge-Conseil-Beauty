@@ -63,7 +63,7 @@ private RecipeService recipeService;
         return ResponseEntity.ok(updatedRecipe);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteRecipe(@PathVariable Long id) {
         recipeService.deleteRecipe(id);
         return ResponseEntity.noContent().build();

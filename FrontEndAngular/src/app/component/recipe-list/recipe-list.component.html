@@ -5,11 +5,11 @@
     <!-- Image Column -->
     <ng-container matColumnDef="image">
       <th mat-header-cell *matHeaderCellDef>Image</th>
-      <td mat-cell *matCellDef="let article">
-        <img [src]="'data:image/png;base64,' + article.image" alt="Image" style="width: 150px; height: auto;">
+      <td mat-cell *matCellDef="let recipe">
+        <img [src]="'data:image/png;base64,' + recipe.image" alt="Image" style="width: 150px; height: auto;">
       </td>
     </ng-container>
-    displayedColumns: string[] = ['image', 'name', 'description', 'ingredients', 'Instructions','datePublication'];
+
     <!-- Title Column -->
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef>Name</th>
@@ -25,18 +25,15 @@
       <th mat-header-cell *matHeaderCellDef>ingredients</th>
       <td mat-cell *matCellDef="let recipe">{{recipe.ingredients}}</td>
     </ng-container>
-    <ng-container matColumnDef="Instructions">
+    <ng-container matColumnDef="instructions">
       <th mat-header-cell *matHeaderCellDef>Instructions</th>
-      <td mat-cell *matCellDef="let recipe">{{recipe.Instructions}}</td>
+      <td mat-cell *matCellDef="let recipe">{{recipe.instructions}}</td>
     </ng-container>
     <!-- Date Column -->
-    <ng-container matColumnDef="datePublication">
-      <th mat-header-cell *matHeaderCellDef>datePublication</th>
-      <td mat-cell *matCellDef="let recipe">{{recipe.datePublication | date}}</td>
-    </ng-container>
+
 
     <!-- Delete Column -->
-    <ng-container matColumnDef="delete">
+    <ng-container matColumnDef="deleteRecipe">
       <th mat-header-cell *matHeaderCellDef>Action</th>
       <td mat-cell *matCellDef="let recipe">
         <button mat-button color="warn" (click)="deleteRecipe(recipe.id)">Delete</button>

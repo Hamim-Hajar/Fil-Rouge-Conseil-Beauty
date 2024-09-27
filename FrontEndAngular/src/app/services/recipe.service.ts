@@ -37,8 +37,9 @@ export class RecipeService {
   // Get all recipes
 
   getAllRecipes(): Observable<RecipeDto[]> {
-    return this.http.get<RecipeDto[]>(this.apiUrl); // Le typage doit être RecipeDto[]
+    return this.http.get<RecipeDto[]>(`${this.apiUrl}/all`); // Le typage doit être RecipeDto[]
   }
+
 
   // Update a recipe
   updateRecipe(id: number, recipe: Recipe): Observable<Recipe> {
@@ -48,9 +49,10 @@ export class RecipeService {
 
   // Delete a recipe
   deleteRecipe(id: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiUrl}/${id}`)
-      .pipe(catchError(this.handleError));
+    return this.http.delete<void>(`${this.apiUrl}/delete/${id}`);
+
   }
+
 
   // Get recipes by category
   getRecipesByCategory(category: RecipeCategory): Observable<Recipe[]> {

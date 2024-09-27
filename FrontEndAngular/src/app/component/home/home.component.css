@@ -12,3 +12,33 @@
 .custom-toolbar{
   background-color: white;
 }
+
+.recipe-container
+{ display: flex;
+  flex-direction: column; }
+
+.recipe-title { color: rgba(23, 26, 31, 1); font: 700 24px Encode Sans, sans-serif; }
+.recipe-content { display: flex; margin-top: 11px; width: 87%; padding-left: 53px; flex-direction: column; font-family: Mulish, sans-serif; font-weight: 400; }
+.recipe-image { aspect-ratio: 2.33; object-fit: contain; object-position: center; width: 100%; border-radius: 6px; align-self: center; margin-left: 24px; max-width: 952px; }
+.recipe-date { border-radius: 6px; background-color: rgba(254, 241, 246, 1); align-self: start; margin-left: 42px; font-size: 20px; color: rgba(242, 98, 152, 1); font-weight: 700; text-transform: uppercase; padding: 4px 19px; }
+.recipe-ingredients { border-radius: 6px; background-color: rgba(240, 222, 241, 1); align-self: end; display: flex; margin-top: 18px; width: 100%; max-width: 1007px; flex-direction: column; overflow: hidden; align-items: start; font-size: 16px; color: rgba(0, 0, 0, 1); line-height: 26px; padding: 12px 80px 120px 14px; }
+.ingredient-list { margin-left: 17px; }
+.comment-section-title { color: rgba(23, 26, 31, 1); align-self: start; margin-top: 49px; font: 700 24px Encode Sans, sans-serif; }
+.comment-form { background-color: rgba(0, 0, 0, 0); align-self: end; display: flex; width: 100%; max-width: 1007px; flex-direction: column; font-size: 14px; color: rgba(188, 193, 202, 1); line-height: 2; padding: 23px 1px 1px; }
+.comment-input { border-radius: 6px; background-color: rgba(243, 244, 246, 1); padding: 52px 12px; }
+.comment-submit { border-radius: 6px; background-color: rgba(236, 186, 240, 1); align-self: end; margin-top: 49px; overflow: hidden; font-size: 16px; color: rgba(255, 255, 255, 1); line-height: 2; padding: 9px 15px; }
+.highlight { color: rgba(205, 56, 243, 1); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+@media (max-width: 991px) {
+  .recipe-content { max-width: 100%; padding-left: 20px; }
+  .recipe-image { max-width: 100%; }
+  .recipe-date { margin-left: 10px; }
+  .recipe-ingredients { max-width: 100%; padding: 0 20px 100px 0; }
+  .ingredient-list { margin-left: 10px; }
+  .comment-section-title { margin-top: 40px; }
+  .comment-form { max-width: 100%; margin-right: 2px; }
+  .comment-input { max-width: 100%; padding-right: 20px; }
+  .comment-submit { margin-top: 40px; }
+}
+

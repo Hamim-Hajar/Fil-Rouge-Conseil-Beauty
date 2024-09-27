@@ -11,23 +11,23 @@ import {RecipeService} from "../../services/recipe.service";
 })
 export class RecipeListComponent implements OnInit {
 
+
   listrecipe:RecipeDto[]=[];
-  displayedColumns: string[] = ['image', 'name', 'description', 'ingredients', 'Instructions','datePublication'];
+  displayedColumns: string[] = ['image', 'name', 'description', 'ingredients', 'instructions','deleteRecipe'];
   clickedRows = new Set<RecipeDto>();
 
 
-  constructor(private recipeservice:RecipeService) {
+  constructor(private recipeservice :RecipeService) {
   }
   ngOnInit(): void {
     this.fetchAllRecipes();
   }
   fetchAllRecipes() {
     this.recipeservice.getAllRecipes().subscribe((res: RecipeDto[]) => {
-      this.listrecipe = res; // Assurez-vous que listrecipe est bien de type RecipeDto[]
+      this.listrecipe = res;
       console.log(res);
     });
   }
-
 
   deleteRecipe(id:number){
     this.recipeservice.deleteRecipe(id).subscribe(()=>{
