@@ -1,0 +1,26 @@
+<mat-toolbar class="custom-toolbar">
+  <img src="assets/images/beautb.png" alt="Icon" style="width: 74px; height: 74px; margin-right: 8px;">
+  <h2>
+    <span style="color: black;">Your</span>
+    <span style="color: #D562F2;">Beauty</span>
+  </h2>
+  <span style="flex: auto"></span>
+
+  <ng-container *ngIf="(isAuthenticated$ | async) === false; else loggedIn">
+    <button mat-raised-button routerLink="/login" style="background-color: #D562F2; color: white">
+      <mat-icon>add</mat-icon>
+      Login
+    </button>
+  </ng-container>
+
+  <ng-template #loggedIn>
+    <button mat-raised-button routerLink="/add" style="background-color: #D562F2; color: white; margin-right: 10px;">
+      <mat-icon>home</mat-icon>
+      To my Dashboard
+    </button>
+    <button mat-raised-button (click)="logout()" style="background-color: #D562F2; color: white">
+      <mat-icon>exit_to_app</mat-icon>
+      Logout
+    </button>
+  </ng-template>
+</mat-toolbar>

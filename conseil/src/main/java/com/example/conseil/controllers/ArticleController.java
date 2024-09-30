@@ -74,7 +74,7 @@ public class ArticleController {
             @RequestParam Long specialist_id,
             @RequestPart(value = "image", required = false) MultipartFile image
     ) {
-        // Input validation
+
         if (titre == null || titre.trim().isEmpty()) {
             return ResponseEntity.badRequest().body("Title cannot be null or empty.");
         }
@@ -87,18 +87,17 @@ public class ArticleController {
 
         byte[] imageBytes = null;
         try {
-            // Convert image to byte array if provided
+
             if (image != null && !image.isEmpty()) {
                 imageBytes = image.getBytes();
             }
 
-            // Create the ArticleDto for the update
+
             ArticleDto articleDto = ArticleDto.builder()
                     .titre(titre)
                     .contenu(contenu)
                     .build();
 
-            // Call the service to update the article
             ArticleDto updatedArticle = articleService.updateArticle(id, articleDto, imageBytes);
             return ResponseEntity.ok(updatedArticle);
         } catch (IOException e) {

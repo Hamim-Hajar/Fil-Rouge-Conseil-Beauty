@@ -26,7 +26,7 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
-import { LeftSidebarComponent } from './component/left-sidebar/left-sidebar.component';
+import { LeftSidebarComponent } from './component/header/left-sidebar.component';
 import {CommonModule} from "@angular/common";
 import { MainComponent } from './component/main/main.component';
 import { FooterComponent } from './component/footer/footer.component';

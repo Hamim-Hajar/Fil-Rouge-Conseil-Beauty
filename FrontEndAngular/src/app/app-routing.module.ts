@@ -12,6 +12,7 @@ import {AddrecipeComponent} from "./component/addrecipe/addrecipe.component";
 import {RecipeListComponent} from "./component/recipe-list/recipe-list.component";
 import {HomeComponent} from "./component/home/home.component";
 import {VisiteurDashboardComponent} from "./component/visiteur-dashboard/visiteur-dashboard.component";
+import {LeftSidebarComponent} from "./component/header/left-sidebar.component";
 
 
 const routes: Routes = [
@@ -27,8 +28,9 @@ const routes: Routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'email', component: EmailFormComponentComponent},
   {path: 'home', component: HomeComponent},
+  {path: 'header', component: LeftSidebarComponent},
   {path: 'visitor-dashboard', component: VisiteurDashboardComponent},
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: '', redirectTo: 'main', pathMatch: 'full' },
 
 ];
 

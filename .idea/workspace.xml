@@ -6,13 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="653c835f-ee12-4abc-9832-6951c52113b1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/dashboardspecialist/dashboardspecialist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/dashboardspecialist/dashboardspecialist.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/home/home.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/services/recipe.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/services/recipe.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/RecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/RecipeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/left-sidebar/left-sidebar.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/header/left-sidebar.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/left-sidebar/left-sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/header/left-sidebar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/left-sidebar/left-sidebar.component.spec.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/header/left-sidebar.component.spec.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/left-sidebar/left-sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/header/left-sidebar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/visiteur-dashboard/visiteur-dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/visiteur-dashboard/visiteur-dashboard.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/visiteur-dashboard/visiteur-dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/visiteur-dashboard/visiteur-dashboard.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/services/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/configs/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/configs/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/ArticleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/AuthenticationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/AuthenticationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/entities/Comment.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/entities/Comment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/services/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/services/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/ArticleServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/ArticleServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/RecipeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/RecipeServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,37 +58,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "JUnit.ArticleServiceTest.addArticle.executor": "Run",
-    "JUnit.ArticleServiceTest.getAllArticles.executor": "Run",
-    "JUnit.ArticleServiceTest.testAddArticle_Success.executor": "Run",
-    "JUnit.AuthenticationServiceTest.authenticate.executor": "Run",
-    "JUnit.AuthenticationServiceTest.signup.executor": "Run",
-    "Maven.conseil [clean].executor": "Run",
-    "Maven.conseil [install].executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Spring Boot.ConseilApplication.executor": "Run",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/user/Desktop/Fil-Rouge-Conseil-Beauty/FrontEndAngular/src/assets/images",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "configurable.group.language",
-    "ts.external.directory.path": "C:\\Users\\user\\Desktop\\Fil-Rouge-Conseil-Beauty\\FrontEndAngular\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;JUnit.ArticleServiceTest.addArticle.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ArticleServiceTest.getAllArticles.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ArticleServiceTest.testAddArticle_Success.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthenticationServiceTest.authenticate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.AuthenticationServiceTest.signup.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.conseil [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.conseil [install].executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Spring Boot.ConseilApplication.executor&quot;: &quot;Run&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/Fil-Rouge-Conseil-Beauty/FrontEndAngular/src/assets/images&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\user\\Desktop\\Fil-Rouge-Conseil-Beauty\\FrontEndAngular\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\Desktop\Fil-Rouge-Conseil-Beauty\FrontEndAngular\src\assets\images" />
@@ -223,7 +235,10 @@
       <workItem from="1727252084688" duration="13162000" />
       <workItem from="1727274422904" duration="2676000" />
       <workItem from="1727339137034" duration="20627000" />
-      <workItem from="1727469970082" duration="7451000" />
+      <workItem from="1727469970082" duration="17609000" />
+      <workItem from="1727684077656" duration="5195000" />
+      <workItem from="1727708708364" duration="276000" />
+      <workItem from="1727709129752" duration="3878000" />
     </task>
     <servers />
   </component>

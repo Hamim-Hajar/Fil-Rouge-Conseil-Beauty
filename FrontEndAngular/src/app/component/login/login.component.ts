@@ -10,6 +10,43 @@ import {Loginuserdto} from "../../dto/loginuserdto";
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+  // userName: string = '';
+  // password: string = '';
+  //
+  // constructor(private authService: AuthService, private router: Router) {}
+  //
+  // login() {
+  //   const loginUser: Loginuserdto = new Loginuserdto(this.userName, this.password);
+  //   this.authService.login(loginUser).subscribe({
+  //     next: (response) => {
+  //       console.log('Login successful:', response);
+  //       localStorage.setItem('token', response.token);
+  //       console.log('Token expires in:', response.expiresIn);
+  //
+  //       const token = response.token;
+  //       const decodedToken: any = jwtDecode(token);
+  //
+  //       if (decodedToken.role === 'ADMIN') {
+  //         this.router.navigateByUrl('/dashboard');
+  //       } else if (decodedToken.role === 'VISITEUR') {
+  //         this.router.navigateByUrl('/visitor-dashboard');
+  //       }else if(decodedToken.role === 'SPECIALIST') {
+  //         this.router.navigateByUrl('/add');
+  //       }
+  //     },
+  //     error: (err) => {
+  //       console.error('Login failed:', err);
+  //     },
+  //     complete: () => {
+  //       console.log('Login process complete.');
+  //     }
+  //   });
+  // }
+  //
+  // openSignUp() {
+  //   this.router.navigate(['/register']);
+  // }
+
   userName: string = '';
   password: string = '';
 
@@ -20,7 +57,6 @@ export class LoginComponent {
     this.authService.login(loginUser).subscribe({
       next: (response) => {
         console.log('Login successful:', response);
-        localStorage.setItem('token', response.token);
         console.log('Token expires in:', response.expiresIn);
 
         const token = response.token;
@@ -30,7 +66,7 @@ export class LoginComponent {
           this.router.navigateByUrl('/dashboard');
         } else if (decodedToken.role === 'VISITEUR') {
           this.router.navigateByUrl('/visitor-dashboard');
-        }else if(decodedToken.role === 'SPECIALIST') {
+        } else if (decodedToken.role === 'SPECIALIST') {
           this.router.navigateByUrl('/add');
         }
       },
@@ -46,5 +82,5 @@ export class LoginComponent {
   openSignUp() {
     this.router.navigate(['/register']);
   }
-
 }
+

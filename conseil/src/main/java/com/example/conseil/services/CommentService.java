@@ -12,6 +12,7 @@ import com.example.conseil.exception.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
@@ -31,53 +32,51 @@ public class CommentService {
     @Autowired
     private CommentMapper commentMapper;
 
+
     public CommentDto addComment(Long recipeId, Long userId, String content) {
-        Recipe recipe = recipeRepository.findById(recipeId)
-                .orElseThrow(() -> new ResourceNotFoundException("Recipe not found with id: " + recipeId));
+        Recipe recipe = findRecipeById(recipeId);
+        Visiteur visiteur = findVisiteurById(userId);
 
-        Visiteur visiteur = visiteurRepository.findById(userId)
-                .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + userId));
+        Comment comment = Comment.builder()
+                .content(content)
+                .timestamp(new Date(System.currentTimeMillis()))
+                .visiteur(visiteur)
+                .recipe(recipe)
+                .build();
 
-        Comment comment = new Comment();
-        comment.setContent(content);
-        comment.setTimestamp(LocalDateTime.now());
-        comment.setVisiteur(visiteur);
-        comment.setRecipe(recipe);
-
-        Comment savedComment = commentRepository.save(comment);
-        return commentMapper.toDto(savedComment);
+        return commentMapper.toDto(commentRepository.save(comment));
     }
 
     public List<CommentDto> getCommentsByRecipe(Long recipeId) {
-        Recipe recipe = recipeRepository.findById(recipeId)
-                .orElseThrow(() -> new ResourceNotFoundException("Recipe not found with id: " + recipeId));
-
-        List<Comment> comments = commentRepository.findByRecipe(recipe);
-        return comments.stream()
+        Recipe recipe = findRecipeById(recipeId);
+        return commentRepository.findByRecipe(recipe).stream()
                 .map(commentMapper::toDto)
                 .collect(Collectors.toList());
     }
 
     public void deleteComment(Long commentId) {
-        Comment comment = commentRepository.findById(commentId)
-                .orElseThrow(() -> new ResourceNotFoundException("Comment not found with id: " + commentId));
-
-        commentRepository.delete(comment);
+        commentRepository.deleteById(commentId);
     }
 
     public CommentDto updateComment(Long commentId, String newContent) {
-        // Récupérer le commentaire existant ou lancer une exception si non trouvé
-        Comment comment = commentRepository.findById(commentId)
-                .orElseThrow(() -> new ResourceNotFoundException("Comment not found with id: " + commentId));
-
-        // Mettre à jour le contenu du commentaire
+        Comment comment = findCommentById(commentId);
         comment.setContent(newContent);
-        comment.setTimestamp(LocalDateTime.now()); // Optionnel, mettre à jour la date de modification
+        comment.setTimestamp(new Date(System.currentTimeMillis()));
+        return commentMapper.toDto(commentRepository.save(comment));
+    }
 
-        // Enregistrer le commentaire mis à jour dans le dépôt
-        Comment updatedComment = commentRepository.save(comment);
+    private Recipe findRecipeById(Long recipeId) {
+        return recipeRepository.findById(recipeId)
+                .orElseThrow(() -> new ResourceNotFoundException("Recipe not found with id: " + recipeId));
+    }
 
-        // Retourner le DTO du commentaire mis à jour
-        return commentMapper.toDto(updatedComment);
+    private Visiteur findVisiteurById(Long userId) {
+        return visiteurRepository.findById(userId)
+                .orElseThrow(() -> new ResourceNotFoundException("User not found with id: " + userId));
+    }
+
+    private Comment findCommentById(Long commentId) {
+        return commentRepository.findById(commentId)
+                .orElseThrow(() -> new ResourceNotFoundException("Comment not found with id: " + commentId));
     }
 }

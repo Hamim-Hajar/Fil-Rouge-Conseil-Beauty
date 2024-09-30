@@ -12,6 +12,7 @@ import {EmailFormComponentComponent} from "../email-form-component/email-form-co
   styleUrls: ['./visiteur-dashboard.component.css']
 })
 export class VisiteurDashboardComponent implements AfterViewInit {
+
   @ViewChild('componentContainer', { read: ViewContainerRef }) componentContainer!: ViewContainerRef;
 
   constructor(

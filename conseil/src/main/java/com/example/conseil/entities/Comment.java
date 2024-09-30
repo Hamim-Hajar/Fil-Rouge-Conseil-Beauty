@@ -2,11 +2,9 @@ package com.example.conseil.entities;
 
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
+import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -16,6 +14,7 @@ import java.time.LocalDateTime;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,7 +25,7 @@ public class Comment {
     private String content;
 
     @Column(nullable = false)
-    private LocalDateTime timestamp;
+    private Date timestamp;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "visiteur_id", nullable = false)
