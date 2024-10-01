@@ -12,7 +12,8 @@ export class AuthService {
 
 
   private apiUrl = 'http://localhost:8081/api/auth';
-
+  private authenticated: boolean = false;
+  private userRole: string = '';
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
 
   // URL de l'API d'authentification
