@@ -43,9 +43,9 @@ export class LoginComponent {
   //   });
   // }
   //
-  // openSignUp() {
-  //   this.router.navigate(['/register']);
-  // }
+  openSignUp() {
+    this.router.navigate(['/register']);
+  }
 
   userName: string = '';
   password: string = '';
@@ -60,6 +60,7 @@ export class LoginComponent {
         console.log('Token expires in:', response.expiresIn);
 
         const token = response.token;
+        localStorage.setItem('token', token);
         const decodedToken: any = jwtDecode(token);
 
         if (decodedToken.role === 'ADMIN') {
@@ -77,10 +78,4 @@ export class LoginComponent {
         console.log('Login process complete.');
       }
     });
-  }
-
-  openSignUp() {
-    this.router.navigate(['/register']);
-  }
-}
-
+  }}

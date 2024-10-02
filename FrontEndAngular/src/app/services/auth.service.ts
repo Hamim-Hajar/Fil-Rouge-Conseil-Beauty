@@ -4,40 +4,37 @@ import {RegisterUserDto} from "../dto/register-user-dto";
 import {BehaviorSubject, Observable, of, tap} from "rxjs";
 import {Loginuserdto} from "../dto/loginuserdto";
 import {Loginresponce} from "../models/loginresponce";
+import {jwtDecode} from "jwt-decode";
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-
   private apiUrl = 'http://localhost:8081/api/auth';
-  private authenticated: boolean = false;
-  private userRole: string = '';
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
-
-  // URL de l'API d'authentification
 
   constructor(private http: HttpClient) {
     this.checkAuthStatus();
   }
+
+  // Check authentication status by looking for the token
   checkAuthStatus() {
     const token = localStorage.getItem('token');
     this.isAuthenticatedSubject.next(!!token);
   }
 
+  // Observable to return authentication status
   isAuthenticated(): Observable<boolean> {
     return this.isAuthenticatedSubject.asObservable();
   }
+
+  // Signup function
   signup(registerUserDto: RegisterUserDto): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/signup`, registerUserDto);
- }
+  }
 
-
-  // login(loginUser: Loginuserdto):Observable<any>{
-  //   return this.http.post<any>(`${this.apiUrl}/login`, loginUser);
-  //
-  // }
+  // Login function
   login(loginUser: Loginuserdto): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/login`, loginUser).pipe(
       tap(response => {
@@ -50,18 +47,35 @@ export class AuthService {
     );
   }
 
+
+  // Logout function
   logout() {
     localStorage.removeItem('token');
     localStorage.removeItem('currentUser');
     this.isAuthenticatedSubject.next(false);
   }
+
+  // Get current user ID
   getCurrentUserId(): number | null {
     const user = JSON.parse(localStorage.getItem('currentUser') || '{}');
-    return user?.id ;
+    return user?.id || null;
   }
+
+  // Get current user
   getCurrentUser(): Observable<any> {
     const user = JSON.parse(localStorage.getItem('currentUser') || '{}');
-    return of(
-      user);
+    return of(user);
+  }
+
+  // Get the current user's role (visitor or specialist)
+  getUserRole(): string {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+      const decodedToken: any = jwtDecode(token);
+      return decodedToken.role || '';  // Return the role from the decoded token
+    }
+
+    return '';  // Return empty string if no token is found
   }
 }

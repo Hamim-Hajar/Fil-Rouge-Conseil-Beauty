@@ -24,8 +24,6 @@ export class ArticlService {
 
     return this.http.post<ArticleDto>(`${this.apiUrl}/add`, formData,);
   }
-
-
   // Get all articles
   getAllArticles(): Observable<ArticleDto[]> {
     return this.http.get<ArticleDto[]>(`${this.apiUrl}/get_all_article`);
@@ -33,7 +31,7 @@ export class ArticlService {
 
   // Get an article by ID
   getArticleById(id: number): Observable<ArticleDto> {
-    return this.http.get<ArticleDto>(`${this.apiUrl}/${id}`);
+    return this.http.get<ArticleDto>(`${this.apiUrl}/get/${id}`);
   }
 
   // Delete an article by ID

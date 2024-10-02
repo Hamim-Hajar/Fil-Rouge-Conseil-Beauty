@@ -6,8 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="653c835f-ee12-4abc-9832-6951c52113b1" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/header/left-sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/header/left-sidebar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/dashboardspecialist/dashboardspecialist.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/dashboardspecialist/dashboardspecialist.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/login/login.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/login/login.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/services/articl.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/services/articl.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/services/auth.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/services/auth.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/configs/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/configs/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/ArticleController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -223,6 +231,7 @@
       <workItem from="1727708708364" duration="276000" />
       <workItem from="1727709129752" duration="6223000" />
       <workItem from="1727801086584" duration="360000" />
+      <workItem from="1727856561262" duration="5798000" />
     </task>
     <servers />
   </component>

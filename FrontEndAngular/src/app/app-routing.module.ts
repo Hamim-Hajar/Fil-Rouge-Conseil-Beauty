@@ -13,6 +13,7 @@ import {RecipeListComponent} from "./component/recipe-list/recipe-list.component
 import {HomeComponent} from "./component/home/home.component";
 import {VisiteurDashboardComponent} from "./component/visiteur-dashboard/visiteur-dashboard.component";
 import {LeftSidebarComponent} from "./component/header/left-sidebar.component";
+import {HeadertwoComponent} from "./component/headertwo/headertwo.component";
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
   {path: 'email', component: EmailFormComponentComponent},
   {path: 'home', component: HomeComponent},
   {path: 'header', component: LeftSidebarComponent},
+  {path: 'header-two', component: HeadertwoComponent},
   {path: 'visitor-dashboard', component: VisiteurDashboardComponent},
   { path: '', redirectTo: 'main', pathMatch: 'full' },
 

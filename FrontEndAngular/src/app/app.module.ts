@@ -37,6 +37,7 @@ import { AddrecipeComponent } from './component/addrecipe/addrecipe.component';
 import { RecipeListComponent } from './component/recipe-list/recipe-list.component';
 import { HomeComponent } from './component/home/home.component';
 import { VisiteurDashboardComponent } from './component/visiteur-dashboard/visiteur-dashboard.component';
+import { HeadertwoComponent } from './component/headertwo/headertwo.component';
 
 @NgModule({
   declarations: [
@@ -55,6 +56,7 @@ import { VisiteurDashboardComponent } from './component/visiteur-dashboard/visit
     RecipeListComponent,
     HomeComponent,
     VisiteurDashboardComponent,
+    HeadertwoComponent,
 
 
   ],

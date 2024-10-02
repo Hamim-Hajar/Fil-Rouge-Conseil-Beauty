@@ -43,8 +43,11 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(authz -> authz
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers("/api/auth/**").permitAll()
-                        .requestMatchers("/api/articles/get_all_article").hasAnyRole("VISITEUR", "SPECIALIST")
-                        .requestMatchers("/api/recipe/all").hasAnyRole("VISITEUR", "SPECIALIST")
+                        .requestMatchers("/api/articles/get_all_article").permitAll()
+                        .requestMatchers("/api/articles/get/*").permitAll()
+                       // .requestMatchers("/api/articles/get_all_article").hasAnyRole("VISITEUR", "SPECIALIST")
+                        //.requestMatchers("/api/recipe/all").hasAnyRole("VISITEUR", "SPECIALIST")
+                        .requestMatchers("/api/recipe/all").permitAll()
                         .requestMatchers("/api/articles/**").hasRole("SPECIALIST")
                         .requestMatchers("/api/recipe/**").hasRole("SPECIALIST")
 

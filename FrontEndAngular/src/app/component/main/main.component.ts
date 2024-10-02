@@ -3,6 +3,7 @@ import {ArticleDto} from "../../dto/article-dto";
 import {ArticlService} from "../../services/articl.service";
 import {RecipeDto} from "../../dto/recipe-dto";
 import {RecipeService} from "../../services/recipe.service";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-main',
@@ -10,16 +11,18 @@ import {RecipeService} from "../../services/recipe.service";
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit{
-
+  userRole: string = '';
   listArticle: ArticleDto[] = [];
   selectedArticle: ArticleDto | null = null;
   listRecipe:RecipeDto []=[];
   selectedRecipe:RecipeDto | null = null;
-  constructor(private articleService: ArticlService, private recipeService:RecipeService) { }
+  constructor(private articleService: ArticlService, private recipeService:RecipeService,private authService :AuthService ) { }
 
   ngOnInit(): void {
     this.fetchAllArticles();
     this.fetchAllRecipes();
+    this.userRole = this.authService.getUserRole();
+    console.log('User Role:', this.userRole);
   }
 
   fetchAllArticles() {

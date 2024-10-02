@@ -15,7 +15,17 @@
 <!--    <mat-icon>add</mat-icon>-->
 <!--    Signup</button>-->
 <!--</mat-toolbar>-->
-<app-left-sidebar></app-left-sidebar>
+
+<div *ngIf="userRole === 'VISITEUR'">
+  <app-headertwo></app-headertwo>
+</div>
+
+<div *ngIf="userRole === 'SPECIALIST'">
+  <app-left-sidebar></app-left-sidebar>
+</div>
+<div *ngIf="userRole === ''">
+  <app-left-sidebar></app-left-sidebar>
+</div>
 
 <section class="image-container">
   <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9eb7c3518f9f29c52dc1d1fc22fe3406a03f02d5487abfeb752f61798aee398f?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" class="full-width-image" alt="Description of the image" />
@@ -57,7 +67,7 @@
                   <time class="event-datetime">{{ article.datePublication }} </time>
                 </div>
                 <div class="event-location">
-                  <button id="read_btn" (click)="showMoreDetails(article.id)">show more</button>
+                  <button id="read_btn" [routerLink]="['/home', { id: article.id }]">show more</button>
                 </div>
               </div>
             </div>

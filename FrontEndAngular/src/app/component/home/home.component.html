@@ -8,30 +8,32 @@
 
   <button mat-raised-button routerLink="/login" style="background-color: #D562F2;color: white">
     <mat-icon>add</mat-icon>
-    Login</button>
+    Login
+  </button>
 
   <button mat-raised-button routerLink="/login" style="background-color: #D562F2;color: white">
     <mat-icon>add</mat-icon>
-    Signup</button>
+    Signup
+  </button>
 </mat-toolbar>
 
 <section class="image-container">
   <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/40093e25a2acccc9f5453599e1daf8a71cd86d115e3bc2af0785ada7d12e8ed4?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" class="responsive-image" alt=""/>
 </section>
 
-<section class="recipe-container">
-  <h1 class="recipe-title">Recipe for <span class="highlight">hair loss</span></h1>
+<section class="recipe-container"  *ngIf="selectedArticle" >
+  <h1 class="recipe-title">Recipe for <span class="highlight">{{ selectedArticle.titre }}</span></h1>
   <div class="recipe-content">
-    <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/dcc0bffc4da9a2976d39eea35b3abcd74470a58b823ca56d26f40628979084ca?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="Hair loss recipe illustration" class="recipe-image" />
-    <p class="recipe-date">February 20 | 08:00 PM</p>
+    <img [src]="'data:image/png;base64,'+selectedArticle.image" alt="" style="width: 87%; height: 87%;">
+    <p class="recipe-date"> <strong>Published on:</strong>{{ selectedArticle.datePublication }}</p>
     <div class="recipe-ingredients">
-      <h2>Avocado & Coconut Oil Hair Mask</h2>
-      <h3>Ingredients:</h3>
       <ul class="ingredient-list">
-        <li>1 ripe avocado</li>
-        <li>2 tablespoons of coconut oil</li>
-        <li>1 tablespoon of honey (optional, for extra moisture)</li>
-        <li>1 tablespoon of olive oil (optional, for added shine)</li>
+        <section>
+          <h2>Article Details</h2>
+          <li>{{ selectedArticle.titre }}</li>
+          <li>{{ selectedArticle.contenu }}</li>
+          <li><strong>Published on:</strong> {{ selectedArticle.datePublication }}</li>
+        </section>
       </ul>
     </div>
   </div>
@@ -42,3 +44,5 @@
     <button type="submit" class="comment-submit">Comment</button>
   </form>
 </section>
+
+<!-- Section to display the selected article details -->

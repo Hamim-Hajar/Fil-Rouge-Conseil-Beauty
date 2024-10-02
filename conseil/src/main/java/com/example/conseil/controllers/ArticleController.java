@@ -55,7 +55,7 @@ public class ArticleController {
         return new ResponseEntity<>(articles, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/get/{id}")
     public ResponseEntity<ArticleDto> getArticleById(@PathVariable Long id) {
         ArticleDto article = articleService.getArticleById(id);
         return new ResponseEntity<>(article, HttpStatus.OK);
