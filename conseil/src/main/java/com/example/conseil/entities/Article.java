@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.sql.Date;
 import java.time.LocalDateTime;
+import java.util.List;
 
 
 @Entity
@@ -30,4 +31,6 @@ public class Article {
     @ManyToOne(fetch = FetchType.LAZY)
      @JoinColumn(name = "specialist_id")
      private Specialist specialist;
+
+
 }

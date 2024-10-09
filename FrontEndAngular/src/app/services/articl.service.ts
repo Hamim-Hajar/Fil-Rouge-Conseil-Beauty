@@ -38,4 +38,23 @@ export class ArticlService {
   deleteArticle(id: number): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/delete/${id}`);
   }
+
+  // updateArticle(id: number, titre: string, contenu: string, image?: File): Observable<ArticleDto> {
+  //   const formData: FormData = new FormData();
+  //   formData.append('titre', titre);
+  //   formData.append('contenu', contenu);
+  //
+  //   if (image) {
+  //     formData.append('image', image);
+  //   }
+  //
+  //   return this.http.put<ArticleDto>(`${this.apiUrl}/update/${id}`, formData, {
+  //
+  //   });
+  // }
+  updateArticle(articleData: FormData,id:number): Observable<any> {
+    const url = `${this.apiUrl}/update/${id}`;
+    return this.http.put(url, articleData);
+  }
+
 }

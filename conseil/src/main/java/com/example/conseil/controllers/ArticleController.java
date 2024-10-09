@@ -49,6 +49,7 @@ public class ArticleController {
     }
 
 
+
     @GetMapping("/get_all_article")
     public ResponseEntity<List<ArticleDto>> getAllArticles() {
         List<ArticleDto> articles = articleService.getAllArticles();
@@ -66,46 +67,75 @@ public class ArticleController {
         articleService.deleteArticle(id);
         return new ResponseEntity<>(HttpStatus.NO_CONTENT);
     }
-    @PutMapping("/update/{id}")
-    public ResponseEntity<?> updateArticle(
-            @PathVariable Long id,
-            @RequestParam String titre,
-            @RequestParam String contenu,
-            @RequestParam Long specialist_id,
-            @RequestPart(value = "image", required = false) MultipartFile image
-    ) {
 
-        if (titre == null || titre.trim().isEmpty()) {
-            return ResponseEntity.badRequest().body("Title cannot be null or empty.");
-        }
-        if (contenu == null || contenu.trim().isEmpty()) {
-            return ResponseEntity.badRequest().body("Content cannot be null or empty.");
-        }
-        if (specialist_id == null) {
-            return ResponseEntity.badRequest().body("Specialist ID cannot be null.");
-        }
 
+    @PutMapping("/update/{articleId}")
+    public ResponseEntity<ArticleDto> updateArticle(
+            @PathVariable Long articleId,
+            @RequestParam("titre") String titre,
+            @RequestParam("contenu") String contenu,
+            @RequestParam(value = "image", required = false) MultipartFile image) {
+
+        // Convert MultipartFile to byte[] if image is provided
         byte[] imageBytes = null;
-        try {
-
-            if (image != null && !image.isEmpty()) {
+        if (image != null && !image.isEmpty()) {
+            try {
                 imageBytes = image.getBytes();
+            } catch (Exception e) {
+                throw new RuntimeException("Failed to read image", e);
             }
-
-
-            ArticleDto articleDto = ArticleDto.builder()
-                    .titre(titre)
-                    .contenu(contenu)
-                    .build();
-
-            ArticleDto updatedArticle = articleService.updateArticle(id, articleDto, imageBytes);
-            return ResponseEntity.ok(updatedArticle);
-        } catch (IOException e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("An error occurred while processing the image.");
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("An unexpected error occurred.");
         }
+
+        // Create an ArticleDto with the provided parameters
+        ArticleDto articleDto = new ArticleDto();
+        articleDto.setTitre(titre);
+        articleDto.setContenu(contenu);
+
+        // Call the service to update the article
+        ArticleDto updatedArticle = articleService.updateArticle(articleId, articleDto, imageBytes);
+        return ResponseEntity.ok(updatedArticle);
     }
+
+//    @PutMapping("/update/{id}")
+//    public ResponseEntity<?> updateArticle(
+//            @PathVariable Long id,
+//            @RequestParam String titre,
+//            @RequestParam String contenu,
+//            @RequestParam Long specialist_id,
+//            @RequestPart(value = "image", required = false) MultipartFile image
+//    ) {
+//
+//        if (titre == null || titre.trim().isEmpty()) {
+//            return ResponseEntity.badRequest().body("Title cannot be null or empty.");
+//        }
+//        if (contenu == null || contenu.trim().isEmpty()) {
+//            return ResponseEntity.badRequest().body("Content cannot be null or empty.");
+//        }
+//        if (specialist_id == null) {
+//            return ResponseEntity.badRequest().body("Specialist ID cannot be null.");
+//        }
+//
+//        byte[] imageBytes = null;
+//        try {
+//
+//            if (image != null && !image.isEmpty()) {
+//                imageBytes = image.getBytes();
+//            }
+//
+//
+//            ArticleDto articleDto = ArticleDto.builder()
+//                    .titre(titre)
+//                    .contenu(contenu)
+//                    .build();
+//
+//            ArticleDto updatedArticle = articleService.updateArticle(id, articleDto, imageBytes);
+//            return ResponseEntity.ok(updatedArticle);
+//        } catch (IOException e) {
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+//                    .body("An error occurred while processing the image.");
+//        } catch (Exception e) {
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+//                    .body("An unexpected error occurred.");
+//        }
+//    }
 }

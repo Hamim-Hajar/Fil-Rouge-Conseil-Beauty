@@ -24,7 +24,7 @@
   <app-left-sidebar></app-left-sidebar>
 </div>
 <div *ngIf="userRole === ''">
-  <app-left-sidebar></app-left-sidebar>
+ <app-headerthree></app-headerthree>
 </div>
 
 <section class="image-container">
@@ -67,7 +67,7 @@
                   <time class="event-datetime">{{ article.datePublication }} </time>
                 </div>
                 <div class="event-location">
-                  <button id="read_btn" [routerLink]="['/home', { id: article.id }]">show more</button>
+                  <button id="read_btn" [routerLink]="['/home', { idarticle: article.id }]">show more</button>
                 </div>
               </div>
             </div>
@@ -103,7 +103,7 @@
                   <time class="event-datetime">{{ recipe.datePublication}} </time>
                 </div>
                 <div class="event-location">
-
+                  <button id="read_btnn" [routerLink]="['/home', { idrecipe: recipe.id}]">show more</button>
                 </div>
               </div>
             </div>

@@ -2,20 +2,22 @@ export class Comment {
   id: number;
   content: string;
   timestamp: Date;
-  visiteurId: number;  // Store the ID of Visiteur (relationship)
-  recipeId: number;    // Store the ID of Recipe (relationship)
+  visiteur_id: number;
+  recipe_id: number;
 
   constructor(
     id: number,
     content: string,
     timestamp: Date,
-    visiteurId: number,
-    recipeId: number
+    visiteur_id: number,
+    recipe_id: number,
+
   ) {
     this.id = id;
     this.content = content;
     this.timestamp = timestamp;
-    this.visiteurId = visiteurId;
-    this.recipeId = recipeId;
+    this.visiteur_id = visiteur_id;
+    this.recipe_id = recipe_id;
+
   }
 }

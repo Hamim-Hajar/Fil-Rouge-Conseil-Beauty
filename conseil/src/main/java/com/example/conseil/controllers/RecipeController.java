@@ -46,11 +46,15 @@ private RecipeService recipeService;
         RecipeDto addRecipe = recipeService.addRecipe(recipeDto,specialist_id ,imageBytes );
         return new ResponseEntity<>(addRecipe, HttpStatus.CREATED);
     }
-    @GetMapping("/{id}")
+    @GetMapping("/get/{id}")
     public ResponseEntity<RecipeDto> getRecipeById(@PathVariable Long id) {
-        RecipeDto recipeDto = recipeService.getRecipeById(id);
-        return ResponseEntity.ok(recipeDto);
+        RecipeDto recipe = recipeService.getRecipeById(id);
+        return new ResponseEntity<>(recipe,HttpStatus.OK);
     }
+
+
+
+
     @GetMapping("/all")
     public ResponseEntity<List<RecipeDto>> getAllRecipes() {
         List<RecipeDto> recipeDtos = recipeService.getAllRecipes();

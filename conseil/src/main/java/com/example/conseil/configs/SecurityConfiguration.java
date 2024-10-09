@@ -48,6 +48,8 @@ public class SecurityConfiguration {
                        // .requestMatchers("/api/articles/get_all_article").hasAnyRole("VISITEUR", "SPECIALIST")
                         //.requestMatchers("/api/recipe/all").hasAnyRole("VISITEUR", "SPECIALIST")
                         .requestMatchers("/api/recipe/all").permitAll()
+                        .requestMatchers("/api/recipe/get/*").permitAll()
+                        .requestMatchers("/api/comments/**").hasAnyRole("VISITEUR", "SPECIALIST")
                         .requestMatchers("/api/articles/**").hasRole("SPECIALIST")
                         .requestMatchers("/api/recipe/**").hasRole("SPECIALIST")
 

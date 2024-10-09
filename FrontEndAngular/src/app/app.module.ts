@@ -38,6 +38,8 @@ import { RecipeListComponent } from './component/recipe-list/recipe-list.compone
 import { HomeComponent } from './component/home/home.component';
 import { VisiteurDashboardComponent } from './component/visiteur-dashboard/visiteur-dashboard.component';
 import { HeadertwoComponent } from './component/headertwo/headertwo.component';
+import { UpdatearticleComponent } from './component/updatearticle/updatearticle.component';
+import { HeaderthreeComponent } from './component/headerthree/headerthree.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +59,8 @@ import { HeadertwoComponent } from './component/headertwo/headertwo.component';
     HomeComponent,
     VisiteurDashboardComponent,
     HeadertwoComponent,
+    UpdatearticleComponent,
+    HeaderthreeComponent,
 
 
   ],
@@ -74,6 +78,8 @@ import { HeadertwoComponent } from './component/headertwo/headertwo.component';
     MatMenuModule,
     MatSidenavModule,
     MatListModule, RouterModule, CommonModule, MatTableModule,
+
+
 
   ],
   providers: [

@@ -56,10 +56,28 @@ export class AuthService {
   }
 
   // Get current user ID
-  getCurrentUserId(): number | null {
-    const user = JSON.parse(localStorage.getItem('currentUser') || '{}');
-    return user?.id || null;
+  // getCurrentUserId(): number | null {
+  //   const user = JSON.parse(localStorage.getItem('currentUser') || '{}');
+  //   return user?.id || null;
+  // }
+  // getCurrentUserId(): number {
+  //   const user = JSON.parse(localStorage.getItem('currentUser') || '{}');
+  //   return user?.id ?? 0; // Default to 0 if user.id is null
+  // }
+  getCurrentUserId(): string | null {
+    const userDataString = localStorage.getItem('currentUser');
+    if (!userDataString) {
+      return null;
+    }
+    try {
+      const userData = JSON.parse(userDataString);
+      return userData.id ? userData.id.toString() : null;
+    } catch (error) {
+      console.error('Error parsing user data:', error);
+      return null;
+    }
   }
+
 
   // Get current user
   getCurrentUser(): Observable<any> {
@@ -77,5 +95,10 @@ export class AuthService {
     }
 
     return '';  // Return empty string if no token is found
+  }
+
+  isLoggedIn(): boolean {
+    const token = localStorage.getItem('token');
+    return !!token;
   }
 }

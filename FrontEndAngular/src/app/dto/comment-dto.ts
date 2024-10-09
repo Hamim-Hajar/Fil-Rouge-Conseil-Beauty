@@ -1,9 +1,9 @@
 export interface CommentDto {
-  id: number;
+  id?: number;
   content: string;
-  timestamp: string;
-  visiteurId: number;
-  recipeId: number;
+  timestamp?: string;
+
+  recipe_id?: number;
 
 
 }

@@ -18,7 +18,7 @@ public class ArticleDto {
     private String contenu;
     private Date datePublication;
     private Long specialist_id;
-
+    private Long comment_id;
     @Transient
     private byte[] image;
 }

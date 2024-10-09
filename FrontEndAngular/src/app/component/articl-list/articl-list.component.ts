@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ArticleDto} from "../../dto/article-dto";
 import {ArticlService} from "../../services/articl.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-articl-list',
@@ -13,7 +14,7 @@ export class ArticlListComponent implements OnInit{
   displayedColumns: string[] = ['image', 'titre', 'contenu', 'datePublication', 'delete'];
   clickedRows = new Set<ArticleDto>();
 
-  constructor(private articleService: ArticlService) { }
+  constructor(private articleService: ArticlService, private router:Router) { }
 
   ngOnInit(): void {
     this.fetchAllArticles();
@@ -28,7 +29,10 @@ export class ArticlListComponent implements OnInit{
 
   delete(id: number) {
     this.articleService.deleteArticle(id).subscribe(() => {
-      this.fetchAllArticles(); // Rafraîchir la liste après suppression
+      this.fetchAllArticles();
     });
   }
+  update(id:number):void{
+   this.router.navigate(['/update',id]);
+    }
 }

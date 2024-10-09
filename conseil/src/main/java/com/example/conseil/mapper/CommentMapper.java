@@ -4,15 +4,13 @@ import com.example.conseil.dto.CommentDto;
 import com.example.conseil.entities.Comment;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
+import org.mapstruct.ReportingPolicy;
+import org.mapstruct.factory.Mappers;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE)
 public interface CommentMapper {
 
-    @Mapping(source = "visiteur.id", target = "visiteurId")
-    @Mapping(source = "recipe.id", target = "recipeId")
-    CommentDto toDto(Comment comment);
-
-    @Mapping(source = "visiteurId", target = "visiteur.id")
-    @Mapping(source = "recipeId", target = "recipe.id")
-    Comment toEntity(CommentDto commentDto);
+    CommentMapper MAPPER = Mappers.getMapper(CommentMapper.class);
+    CommentDto commentToCommentDto(Comment comment);
+    Comment commentDtoToComment(CommentDto commentDto);
 }

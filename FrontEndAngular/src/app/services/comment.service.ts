@@ -12,10 +12,21 @@ export class CommentService {
   private baseUrl = 'http://localhost:8081/api/comments'; // Remplacez par votre URL backend
 
   constructor(private http: HttpClient) { }
-  addComment(recipeId: number, userId: number, content: string): Observable<CommentDto> {
-    const url = `${this.baseUrl}/add?recipeId=${recipeId}&userId=${userId}`;
-    return this.http.post<CommentDto>(url, content);
+  // addComment(recipeId: number, userId: number, content: string): Observable<CommentDto> {
+  //   const url = `${this.baseUrl}/add?recipeId=${recipeId}&userId=${userId}`;
+  //   return this.http.post<CommentDto>(url, content);
+  // }
+
+  getComments(): Observable<CommentDto[]> {
+    return this.http.get<CommentDto[]>(`${this.baseUrl}/comments`);
   }
+  // addComment(comment: CommentDto): Observable<CommentDto> {
+  //   return this.http.post<CommentDto>(`${this.baseUrl}/com/recipe`, comment);
+  // }
+  addComment(visiteur_id: number, comment: CommentDto): Observable<CommentDto> {
+    return this.http.post<CommentDto>(`${this.baseUrl}/com/recipe?visiteur_id=${visiteur_id}`, comment);
+  }
+
 
   getCommentsByRecipe(recipeId: number): Observable<CommentDto[]> {
     return this.http.get<CommentDto[]>(`${this.baseUrl}/recipe/${recipeId}`);

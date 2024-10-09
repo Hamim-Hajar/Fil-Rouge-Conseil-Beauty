@@ -40,12 +40,20 @@ export class MainComponent implements OnInit{
   }
 
 
-showMoreDetails(articleId: number) {
-  this.articleService.getArticleById(articleId).subscribe((article: ArticleDto) => {
-    this.selectedArticle = article; // Save the selected article details
-    console.log(this.selectedArticle);
-    // Optionally, you could navigate to a details page or display a modal with article details.
-  });
+  showMoreDetails(articleId: number) {
+    this.articleService.getArticleById(articleId).subscribe((article: ArticleDto) => {
+      this.selectedArticle = article; // Save the selected article details
+      console.log(this.selectedArticle);
+      // Optionally, you could navigate to a details page or display a modal with article details.
+    });
   }
+  // showMoreDetailsrecipe(recipeId: number) {
+  //   this.recipeService.getRecipeById(recipeId).subscribe((recipe: RecipeDto) => {
+  //     this.selectedRecipe = recipe; // Save the selected article details
+  //     console.log(this.selectedRecipe);
+  //     // Optionally, you could navigate to a details page or display a modal with article details.
+  //   });
+  // }
+
 
 }

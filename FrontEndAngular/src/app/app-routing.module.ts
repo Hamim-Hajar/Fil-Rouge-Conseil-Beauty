@@ -14,6 +14,8 @@ import {HomeComponent} from "./component/home/home.component";
 import {VisiteurDashboardComponent} from "./component/visiteur-dashboard/visiteur-dashboard.component";
 import {LeftSidebarComponent} from "./component/header/left-sidebar.component";
 import {HeadertwoComponent} from "./component/headertwo/headertwo.component";
+import {UpdatearticleComponent} from "./component/updatearticle/updatearticle.component";
+import {HeaderthreeComponent} from "./component/headerthree/headerthree.component";
 
 
 const routes: Routes = [
@@ -31,7 +33,10 @@ const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: 'header', component: LeftSidebarComponent},
   {path: 'header-two', component: HeadertwoComponent},
+  {path: 'header-three', component: HeaderthreeComponent},
   {path: 'visitor-dashboard', component: VisiteurDashboardComponent},
+
+  {path: 'update/:id', component: UpdatearticleComponent},
   { path: '', redirectTo: 'main', pathMatch: 'full' },
 
 ];

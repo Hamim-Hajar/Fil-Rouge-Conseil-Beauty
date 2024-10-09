@@ -7,4 +7,5 @@ export interface ArticleDto {
   specialist_id: number; // Representing the relation with Specialist
 
 
+
 }

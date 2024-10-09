@@ -32,6 +32,7 @@ public class Comment {
     private Visiteur visiteur;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "recipe_id", nullable = false)
+    @JoinColumn(name = "recipe_id")
     private Recipe recipe;
+
 }

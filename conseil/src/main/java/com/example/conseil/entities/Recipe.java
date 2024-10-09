@@ -37,7 +37,7 @@ public class Recipe {
      private RecipeCategory category;
 
       @OneToMany(fetch = FetchType.EAGER)
-  private List<Comment> commentList;
+      private List<Comment> commentList;
 
   @OneToMany(fetch = FetchType.EAGER)
   private List<FavoriteRecipe> favoriteRecipeList;

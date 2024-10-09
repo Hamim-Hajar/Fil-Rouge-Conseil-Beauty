@@ -6,17 +6,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.sql.Date;
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class CommentDto {
-    private  Long id;
+public class CommentDtoAr {
+
     private String content;
     private Date timestamp;
-    //private Long visiteur_id;
-    private Long recipe_id;
-
+//    private Long visiteur_id;
+    private Long articl_id;
 }
