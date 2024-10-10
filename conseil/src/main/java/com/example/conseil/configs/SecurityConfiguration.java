@@ -52,6 +52,7 @@ public class SecurityConfiguration {
                         .requestMatchers("/api/comments/**").hasAnyRole("VISITEUR", "SPECIALIST")
                         .requestMatchers("/api/articles/**").hasRole("SPECIALIST")
                         .requestMatchers("/api/recipe/**").hasRole("SPECIALIST")
+                        .requestMatchers("/api/favrecipe/**").hasAnyRole("VISITEUR", "SPECIALIST")
 
                         .anyRequest().authenticated()
                 )

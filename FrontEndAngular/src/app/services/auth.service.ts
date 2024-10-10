@@ -5,6 +5,7 @@ import {BehaviorSubject, Observable, of, tap} from "rxjs";
 import {Loginuserdto} from "../dto/loginuserdto";
 import {Loginresponce} from "../models/loginresponce";
 import {jwtDecode} from "jwt-decode";
+import {JwtHelperService} from "@auth0/angular-jwt";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,10 @@ export class AuthService {
   private apiUrl = 'http://localhost:8081/api/auth';
   private isAuthenticatedSubject = new BehaviorSubject<boolean>(false);
 
-  constructor(private http: HttpClient) {
+  constructor(
+    private http: HttpClient,
+    private jwtHelper:JwtHelperService
+  ) {
     this.checkAuthStatus();
   }
 
@@ -35,19 +39,35 @@ export class AuthService {
   }
 
   // Login function
+  // login(loginUser: Loginuserdto): Observable<any> {
+  //   return this.http.post<any>(`${this.apiUrl}/login`, loginUser).pipe(
+  //     tap(response => {
+  //       if (response && response.token) {
+  //         localStorage.setItem('token', response.token);
+  //         localStorage.setItem('currentUser', JSON.stringify(response.user));
+  //         this.isAuthenticatedSubject.next(true);
+  //       }
+  //     })
+  //   );
+  // }
   login(loginUser: Loginuserdto): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/login`, loginUser).pipe(
       tap(response => {
         if (response && response.token) {
           localStorage.setItem('token', response.token);
-          localStorage.setItem('currentUser', JSON.stringify(response.user));
+          if (response.user) {
+            localStorage.setItem('currentUser', JSON.stringify(response.user));
+          } else {
+            console.error('Login response does not contain user data:', response);
+          }
           this.isAuthenticatedSubject.next(true);
+        } else {
+          console.error('Login response does not contain a token:', response);
         }
       })
     );
+
   }
-
-
   // Logout function
   logout() {
     localStorage.removeItem('token');
@@ -65,18 +85,36 @@ export class AuthService {
   //   return user?.id ?? 0; // Default to 0 if user.id is null
   // }
   getCurrentUserId(): string | null {
+    const token = localStorage.getItem('token');
     const userDataString = localStorage.getItem('currentUser');
-    if (!userDataString) {
+
+    console.log('Token:', token);
+    console.log('User data string:', userDataString);
+
+    if (!token) {
+      console.error('No token found in localStorage');
       return null;
     }
+
+    if (!userDataString) {
+      console.error('No user data found in localStorage');
+      return null;
+    }
+
     try {
       const userData = JSON.parse(userDataString);
-      return userData.id ? userData.id.toString() : null;
+      if (!userData || !userData.id) {
+        console.error('User data does not contain an id:', userData);
+        return null;
+      }
+      return userData.id.toString();
     } catch (error) {
       console.error('Error parsing user data:', error);
+      console.error('Raw user data string:', userDataString);
       return null;
     }
   }
+
 
 
   // Get current user
@@ -101,4 +139,21 @@ export class AuthService {
     const token = localStorage.getItem('token');
     return !!token;
   }
+
+
+
+
+  getId():number | null
+  {
+  const token = localStorage.getItem("token");
+  if(token)
+  {
+    const  decodedToken = this.jwtHelper.decodeToken(token);
+    return decodedToken.id;
+  }
+  return null;
+  }
+
+
+
 }

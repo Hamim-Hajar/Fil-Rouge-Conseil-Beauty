@@ -1,195 +1,55 @@
+.event-container { gap: 20px; display: flex; }
+.event-column { display: flex; flex-direction: column; line-height: normal; width: 50%; }
+.event-details { display: flex; flex-direction: column; font-size: 24px; font-weight: 400; }
+.event-header { display: flex; flex-direction: column; align-items: start; font-weight: 700; padding: 0 54px 0 6px; }
+.event-title { transform: rotate(2.4492937051703357e-16rad); color: #171a1f; font-family: Encode Sans, sans-serif; margin-left: 18px; }
+.event-date { transform: rotate(2.4492937051703357e-16rad); border-radius: 6px; background-color: #fef1f6; margin-left: 11px; width: 272px; max-width: 100%; color: #f26298; text-transform: uppercase; padding: 0 29px 8px; font: 20px Mulish, sans-serif; }
+.event-description { color: #000; font-family: Playfair, sans-serif; font-weight: 400; line-height: 26px; align-self: stretch; }
+.additional-info { color: #000; font-family: Playfair, sans-serif; line-height: 26px; margin-top: 52px; }
+.extra-details { color: #000; font-family: Playfair, sans-serif; line-height: 26px; margin: 32px 48px 0 0; }
+.image-column { display: flex; flex-direction: column; line-height: normal; width: 50%; margin-left: 20px; }
+.image-wrapper { z-index: 10; display: flex; flex-grow: 1; flex-direction: column; color: #000; margin: 73px -25px 0 0; font: 400 24px/26px Playfair, sans-serif; }
+.event-image { aspect-ratio: 1.84; object-fit: contain; object-position: center; width: 588px; border-radius: 6px; max-width: 100%; }
+.image-caption { color: #000; font-family: Playfair, sans-serif; line-height: 26px; }
 
-.image-container {
-  width: 100%;
+@media (max-width: 991px) {
+  .event-container { flex-direction: column; align-items: stretch; gap: 0; }
+  .event-column, .image-column { width: 100%; margin-left: 0; }
+  .event-details { max-width: 100%; margin-top: 11px; }
+  .event-header { max-width: 100%; padding-right: 20px; }
+  .event-title, .event-date, .event-description, .additional-info, .extra-details { max-width: 100%; }
+  .event-date { margin-left: 10px; padding-left: 20px; }
+  .additional-info { margin-top: 40px; }
+  .extra-details { margin-right: 10px; }
+  .image-wrapper { max-width: 100%; margin-top: 40px; }
+  .image-caption { max-width: 100%; }
 }
+.comment-section { display: flex; flex-direction: column; }
+.section-title { color: #171a1f; font: 700 24px 'Encode Sans', sans-serif; }
+.comment-form { display: flex; margin-top: 13px; width: 100%; padding: 0 0 0 50px; flex-direction: column; align-items: flex-start; }
+.form-group { display: flex; gap: 30px; font-family: Mulish, sans-serif; font-weight: 400; flex-wrap: wrap; }
+.address-input { border-radius: 6px; background-color: #f3f4f6; font-size: 14px; color: #bcc1ca; line-height: 2; flex-grow: 1; width: fit-content; padding: 7px 12px; }
+.submit-button { border-radius: 6px; background-color: #ecbaf0; font-size: 16px; color: #fff; line-height: 2; padding: 9px 39px; border: none; cursor: pointer; }
+.comment-card { border-radius: 6px; background-color: #fafafb; display: flex; margin-top: 30px; width: 100%; flex-direction: column; align-items: flex-start; font-size: 16px; padding: 1px 17px 17px 1px; border: 1px solid #f3f4f6; }
+.user-info { display: flex; gap: 7px; font-family: Playfair, sans-serif; color: #171a1f; font-weight: 400; line-height: 1; }
+.user-avatar { aspect-ratio: 1.16; object-fit: contain; object-position: center; width: 36px; }
+.user-name { margin: auto 0; }
+.comment-content { display: flex; width: 100%; max-width: 950px; gap: 20px; font-family: Mulish, sans-serif; line-height: 2; flex-wrap: wrap; justify-content: space-between; margin: 19px 0 0 18px; }
+.comment-text { color: #000; font-weight: 400; margin: auto 0; }
+.comment-code { display: flex; flex-direction: column; color: #f26298; }
+.code-label { align-self: center; }
+.code-value { font-weight: 700; margin-top: 5px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 
-.responsive-image {
-  aspect-ratio: 3.21;
-  object-fit: contain;
-  object-position: center;
-  width: 100%;
+@media (max-width: 991px) {
+  .comment-form { max-width: 100%; padding-left: 20px; }
+  .form-group { max-width: 100%; }
+  .address-input { max-width: 100%; padding-right: 20px; }
+  .submit-button { padding: 0 20px; }
+  .comment-card { max-width: 100%; padding-right: 20px; }
+  .comment-content { max-width: 100%; }
 }
-.custom-toolbar{
-  background-color: white;
-}
-
-.recipe-container
-{ display: flex;
-  flex-direction: column; }
-
-.recipe-title { color: rgba(23, 26, 31, 1); font: 700 24px Encode Sans, sans-serif; }
-.recipe-content { display: flex; margin-top: 11px; width: 87%; padding-left: 53px; flex-direction: column; font-family: Mulish, sans-serif; font-weight: 400; }
-.recipe-image { aspect-ratio: 2.33; object-fit: contain; object-position: center; width: 100%; border-radius: 6px; align-self: center; margin-left: 24px; max-width: 952px; }
-.recipe-date { border-radius: 6px; background-color: rgba(254, 241, 246, 1); align-self: start; margin-left: 42px; font-size: 20px; color: rgba(242, 98, 152, 1); font-weight: 700; text-transform: uppercase; padding: 4px 19px; }
-.recipe-ingredients { border-radius: 6px; background-color: rgb(255, 254, 254); align-self: end; display: flex; margin-top: 18px; width: 100%; max-width: 1007px; flex-direction: column; overflow: hidden; align-items: start; font-size: 16px; color: rgba(0, 0, 0, 1); line-height: 26px; padding: 12px 80px 120px 14px; }
-.ingredient-list { margin-left: 17px; }
 .comment-section-title { color: rgba(23, 26, 31, 1); align-self: start; margin-top: 49px; font: 700 24px Encode Sans, sans-serif; }
 .comment-form { background-color: rgba(0, 0, 0, 0); align-self: end; display: flex; width: 100%; max-width: 1007px; flex-direction: column; font-size: 14px; color: rgba(188, 193, 202, 1); line-height: 2; padding: 23px 1px 1px; }
 .comment-input { border-radius: 6px; background-color: rgba(243, 244, 246, 1); padding: 52px 12px; }
 .comment-submit { border-radius: 6px; background-color: rgba(236, 186, 240, 1); align-self: end; margin-top: 49px; overflow: hidden; font-size: 16px; color: rgba(255, 255, 255, 1); line-height: 2; padding: 9px 15px; }
-.highlight { color: rgba(205, 56, 243, 1); }
-.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
-
-@media (max-width: 991px) {
-  .recipe-content { max-width: 100%; padding-left: 20px; }
-  .recipe-image { max-width: 100%; }
-  .recipe-date { margin-left: 10px; }
-  .recipe-ingredients { max-width: 100%; padding: 0 20px 100px 0; }
-  .ingredient-list { margin-left: 10px; }
-  .comment-section-title { margin-top: 40px; }
-  .comment-form { max-width: 100%; margin-right: 2px; }
-  .comment-input { max-width: 100%; padding-right: 20px; }
-  .comment-submit { margin-top: 40px; }
-
-}
-
-
-
-
-
-
-
-.event-ticket {
-  max-width: 532px;
-  font-family: Mulish, sans-serif;
-}
-.ticket-content {
-  display: flex;
-  gap: 20px;
-}
-.ticket-details {
-  width: 57%;
-}
-.ticket-info {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-}
-.date-time-info,
-.location-info {
-  display: flex;
-  gap: 20px;
-  color: #6e7787;
-  font-weight: 400;
-  line-height: 2;
-  justify-content: space-between;
-}
-.location-info {
-  margin-top: 34px;
-}
-.ticket-icon {
-  aspect-ratio: 1;
-  object-fit: contain;
-  object-position: center;
-  width: 80px;
-  border-radius: 6px;
-  align-self: start;
-}
-.info-text {
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-}
-.info-label {
-  color: #171a1f;
-  font-weight: 700;
-  text-transform: uppercase;
-}
-.info-value {
-  margin-top: 4px;
-}
-.location-value {
-  line-height: 26px;
-  margin-top: 5px;
-}
-.ticket-additional {
-  width: 43%;
-}
-.duration-info,
-.eticket-info {
-  display: flex;
-  gap: 30px;
-}
-.eticket-info {
-  margin-top: 37px;
-  justify-content: space-between;
-}
-.eticket-text {
-  align-self: end;
-  margin-top: 42px;
-}
-@media (max-width: 991px) {
-  .ticket-content {
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-  }
-  .ticket-details,
-  .ticket-additional {
-    width: 100%;
-    margin-top: 40px;
-  }
-  .date-time-info {
-    margin-right: 7px;
-  }
-  .eticket-text {
-    margin-top: 40px;
-  }
-}
-
-.event-container { gap: 20px; display: flex; }
-.event-main { display: flex; flex-direction: column; line-height: normal; width: 63%; margin-left: 0; }
-.event-card {
-
-  border-radius: 6px;
-  background-color: #fff;
-  display: flex;
-  flex-grow: 1;
-  padding-bottom: 26px;
-  padding-left: 7%; /* Ajoute un espacement à gauche */
-  flex-direction: column;
-  overflow: hidden;
-  color: #000;
-  width: 100%;
-  font: 400 24px Playfair, sans-serif;
-}
-.event-image {
-  aspect-ratio: 2.17;
-  object-fit: contain;
-  object-position: center;
-  width: 100%;
-
-  margin-left: 10%; /* Ajoute une marge à gauche */
-  padding-left: 0; /* Retirez le padding si nécessaire */
-}
-.event-date { transform: rotate(-2.4492937051703357e-16rad); border-radius: 6px; background-color: #fef1f6; align-self: start; margin-top: 42px; color: #f26298; text-transform: uppercase; padding: 0 19px 8px; font: 700 20px Mulish, sans-serif; }
-.event-description { transform: rotate(-2.4492937051703357e-16rad); line-height: 26px; margin: 23px 69px 0 20px; }
-.event-details { transform: rotate(-2.4492937051703357e-16rad); line-height: 26px; margin: 0 34px 0 55px; }
-.event-info { display: flex; flex-direction: column; line-height: normal; width: 21%; margin-left: 20px; }
-.info-container { display: flex; margin-top: 7px; gap: 17px; }
-.image-wrapper { display: flex; flex-direction: column; }
-.info-image { aspect-ratio: 1; object-fit: contain; object-position: center; width: 80px; border-radius: 6px; }
-.info-image-secondary { margin-top: 37px; }
-.text-container { display: flex; flex-direction: column; color: #6e7787; font: 400 16px/2 Mulish, sans-serif; }
-.date-time-wrapper { display: flex; flex-direction: column; align-items: start; padding: 0 6px; }
-.info-label { transform: rotate(2.4492937051703357e-16rad); color: #171a1f; font-weight: 700; text-transform: uppercase; }
-.info-value { transform: rotate(2.4492937051703357e-16rad); align-self: stretch; margin-top: 4px; }
-.place-label { margin-top: 34px; }
-.place-value { transform: rotate(2.4492937051703357e-16rad); line-height: 26px; margin-top: 5px; }
-.event-additional-info { display: flex; flex-direction: column; line-height: normal; width: 16%; margin-left: 20px; }
-.additional-info-container { display: flex; margin-top: 7px; width: 100%; flex-direction: column; font: 16px/2 Mulish, sans-serif; }
-.duration-wrapper { align-self: start; display: flex; gap: 30px; }
-.duration-text { display: flex; flex-direction: column; margin: auto 0; }
-.duration-value { transform: rotate(2.4492937051703357e-16rad); color: #6e7787; font-weight: 400; align-self: start; margin-top: 4px; }
-.ticket-wrapper { display: flex; margin-top: 37px; gap: 20px; color: #6e7787; font-weight: 400; justify-content: space-between; }
-.ticket-text { transform: rotate(2.4492937051703357e-16rad); align-self: end; margin-top: 42px; }
-
-@media (max-width: 991px) {
-  .event-container { flex-direction: column; align-items: stretch; gap: 0; }
-  .event-main, .event-info, .event-additional-info { width: 100%; margin-left: 0; }
-  .event-card, .info-container, .additional-info-container { max-width: 100%; margin-top: 40px; }
-  .event-image, .event-description, .event-details { max-width: 100%; margin-right: 10px; }
-  .event-date, .ticket-text { margin-top: 40px; }
-}
-
-

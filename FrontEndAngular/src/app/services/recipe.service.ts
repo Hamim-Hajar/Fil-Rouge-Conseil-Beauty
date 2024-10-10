@@ -42,10 +42,12 @@ export class RecipeService {
 
 
   // Update a recipe
-  updateRecipe(id: number, recipe: Recipe): Observable<Recipe> {
-    return this.http.put<Recipe>(`${this.apiUrl}/${id}`, recipe)
-      .pipe(catchError(this.handleError));
+  updateRecipe( recipeData: FormData,id: number): Observable<any> {
+    const url = `${this.apiUrl}/update/${id}`;
+  return this.http.put(url,recipeData);
+
   }
+
 
   // Delete a recipe
   deleteRecipe(id: number): Observable<void> {

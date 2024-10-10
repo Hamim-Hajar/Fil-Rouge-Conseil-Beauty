@@ -11,7 +11,7 @@ import {Userrole} from "../../enums/userrole";
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  signupForm: FormGroup;
+  signUpForm: FormGroup;
   userRoles = Object.values(Userrole);
 
   constructor(
@@ -19,23 +19,16 @@ export class RegisterComponent {
     private authService: AuthService,
     private router: Router
   ) {
-    this.signupForm = this.formBuilder.group({
-      username: ['', Validators.required],
+    this.signUpForm = this.formBuilder.group({
+      userName: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
       role: ['', Validators.required]
     });
   }
 
-  onSubmit() {
-    if (this.signupForm.valid) {
-      const registerDto: RegisterUserDto = {
-        username: this.signupForm.get('username')?.value,
-        email: this.signupForm.get('email')?.value,
-        password: this.signupForm.get('password')?.value,
-        role: this.signupForm.get('role')?.value as Userrole
-      };
-
+  signUp() {
+     const registerDto :RegisterUserDto = this.signUpForm.value
       this.authService.signup(registerDto).subscribe(
         (user) => {
           console.log('Signup successful:', user);
@@ -48,4 +41,4 @@ export class RegisterComponent {
     }
   }
 
-}
+

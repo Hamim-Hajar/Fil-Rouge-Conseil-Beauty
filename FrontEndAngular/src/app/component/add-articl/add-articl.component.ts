@@ -14,7 +14,7 @@ import {Article} from "../../models/article";
 export class AddArticlComponent implements OnInit{
 
   formArticle !: FormGroup
-  specialist_id= 2;
+  specialist_id!:number;
   selectedImage!: File;
    articleid?:number;
   constructor(
@@ -33,7 +33,6 @@ export class AddArticlComponent implements OnInit{
 
 addArticle(){
     this.formArticle=this.fb.group({
-      id:["",Validators.required],
       titre:["",Validators.required],
       contenu:["",Validators.required],
       image:["",Validators.required]
@@ -49,6 +48,7 @@ getId(){
   onSubmit(){
     const valid = this.formArticle.valid
     console.log(this.specialist_id)
+    console.log(valid)
 
     if(valid){
       const value=  this.formArticle.value

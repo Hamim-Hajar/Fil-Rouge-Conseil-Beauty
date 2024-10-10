@@ -57,29 +57,41 @@ public class RecipeService {
         return recipes.stream().map(recipeMapper::recipeToRecipeDto).toList();
     }
 
-    public RecipeDto updateRecipe(Long id, RecipeDto updatedRecipeDto) {
-        Recipe existingRecipe = recipeRepository.findById(id)
-                .orElseThrow(() -> new RecipeNotFoundException("Recipe not found with id: " + id));
+    public RecipeDto updateRecipe(Long recipeId, RecipeDto recipeDto,byte[] imageBytes) {
+        Recipe existingRecipe = recipeRepository.findById(recipeId)
+                .orElseThrow(() -> new RecipeNotFoundException("Recipe not found with id: " + recipeId));
 
-        existingRecipe.setName(updatedRecipeDto.getName());
-        existingRecipe.setDescription(updatedRecipeDto.getDescription());
-        existingRecipe.setIngredients(updatedRecipeDto.getIngredients());
-
+        existingRecipe.setName(recipeDto.getName());
+        existingRecipe.setDescription(recipeDto.getDescription());
+        existingRecipe.setIngredients(recipeDto.getIngredients());
+        existingRecipe.setInstructions(recipeDto.getInstructions());
+        if (imageBytes != null && imageBytes.length > 0) {
+            existingRecipe.setImage(imageBytes);
+        }
+        existingRecipe.setDatePublication(new Date(System.currentTimeMillis()));
         Recipe updatedRecipe = recipeRepository.save(existingRecipe);
         return recipeMapper.recipeToRecipeDto(updatedRecipe);
     }
-
     public void deleteRecipe(Long id) {
         Recipe recipe = recipeRepository.findById(id)
                 .orElseThrow(() -> new RecipeNotFoundException("Recipe not found with id: " + id));
         recipeRepository.delete(recipe);
     }
 
-    public List<RecipeDto> getRecipesByCategory(RecipeCategory category) {
-        List<Recipe> recipes = recipeRepository.findByCategory(category);
-        if (recipes.isEmpty()) {
-            throw new RecipeNotFoundException("No recipes found for category: " + category);
-        }
-        return recipes.stream().map(recipeMapper::recipeToRecipeDto).toList();
+//    public List<RecipeDto> getRecipesByCategory(RecipeCategory category) {
+//        List<Recipe> recipes = recipeRepository.findByCategory(category);
+//        if (recipes.isEmpty()) {
+//            throw new RecipeNotFoundException("No recipes found for category: " + category);
+//        }
+//        return recipes.stream().map(recipeMapper::recipeToRecipeDto).toList();
+//    }
+ public List<RecipeDto> getRecipesByCategory(RecipeCategory category) {
+    List<Recipe> recipes = recipeRepository.findByCategory(category);
+    if (recipes.isEmpty()) {
+        throw new RecipeNotFoundException("No recipes found for category: " + category);
     }
+    return recipes.stream()
+            .map(recipeMapper::recipeToRecipeDto)
+            .toList();
+}
 }

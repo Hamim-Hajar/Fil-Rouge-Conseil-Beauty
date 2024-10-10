@@ -51,10 +51,6 @@ private RecipeService recipeService;
         RecipeDto recipe = recipeService.getRecipeById(id);
         return new ResponseEntity<>(recipe,HttpStatus.OK);
     }
-
-
-
-
     @GetMapping("/all")
     public ResponseEntity<List<RecipeDto>> getAllRecipes() {
         List<RecipeDto> recipeDtos = recipeService.getAllRecipes();

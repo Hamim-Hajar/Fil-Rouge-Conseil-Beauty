@@ -3,6 +3,7 @@ import {RecipeDto} from "../../dto/recipe-dto";
 import {ArticleDto} from "../../dto/article-dto";
 import {ArticlService} from "../../services/articl.service";
 import {RecipeService} from "../../services/recipe.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-recipe-list',
@@ -17,7 +18,7 @@ export class RecipeListComponent implements OnInit {
   clickedRows = new Set<RecipeDto>();
 
 
-  constructor(private recipeservice :RecipeService) {
+  constructor(private recipeservice :RecipeService,private router:Router) {
   }
   ngOnInit(): void {
     this.fetchAllRecipes();
@@ -35,5 +36,7 @@ export class RecipeListComponent implements OnInit {
     })
   }
 
-
+  update(id:number):void{
+    this.router.navigate(['/update',id]);
+  }
 }

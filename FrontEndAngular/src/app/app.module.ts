@@ -41,6 +41,10 @@ import { HeadertwoComponent } from './component/headertwo/headertwo.component';
 import { UpdatearticleComponent } from './component/updatearticle/updatearticle.component';
 import { HeaderthreeComponent } from './component/headerthree/headerthree.component';
 
+
+import {JwtModule} from "@auth0/angular-jwt";
+import { UpdaterecipeComponent } from './component/updaterecipe/updaterecipe.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -61,6 +65,7 @@ import { HeaderthreeComponent } from './component/headerthree/headerthree.compon
     HeadertwoComponent,
     UpdatearticleComponent,
     HeaderthreeComponent,
+    UpdaterecipeComponent,
 
 
   ],
@@ -79,6 +84,14 @@ import { HeaderthreeComponent } from './component/headerthree/headerthree.compon
     MatSidenavModule,
     MatListModule, RouterModule, CommonModule, MatTableModule,
 
+    JwtModule.forRoot(
+      {
+        config:{
+          tokenGetter:() => localStorage.getItem('token'),
+          allowedDomains: ['http://localhost:8081/login']
+        }
+      }
+    )
 
 
   ],

@@ -1,63 +1,100 @@
 
-<section class="signup-container">
-  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a19d733cf6e0135e2b55403b5936758d74fe928a47239eb3bda20a8e6e3bb43c?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="close-icon" />
-  <h1 class="welcome-heading">Welcome.</h1>
-  <p class="create-account-text">Create an account</p>
+<!--<section class="signup-container">-->
+<!--  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a19d733cf6e0135e2b55403b5936758d74fe928a47239eb3bda20a8e6e3bb43c?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="close-icon" />-->
+<!--  <h1 class="welcome-heading">Welcome.</h1>-->
+<!--  <p class="create-account-text">Create an account</p>-->
 
-  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
-    <div class="input-wrapper">
-      <label for="name-input" class="input-label">Name</label>
-      <input type="text" id="name-input" placeholder="name" class="input-placeholder" />
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d8dddfbee9e11f566422b07ef8c0bc7b057ad0ba6ce5f4a659deaa09950ddd03?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="input-underline" />
+<!--  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">-->
+<!--    <div class="input-wrapper">-->
+<!--      <label for="name-input" class="input-label">Name</label>-->
+<!--      <input type="text" id="name-input" placeholder="name" class="input-placeholder" />-->
+<!--      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d8dddfbee9e11f566422b07ef8c0bc7b057ad0ba6ce5f4a659deaa09950ddd03?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="input-underline" />-->
+<!--    </div>-->
+
+<!--    <div class="input-wrapper">-->
+<!--      <label for="email-input" class="input-label">Email</label>-->
+<!--      <input type="email" id="email-input" placeholder="example.email@gmail.com" class="input-placeholder" />-->
+<!--      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d8dddfbee9e11f566422b07ef8c0bc7b057ad0ba6ce5f4a659deaa09950ddd03?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="input-underline" />-->
+<!--    </div>-->
+
+<!--    <div class="input-wrapper">-->
+<!--      <div class="password-wrapper">-->
+<!--        <div class="password-info">-->
+<!--          <label for="password-input" class="input-label">Password</label>-->
+<!--          <span class="input-placeholder">Enter at least 8+ characters</span>-->
+<!--        </div>-->
+<!--        <div class="form-group">-->
+<!--          <label for="role">Role</label>-->
+<!--          <select class="form-control" id="role" formControlName="role" required>-->
+<!--            <option *ngFor="let role of userRoles" [value]="role">{{ role }}</option>-->
+<!--          </select>-->
+<!--        </div>-->
+<!--        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/84149e0ef05383e2c22e6958bef5480b1261fb82c7f38281b959490c23cd389e?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="Show password" class="password-icon" />-->
+<!--      </div>-->
+<!--      <input type="password" id="password-input" class="visually-hidden" />-->
+<!--      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d8dddfbee9e11f566422b07ef8c0bc7b057ad0ba6ce5f4a659deaa09950ddd03?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="input-underline" />-->
+<!--    </div>-->
+
+<!--    <div class="terms-wrapper">-->
+<!--      <input type="checkbox" id="terms-checkbox" class="visually-hidden" />-->
+<!--      <label for="terms-checkbox">-->
+<!--        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2d7c4cf1a8912fb17fa7e007b9ba6079103a05c8926ca71d87a64375c7d1198a?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="checkbox-icon" />-->
+<!--      </label>-->
+<!--      <span class="terms-text">I agree with <span style="color: #cd38f3">Terms & Conditions</span></span>-->
+<!--    </div>-->
+
+<!--    <button type="submit" class="signup-button" [disabled]="signupForm.invalid">Sign Up</button>-->
+<!--  </form>-->
+
+<!--  <div class="social-buttons-wrapper">-->
+<!--    <button class="social-button google-button">-->
+<!--      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/23ef075bfb5b9b4fb1e1e16673c8fd79834e1e5487a8f5526fc955c226de74db?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="Sign up with Google" class="social-icon" />-->
+<!--    </button>-->
+<!--    <button class="social-button facebook-button">-->
+<!--      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/383b01c3c38edf30ae6389564eefe5d1abe84d2629cd0f01eb43bfc082046bc4?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="Sign up with Facebook" class="social-icon" />-->
+<!--    </button>-->
+<!--  </div>-->
+
+<!--  <div class="signin-wrapper">-->
+<!--    <span class="signin-text">Already have an account?</span>-->
+<!--    <a href="#" class="signin-link">Sign in</a>-->
+<!--  </div>-->
+<!--</section>-->
+
+<div class="wrapper">
+  <div class="main">
+    <div class="right_img">
+
     </div>
+    <div class="left_signup">
+      <form [formGroup]="signUpForm" (ngSubmit)="signUp()" >
 
-    <div class="input-wrapper">
-      <label for="email-input" class="input-label">Email</label>
-      <input type="email" id="email-input" placeholder="example.email@gmail.com" class="input-placeholder" />
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d8dddfbee9e11f566422b07ef8c0bc7b057ad0ba6ce5f4a659deaa09950ddd03?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="input-underline" />
-    </div>
 
-    <div class="input-wrapper">
-      <div class="password-wrapper">
-        <div class="password-info">
-          <label for="password-input" class="input-label">Password</label>
-          <span class="input-placeholder">Enter at least 8+ characters</span>
+        <div class="form-group">
+          <label for="userName">userName</label>
+          <input type="text" id="userName" formControlName="userName" placeholder="enter your user name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">email</label>
+          <input type="email" id="email" formControlName="email" placeholder="enter your user email" />
+        </div>
+
+        <div class="form-group">
+          <label for="password">password</label>
+          <input type="password" id="password" formControlName="password" placeholder="enter your user password" />
         </div>
         <div class="form-group">
-          <label for="role">Role</label>
-          <select class="form-control" id="role" formControlName="role" required>
-            <option *ngFor="let role of userRoles" [value]="role">{{ role }}</option>
+          <label for="role">role:</label>
+          <select id="role" formControlName="role"  required>
+            <option value="VISITEUR">USER</option>
+            <option value="SPECIALIST">SPECIALIST</option>
           </select>
         </div>
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/84149e0ef05383e2c22e6958bef5480b1261fb82c7f38281b959490c23cd389e?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="Show password" class="password-icon" />
-      </div>
-      <input type="password" id="password-input" class="visually-hidden" />
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/d8dddfbee9e11f566422b07ef8c0bc7b057ad0ba6ce5f4a659deaa09950ddd03?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="input-underline" />
+        <button type="submit" class="btn btn-primary">Sign up</button>
+      </form>
+
+      <p>Already have an ccount? <a routerLink="/main/signin">Log in</a>  </p>
     </div>
-
-    <div class="terms-wrapper">
-      <input type="checkbox" id="terms-checkbox" class="visually-hidden" />
-      <label for="terms-checkbox">
-        <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/2d7c4cf1a8912fb17fa7e007b9ba6079103a05c8926ca71d87a64375c7d1198a?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="checkbox-icon" />
-      </label>
-      <span class="terms-text">I agree with <span style="color: #cd38f3">Terms & Conditions</span></span>
-    </div>
-
-    <button type="submit" class="signup-button" [disabled]="signupForm.invalid">Sign Up</button>
-  </form>
-
-  <div class="social-buttons-wrapper">
-    <button class="social-button google-button">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/23ef075bfb5b9b4fb1e1e16673c8fd79834e1e5487a8f5526fc955c226de74db?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="Sign up with Google" class="social-icon" />
-    </button>
-    <button class="social-button facebook-button">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/383b01c3c38edf30ae6389564eefe5d1abe84d2629cd0f01eb43bfc082046bc4?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="Sign up with Facebook" class="social-icon" />
-    </button>
   </div>
-
-  <div class="signin-wrapper">
-    <span class="signin-text">Already have an account?</span>
-    <a href="#" class="signin-link">Sign in</a>
-  </div>
-</section>
-
+</div>
