@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="653c835f-ee12-4abc-9832-6951c52113b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/conseil/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/updaterecipe/updaterecipe.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/updaterecipe/updaterecipe.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/updaterecipe/updaterecipe.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/updaterecipe/updaterecipe.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/updaterecipe/updaterecipe.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/updaterecipe/updaterecipe.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/Jenkinsfile" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/Jenkinsfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/RecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/RecipeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/ConseilApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/ConseilApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/AuthenticationServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/AuthenticationServiceTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/FavRcServiceTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/RecipeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/RecipeServiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -249,7 +236,7 @@
       <workItem from="1728486712467" duration="13984000" />
       <workItem from="1728548237211" duration="24292000" />
       <workItem from="1728640209016" duration="2280000" />
-      <workItem from="1728642644552" duration="2153000" />
+      <workItem from="1728642644552" duration="3039000" />
     </task>
     <servers />
   </component>
