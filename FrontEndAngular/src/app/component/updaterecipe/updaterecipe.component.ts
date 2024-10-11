@@ -5,6 +5,7 @@ import {ActivatedRoute} from "@angular/router";
 import {jwtDecode} from "jwt-decode";
 import {ArticleDto} from "../../dto/article-dto";
 import {RecipeService} from "../../services/recipe.service";
+import {RecipeDto} from "../../dto/recipe-dto";
 
 @Component({
   selector: 'app-updaterecipe',
@@ -45,7 +46,7 @@ export class UpdaterecipeComponent implements OnInit{
     }
   }
 
-  // Méthode de mise à jour de l'article
+
   onSubmit() {
     if (this.formRecipe.valid) {
       const formData = new FormData();
@@ -73,37 +74,37 @@ export class UpdaterecipeComponent implements OnInit{
     }
   }
 
-  // Méthode pour gérer le changement d'image
+
   onFileChange(event: any) {
     if (event.target.files.length > 0) {
-      this.selectedImage = event.target.files[0]; // Récupérer l'image sélectionnée
+      this.selectedImage = event.target.files[0];
     }
   }
 
-  // Récupérer l'ID de l'article à mettre à jour depuis l'URL
+
   fetchIdUpdate() {
     this.route.params.subscribe(params => {
-      this.articleId = +params['id']; // Convertir en nombre
-      if (this.articleId) {
-        this.loadArticle(); // Charger les détails de l'article si `articleId` existe
+      this.recipeId = +params['id'];
+      if (this.recipeId) {
+        this.loadArticle();
       }
     });
   }
-
-  // Charger les détails de l'article à partir de l'ID
   loadArticle(): void {
-    this.articleService.getArticleById(this.articleId).subscribe(
-      (article: ArticleDto) => {
-        // Patch les valeurs du formulaire avec les détails de l'article
-        this.formArticle.patchValue({
-          id: article.id,
-          titre: article.titre,
-          contenu: article.contenu
-          // L'image n'est pas préremplie car ce n'est pas possible avec un input de type file
+    this.recipeservice.getRecipeById(this.recipeId).subscribe(
+      (recipe: RecipeDto) => {
+
+        this.formRecipe.patchValue({
+          id: recipe.id,
+          name: recipe.name,
+          ingredients: recipe.ingredients,
+          instructions: recipe.instructions,
+          description: recipe.description
+
         });
       },
       error => {
-        console.error('Erreur lors de la récupération de l\'article', error);
+        console.error('Error when upload the recipe', error);
       }
     );
   }

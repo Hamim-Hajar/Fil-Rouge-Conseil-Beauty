@@ -16,6 +16,7 @@ import {LeftSidebarComponent} from "./component/header/left-sidebar.component";
 import {HeadertwoComponent} from "./component/headertwo/headertwo.component";
 import {UpdatearticleComponent} from "./component/updatearticle/updatearticle.component";
 import {HeaderthreeComponent} from "./component/headerthree/headerthree.component";
+import {UpdaterecipeComponent} from "./component/updaterecipe/updaterecipe.component";
 
 
 const routes: Routes = [
@@ -35,7 +36,7 @@ const routes: Routes = [
   {path: 'header-two', component: HeadertwoComponent},
   {path: 'header-three', component: HeaderthreeComponent},
   {path: 'visitor-dashboard', component: VisiteurDashboardComponent},
-
+  {path:'updaterecipe/:id',component:UpdaterecipeComponent},
   {path: 'update/:id', component: UpdatearticleComponent},
   { path: '', redirectTo: 'main', pathMatch: 'full' },
 

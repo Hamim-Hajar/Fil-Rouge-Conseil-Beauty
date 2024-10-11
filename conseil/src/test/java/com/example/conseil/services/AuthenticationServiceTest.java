@@ -30,70 +30,77 @@ class AuthenticationServiceTest {
     private UserRepository userRepository;
 
     @Mock
-    private PasswordEncoder passwordEncoder;
-
-    @InjectMocks
-    private AuthenticationService authenticationService;
-    @Mock
     private AuthenticationManager authenticationManager;
 
-    @BeforeEach
-    public void setUp() {
+    @Mock
+    private PasswordEncoder passwordEncoder;
 
+    private AuthenticationService authenticationService;
+
+    @BeforeEach
+    void setUp() {
         MockitoAnnotations.openMocks(this);
-        MockitoAnnotations.openMocks(this);
+        authenticationService = new AuthenticationService(userRepository, authenticationManager, passwordEncoder);
     }
 
     @Test
-    public void testSignup_Visiteur() {
+    void testSignup_VisiteurRole() {
         RegisterUserDto input = new RegisterUserDto();
         input.setUserName("testUser");
         input.setEmail("test@example.com");
         input.setPassword("password123");
         input.setRole(UserRole.VISITEUR);
+
         when(passwordEncoder.encode("password123")).thenReturn("encodedPassword");
-        Visiteur visiteur = new Visiteur();
-        visiteur.setUsername("testUser");
-        visiteur.setEmail("test@example.com");
-        visiteur.setPassword("encodedPassword");
-        visiteur.setRole(UserRole.VISITEUR);
-        when(userRepository.save(any(Visiteur.class))).thenReturn(visiteur);
+        when(userRepository.save(any(User.class))).thenAnswer(invocation -> invocation.getArgument(0));
         User result = authenticationService.signup(input);
+
+        // Vérifications
+        assertNotNull(result);
         assertEquals("testUser", result.getUsername());
         assertEquals("test@example.com", result.getEmail());
         assertEquals("encodedPassword", result.getPassword());
         assertEquals(UserRole.VISITEUR, result.getRole());
+        assertTrue(result instanceof Visiteur);
+
         verify(passwordEncoder).encode("password123");
-        verify(userRepository).save(any(Visiteur.class));
+        verify(userRepository).save(any(User.class));
     }
+
     @Test
-    public void testAuthenticate_Success() {
+    void testAuthenticate_SuccessfulLogin() {
         LoginUserDto input = new LoginUserDto();
         input.setUserName("testUser");
         input.setPassword("password123");
-        Authentication authentication = mock(Authentication.class);
-        when(authenticationManager.authenticate(any(UsernamePasswordAuthenticationToken.class)))
-                .thenReturn(authentication);
-        Visiteur visiteur = new Visiteur();
-        visiteur.setUsername("testUser");
-        when(userRepository.findByUsername("testUser")).thenReturn(visiteur);
+
+        Authentication mockAuthentication = mock(Authentication.class);
+        User mockUser = new Visiteur();
+        mockUser.setUsername("testUser");
+
+        when(authenticationManager.authenticate(any(UsernamePasswordAuthenticationToken.class))).thenReturn(mockAuthentication);
+        when(userRepository.findByUsername("testUser")).thenReturn(mockUser);
+
         User result = authenticationService.authenticate(input);
+        assertNotNull(result);
         assertEquals("testUser", result.getUsername());
+
         verify(authenticationManager).authenticate(any(UsernamePasswordAuthenticationToken.class));
         verify(userRepository).findByUsername("testUser");
     }
 
     @Test
-    public void testAuthenticate_BadCredentials() {
+    void testAuthenticate_InvalidCredentials() {
+        // Préparation des données de test
         LoginUserDto input = new LoginUserDto();
         input.setUserName("testUser");
         input.setPassword("wrongPassword");
+
         when(authenticationManager.authenticate(any(UsernamePasswordAuthenticationToken.class)))
                 .thenThrow(new BadCredentialsException("Invalid username or password"));
-        BadCredentialsException exception = assertThrows(BadCredentialsException.class, () -> {
-            authenticationService.authenticate(input);
-        });
-        assertEquals("Invalid username or password", exception.getMessage());
+
+        // Exécution du test et vérification
+        assertThrows(BadCredentialsException.class, () -> authenticationService.authenticate(input));
+
         verify(authenticationManager).authenticate(any(UsernamePasswordAuthenticationToken.class));
     }
 }

@@ -57,11 +57,35 @@ private RecipeService recipeService;
         return ResponseEntity.ok(recipeDtos);
     }
 
-    @PutMapping("/{id}")
-    public ResponseEntity<RecipeDto> updateRecipe(@PathVariable Long id, @RequestBody RecipeDto updatedRecipeDto) {
-        RecipeDto updatedRecipe = recipeService.updateRecipe(id, updatedRecipeDto);
+    @PutMapping("/update/{id}")
+    public ResponseEntity<RecipeDto> updateRecipe(@PathVariable Long id,
+                                                  @RequestParam("name") String name,
+                                                  @RequestParam("ingredients") String ingredients,
+                                                          @RequestParam("instructions") String instructions,
+                                                  @RequestParam("description") String description,
+                                                  @RequestParam(value = "image", required = false) MultipartFile image)
+     {
+         // Convert MultipartFile to byte[] if image is provided
+         byte[] imageBytes = null;
+         if (image != null && !image.isEmpty()) {
+             try {
+                 imageBytes = image.getBytes();
+             } catch (Exception e) {
+                 throw new RuntimeException("Failed to read image", e);
+             }
+         }
+         RecipeDto recipeDto = new RecipeDto();
+         recipeDto.setName(name);
+         recipeDto.setIngredients(ingredients);
+         recipeDto.setInstructions(instructions);
+         recipeDto.setDescription(description);
+
+
+        RecipeDto updatedRecipe = recipeService.updateRecipe(id, recipeDto, imageBytes);
         return ResponseEntity.ok(updatedRecipe);
     }
+
+
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<Void> deleteRecipe(@PathVariable Long id) {

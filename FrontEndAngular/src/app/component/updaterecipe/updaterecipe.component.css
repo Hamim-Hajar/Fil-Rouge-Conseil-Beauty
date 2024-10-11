@@ -1,0 +1,46 @@
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 500px;
+  margin: 0 auto;
+}
+label {
+  font-weight: bold;
+}
+input, textarea {
+  width: 100%;
+  padding: 5px;
+}
+button {
+  padding: 10px;
+
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+button:disabled {
+  background-color: #cccccc;
+}
+.upload-cover {
+  display: flex;
+  align-items: center;
+}
+
+.upload-cover mat-icon {
+  margin-right: 8px;
+}
+.placeholder h6 {
+  color: #a9a9a9; /* Couleur grise comme un placeholder */
+  font-style: italic;
+}
+.custom-line {
+  border: none;
+  height: 1px;
+  background-color: darkgrey; /* Couleur de la ligne */
+  margin: 20px 0; /* Espacement au-dessus et en dessous de la ligne */
+}
+.custom-icon {
+  color: #f36588;
+}
+

@@ -1,9 +1,9 @@
 <div class="article-container">
-  <h1>Create an Article</h1>
-  <form [formGroup]="formArticle" (ngSubmit)="onSubmit()">
+  <h1>Update an Recipe</h1>
+  <form [formGroup]="formRecipe" (ngSubmit)="onSubmit()">
     <h3 class="upload-cover"> <mat-icon class="custom-icon">crop_original</mat-icon> Upload cover</h3>
     <div class="placeholder">
-      <h6>Upload the Article cover</h6>
+      <h6>Upload the Recipe cover</h6>
     </div>
 
 
@@ -17,16 +17,23 @@
     <h3 class="upload-cover"> <mat-icon class="custom-icon">info</mat-icon> General information</h3>
     <div class="form-group">
       <label>name</label>
-      <input formControlName="titre" placeholder="titre" />
+      <input formControlName="name" placeholder="name" />
     </div>
     <div class="form-group">
-      <label >contenu</label>
-      <textarea formControlName="contenu" placeholder="Contenu"></textarea>
+      <label >ingredients</label>
+      <textarea formControlName="ingredients" placeholder="ingredients"></textarea>
+    </div>
+    <div class="form-group">
+      <label >instructions</label>
+      <textarea formControlName="instructions" placeholder="instructions"></textarea>
+    </div>
+    <div class="form-group">
+      <label >description</label>
+      <textarea formControlName="description" placeholder="description"></textarea>
     </div>
 
-
     <!--    <button type="submit" class="btn btn-primary" [disabled]="formArticle.invalid">Submit Order</button>-->
-    <button type="submit">Mettre à jour l'article</button>
+    <button type="submit">Update the Recipe</button>
   </form>
 
 </div>

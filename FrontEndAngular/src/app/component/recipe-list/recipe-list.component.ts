@@ -37,6 +37,6 @@ export class RecipeListComponent implements OnInit {
   }
 
   update(id:number):void{
-    this.router.navigate(['/update',id]);
+    this.router.navigate(['/updaterecipe',id]);
   }
 }

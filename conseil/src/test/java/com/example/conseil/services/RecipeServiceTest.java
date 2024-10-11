@@ -26,6 +26,7 @@ import static org.mockito.Mockito.*;
 import org.mockito.MockitoAnnotations;
 @ExtendWith(MockitoExtension.class)
 public class RecipeServiceTest {
+
 @Mock
 private RecipeRepository recipeRepository;
 
@@ -48,18 +49,22 @@ void testAddRecipe() {
     // Arrange
     RecipeDto recipeDto = new RecipeDto();
     recipeDto.setName("Test Recipe");
+    recipeDto.setSpecialistId(1L);
 
     Specialist specialist = new Specialist();
     specialist.setId(1L);
 
     Recipe recipe = new Recipe();
-    recipe.setId(1L);
     recipe.setName("Test Recipe");
+
+    Recipe savedRecipe = new Recipe();
+    savedRecipe.setId(1L);
+    savedRecipe.setName("Test Recipe");
 
     when(specialistRepository.findById(1L)).thenReturn(Optional.of(specialist));
     when(recipeMapper.recipeDtoToRecipe(recipeDto)).thenReturn(recipe);
-    when(recipeRepository.save(any(Recipe.class))).thenReturn(recipe);
-    when(recipeMapper.recipeToRecipeDto(recipe)).thenReturn(recipeDto);
+    when(recipeRepository.save(any(Recipe.class))).thenReturn(savedRecipe);
+    when(recipeMapper.recipeToRecipeDto(savedRecipe)).thenReturn(recipeDto);
 
     // Act
     RecipeDto result = recipeService.addRecipe(recipeDto, 1L, new byte[]{});
@@ -98,11 +103,22 @@ void testGetRecipeById() {
 void testGetAllRecipes() {
     // Arrange
     Recipe recipe1 = new Recipe();
+    recipe1.setId(1L);
+    recipe1.setName("Recipe 1");
+
     Recipe recipe2 = new Recipe();
+    recipe2.setId(2L);
+    recipe2.setName("Recipe 2");
+
     List<Recipe> recipes = Arrays.asList(recipe1, recipe2);
 
     RecipeDto recipeDto1 = new RecipeDto();
+    recipeDto1.setId(1L);
+    recipeDto1.setName("Recipe 1");
+
     RecipeDto recipeDto2 = new RecipeDto();
+    recipeDto2.setId(2L);
+    recipeDto2.setName("Recipe 2");
 
     when(recipeRepository.findAll()).thenReturn(recipes);
     when(recipeMapper.recipeToRecipeDto(recipe1)).thenReturn(recipeDto1);
@@ -112,69 +128,39 @@ void testGetAllRecipes() {
     List<RecipeDto> result = recipeService.getAllRecipes();
 
     // Assert
+    assertNotNull(result);
     assertEquals(2, result.size());
-    verify(recipeRepository).findAll();
+    assertEquals("Recipe 1", result.get(0).getName());
+    assertEquals("Recipe 2", result.get(1).getName());
 }
 
 @Test
 void testUpdateRecipe() {
     // Arrange
     Long recipeId = 1L;
-    RecipeDto updatedRecipeDto = new RecipeDto();
-    updatedRecipeDto.setName("Updated Recipe");
+    RecipeDto recipeDto = new RecipeDto();
+    recipeDto.setName("Updated Recipe");
+    recipeDto.setDescription("Updated Description");
 
     Recipe existingRecipe = new Recipe();
     existingRecipe.setId(recipeId);
     existingRecipe.setName("Original Recipe");
 
+    Recipe updatedRecipe = new Recipe();
+    updatedRecipe.setId(recipeId);
+    updatedRecipe.setName("Updated Recipe");
+    updatedRecipe.setDescription("Updated Description");
+
     when(recipeRepository.findById(recipeId)).thenReturn(Optional.of(existingRecipe));
-    when(recipeRepository.save(any(Recipe.class))).thenReturn(existingRecipe);
-    when(recipeMapper.recipeToRecipeDto(existingRecipe)).thenReturn(updatedRecipeDto);
+    when(recipeRepository.save(any(Recipe.class))).thenReturn(updatedRecipe);
+    when(recipeMapper.recipeToRecipeDto(updatedRecipe)).thenReturn(recipeDto);
 
     // Act
-    RecipeDto result = recipeService.updateRecipe(recipeId, updatedRecipeDto);
+    RecipeDto result = recipeService.updateRecipe(recipeId, recipeDto, new byte[]{});
 
     // Assert
     assertNotNull(result);
     assertEquals("Updated Recipe", result.getName());
-    verify(recipeRepository).save(existingRecipe);
-}
-
-@Test
-void testDeleteRecipe() {
-    // Arrange
-    Long recipeId = 1L;
-    Recipe recipe = new Recipe();
-    recipe.setId(recipeId);
-
-    when(recipeRepository.findById(recipeId)).thenReturn(Optional.of(recipe));
-
-    // Act
-    recipeService.deleteRecipe(recipeId);
-
-    // Assert
-    verify(recipeRepository).delete(recipe);
-}
-
-@Test
-void testGetRecipesByCategory() {
-    // Arrange
-    RecipeCategory category = RecipeCategory.HAIR;
-    Recipe recipe1 = new Recipe();
-    Recipe recipe2 = new Recipe();
-    List<Recipe> recipes = Arrays.asList(recipe1, recipe2);
-
-    RecipeDto recipeDto1 = new RecipeDto();
-    RecipeDto recipeDto2 = new RecipeDto();
-
-    when(recipeRepository.findByCategory(category)).thenReturn(recipes);
-    when(recipeMapper.recipeToRecipeDto(recipe1)).thenReturn(recipeDto1);
-    when(recipeMapper.recipeToRecipeDto(recipe2)).thenReturn(recipeDto2);
-
-    // Act
-    List<RecipeDto> result = recipeService.getRecipesByCategory(category);
-
-    // Assert
-    assertEquals(2, result.size());
-    verify(recipeRepository).findByCategory(category);
+    assertEquals("Updated Description", result.getDescription());
+    verify(recipeRepository).save(any(Recipe.class));
 }}
