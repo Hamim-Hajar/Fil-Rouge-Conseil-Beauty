@@ -1,26 +1,61 @@
+#version: "3.8"
+#
+#services:
+#  filRouge:
+#    image: hajarhamim/fil-rouge-conseil:latest
+#    ports:
+#      - "8081:8081"
+#    depends_on:
+#      - mysqldb
+#    networks:
+#      - myconseil-network
+#
+#  mysqldb:
+#    image: "mysql:latest"
+#    environment:
+#      MYSQL_DATABASE: conseilhair
+#      MYSQL_ALLOW_EMPTY_PASSWORD: jujuRO55
+#    ports:
+#      - "3307:3306"
+#    volumes:
+#      - mysqldb:/var/lib/mysql
+#    networks:
+#      - myconseil-network
+#
+#volumes:
+#  mysqldb:
+#
+#networks:
+#  myconseil-network:
+#    driver: bridge
+
+
 version: "3.8"
 
 services:
-  filRouge:
+  mysql-db:
+    image: mysql:8.0
+    container_name: mysql-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_DATABASE: conseilhair
+      MYSQL_USER: admin
+      MYSQL_PASSWORD: admin
+    ports:
+      - '3307:3306'
+
+  cake_app:
     image: hajarhamim/fil-rouge-conseil:latest
     ports:
       - "8081:8081"
-    depends_on:
-      - mysqldb
-    networks:
-      - myconseil-network
-
-  mysqldb:
-    image: "mysql:latest"
     environment:
-      MYSQL_DATABASE: conseilhair
-      MYSQL_ALLOW_EMPTY_PASSWORD: jujuRO55
-    ports:
-      - "3307:3306"
-    volumes:
-      - mysqldb:/var/lib/mysql
-    networks:
-      - myconseil-network
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/dreamcakes
+      SPRING_DATASOURCE_USERNAME: admin
+      SPRING_DATASOURCE_PASSWORD: admin
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    depends_on:
+      - mysql-db
 
 volumes:
   mysqldb:
@@ -28,3 +63,4 @@ volumes:
 networks:
   myconseil-network:
     driver: bridge
+
