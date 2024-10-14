@@ -5,73 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="653c835f-ee12-4abc-9832-6951c52113b1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/FrontEndAngular/src/assets/images/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEndAngular/src/assets/images/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEndAngular/src/assets/images/Beauty.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/FrontEndAngular/src/assets/images/beautyy.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/add-articl/add-articl.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/add-articl/add-articl.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/add-articl/add-articl.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/add-articl/add-articl.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/add-articl/add-articl.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/add-articl/add-articl.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/addrecipe/addrecipe.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/addrecipe/addrecipe.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/addrecipe/addrecipe.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/addrecipe/addrecipe.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/addrecipe/addrecipe.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/addrecipe/addrecipe.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/articl-list/articl-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/articl-list/articl-list.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/articl-list/articl-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/articl-list/articl-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/articl-list/articl-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/articl-list/articl-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/dashboardspecialist/dashboardspecialist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/dashboardspecialist/dashboardspecialist.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/email-form-component/email-form-component.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/email-form-component/email-form-component.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/email-form-component/email-form-component.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/email-form-component/email-form-component.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/favorit/favorit.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/favorit/favorit.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/favorit/favorit.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/favorit/favorit.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/footer/footer.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/footer/footer.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/footer/footer.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/header/left-sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/header/left-sidebar.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/header/left-sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/header/left-sidebar.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/headertwo/headertwo.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/headertwo/headertwo.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/headertwo/headertwo.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/headertwo/headertwo.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/home/home.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/login/login.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/login/login.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/register/register.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/register/register.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/register/register.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/updaterecipe/updaterecipe.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/updaterecipe/updaterecipe.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/updaterecipe/updaterecipe.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/updaterecipe/updaterecipe.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/updaterecipe/updaterecipe.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/updaterecipe/updaterecipe.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/visiteur-dashboard/visiteur-dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/visiteur-dashboard/visiteur-dashboard.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/visiteur-dashboard/visiteur-dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/visiteur-dashboard/visiteur-dashboard.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/dto/favorite-recipe-dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/dto/favorite-recipe-dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/dto/recipe-dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/dto/recipe-dto.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/models/Page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/models/Page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/services/favrecipe.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/services/favrecipe.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/services/recipe.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/services/recipe.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/styles.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/configs/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/configs/SecurityConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/FavoriteRecipeCotroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/FavoriteRecipeCotroller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/RecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/RecipeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/dto/FavoriteRecipeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/dto/FavoriteRecipeDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/mapper/FavoriteRecipeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/mapper/FavoriteRecipeMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/repository/FavoriteRecipeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/repository/FavoriteRecipeRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/services/FavRcService.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/services/FavRcService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/services/RecipeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/services/RecipeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/RecipeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/RecipeServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -314,7 +248,7 @@
       <workItem from="1728863211649" duration="423000" />
       <workItem from="1728863661054" duration="300000" />
       <workItem from="1728864177598" duration="5245000" />
-      <workItem from="1728899348750" duration="22155000" />
+      <workItem from="1728899348750" duration="22551000" />
     </task>
     <servers />
   </component>
