@@ -8,7 +8,6 @@ import com.example.conseil.exception.RatingNotFoundException;
 import com.example.conseil.exception.RecipeNotFoundException;
 import com.example.conseil.exception.ResourceNotFoundException;
 import com.example.conseil.exception.UserNotFoundException;
-import com.example.conseil.mapper.FavoriteRecipeMapper;
 import com.example.conseil.repository.FavoriteRecipeRepository;
 import com.example.conseil.repository.RecipeRepository;
 import com.example.conseil.repository.VisiteurRepository;
@@ -28,8 +27,8 @@ public class FavRcService {
     @Autowired
     private VisiteurRepository visiteurRepository;
 
-    @Autowired
-    private FavoriteRecipeMapper favoriteRecipeMapper;
+
+
 
     public void addFavoriteRecipe(Long visiteurId, Long recipeId) {
         if (favoriteRecipeRepository.existsByVisiteurIdAndRecipeId(visiteurId, recipeId)) {
