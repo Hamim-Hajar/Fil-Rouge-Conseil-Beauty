@@ -29,6 +29,7 @@ export class AddrecipeComponent {
       description:["",Validators.required],
       ingredients:["",Validators.required],
       instructions: ["",Validators.required],
+      category:["",Validators.required],
       image:["",Validators.required]
 
     })

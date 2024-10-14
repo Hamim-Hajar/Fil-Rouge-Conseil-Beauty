@@ -1,42 +1,78 @@
-<div class="article-container">
-  <h1>Update an Recipe</h1>
-  <form [formGroup]="formRecipe" (ngSubmit)="onSubmit()">
-    <h3 class="upload-cover"> <mat-icon class="custom-icon">crop_original</mat-icon> Upload cover</h3>
-    <div class="placeholder">
-      <h6>Upload the Recipe cover</h6>
-    </div>
 
-
-    <div class="form-group">
-      <label >Image</label>
-      <input type="file" (change)="onFileChange($event)"  required />
-    </div>
-
-
-    <hr class="custom-line">
-    <h3 class="upload-cover"> <mat-icon class="custom-icon">info</mat-icon> General information</h3>
-    <div class="form-group">
-      <label>name</label>
-      <input formControlName="name" placeholder="name" />
-    </div>
-    <div class="form-group">
-      <label >ingredients</label>
-      <textarea formControlName="ingredients" placeholder="ingredients"></textarea>
-    </div>
-    <div class="form-group">
-      <label >instructions</label>
-      <textarea formControlName="instructions" placeholder="instructions"></textarea>
-    </div>
-    <div class="form-group">
-      <label >description</label>
-      <textarea formControlName="description" placeholder="description"></textarea>
-    </div>
-
-    <!--    <button type="submit" class="btn btn-primary" [disabled]="formArticle.invalid">Submit Order</button>-->
-    <button type="submit">Update the Recipe</button>
-  </form>
-
+<div *ngIf="userRole === 'VISITEUR'">
+  <app-headertwo></app-headertwo>
 </div>
 
+<div *ngIf="userRole === 'SPECIALIST'">
+  <app-left-sidebar></app-left-sidebar>
+</div>
+
+<div *ngIf="userRole === ''">
+  <app-headerthree></app-headerthree>
+</div>
+<div class="container mt-5">
+  <div class="article-container">
+    <h1 class="text-center mb-5">Update <span style="color: #1f1f1f">an Recipe</span></h1>
+    <form [formGroup]="formRecipe" (ngSubmit)="onSubmit()">
+      <h3 class="upload-cover d-flex align-items-center">
+        <i class="bi bi-image me-2"></i> Upload <span style="color:black;"> cover</span>
+      </h3>
+
+
+      <div class="mb-4">
+        <label for="imageUpload" class="form-label">Image</label>
+        <input type="file" id="imageUpload" class="form-control" (change)="onFileChange($event)" required />
+      </div>
+
+      <hr class="my-4">
+
+      <h3 class="upload-cover d-flex align-items-center">
+        <i class="bi bi-info-circle me-2"></i> General Information
+      </h3>
+
+      <div class="mb-3">
+        <label for="name" class="form-label">Name</label>
+        <input type="text" id="name" class="form-control" formControlName="name" placeholder="Name" />
+      </div>
+
+      <div class="mb-3">
+        <label for="ingredients" class="form-label">Ingredients</label>
+        <textarea id="ingredients" class="form-control" formControlName="ingredients" placeholder="Ingredients"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="instructions" class="form-label">Instructions</label>
+        <textarea id="instructions" class="form-control" formControlName="instructions" placeholder="Instructions"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea id="description" class="form-control" formControlName="description" placeholder="Description"></textarea>
+      </div>
+
+      <div class="mb-4">
+        <label for="category" class="form-label">Category <span class="text-danger">*</span></label>
+        <select id="category" class="form-select" formControlName="category" required>
+          <option value="">Select Category</option>
+          <option value="HAIR">Hair</option>
+          <option value="FACE">Face</option>
+        </select>
+        <div
+          *ngIf="formRecipe.get('category')?.invalid && formRecipe.get('category')?.touched"
+          class="error mt-2"
+        >
+          Category is required
+        </div>
+      </div>
+
+      <button type="submit" class="w-100" style="color: white" [disabled]="formRecipe.invalid">
+        Update the Recipe
+      </button>
+    </form>
+  </div>
+</div>
+
+
+<app-footer></app-footer>
 
 

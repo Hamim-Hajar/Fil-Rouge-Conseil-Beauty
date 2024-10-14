@@ -5,9 +5,73 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="653c835f-ee12-4abc-9832-6951c52113b1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/FrontEndAngular/src/assets/images/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontEndAngular/src/assets/images/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontEndAngular/src/assets/images/Beauty.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/FrontEndAngular/src/assets/images/beautyy.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/add-articl/add-articl.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/add-articl/add-articl.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/add-articl/add-articl.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/add-articl/add-articl.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/add-articl/add-articl.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/add-articl/add-articl.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/addrecipe/addrecipe.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/addrecipe/addrecipe.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/addrecipe/addrecipe.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/addrecipe/addrecipe.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/addrecipe/addrecipe.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/addrecipe/addrecipe.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/articl-list/articl-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/articl-list/articl-list.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/articl-list/articl-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/articl-list/articl-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/articl-list/articl-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/articl-list/articl-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/dashboardspecialist/dashboardspecialist.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/dashboardspecialist/dashboardspecialist.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/email-form-component/email-form-component.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/email-form-component/email-form-component.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/email-form-component/email-form-component.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/email-form-component/email-form-component.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/favorit/favorit.component.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/favorit/favorit.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/favorit/favorit.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/favorit/favorit.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/footer/footer.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/footer/footer.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/footer/footer.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/footer/footer.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/header/left-sidebar.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/header/left-sidebar.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/header/left-sidebar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/header/left-sidebar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/headertwo/headertwo.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/headertwo/headertwo.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/headertwo/headertwo.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/headertwo/headertwo.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/home/home.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/login/login.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/login/login.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/login/login.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/login/login.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/register/register.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/register/register.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/register/register.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/register/register.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/updaterecipe/updaterecipe.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/updaterecipe/updaterecipe.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/updaterecipe/updaterecipe.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/updaterecipe/updaterecipe.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/updaterecipe/updaterecipe.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/updaterecipe/updaterecipe.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/visiteur-dashboard/visiteur-dashboard.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/visiteur-dashboard/visiteur-dashboard.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/visiteur-dashboard/visiteur-dashboard.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/visiteur-dashboard/visiteur-dashboard.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/dto/favorite-recipe-dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/dto/favorite-recipe-dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/dto/recipe-dto.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/dto/recipe-dto.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/models/Page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/models/Page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/services/favrecipe.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/services/favrecipe.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/services/recipe.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/services/recipe.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/conseil/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/conseil/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/configs/SecurityConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/configs/SecurityConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/FavoriteRecipeCotroller.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/FavoriteRecipeCotroller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/RecipeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/controllers/RecipeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/dto/FavoriteRecipeDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/dto/FavoriteRecipeDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/mapper/FavoriteRecipeMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/mapper/FavoriteRecipeMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/repository/FavoriteRecipeRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/repository/FavoriteRecipeRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/services/FavRcService.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/services/FavRcService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/services/RecipeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/services/RecipeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/RecipeServiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/test/java/com/example/conseil/services/RecipeServiceTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +85,8 @@
         <option value="Enum" />
         <option value="Class" />
         <option value="Dockerfile" />
+        <option value="Interface" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -45,6 +111,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Docker.conseil: Compose Deployment.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ArticleServiceTest.addArticle.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ArticleServiceTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ArticleServiceTest.getAllArticles.executor&quot;: &quot;Run&quot;,
@@ -72,6 +139,9 @@
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\user\\Desktop\\Fil-Rouge-Conseil-Beauty\\FrontEndAngular\\node_modules\\typescript\\lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
@@ -92,7 +162,7 @@
       <recent name="com.example.conseil.services" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.AuthenticationServiceTest.testSignup_VisiteurRole">
+  <component name="RunManager" selected="Spring Boot.ConseilApplication">
     <configuration name="ArticleServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="conseil" />
       <extension name="coverage">
@@ -104,22 +174,6 @@
       <option name="PACKAGE_NAME" value="com.example.conseil.services" />
       <option name="MAIN_CLASS_NAME" value="com.example.conseil.services.ArticleServiceTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ArticleServiceTest.getAllArticles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="conseil" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.conseil.services.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.conseil.services" />
-      <option name="MAIN_CLASS_NAME" value="com.example.conseil.services.ArticleServiceTest" />
-      <option name="METHOD_NAME" value="getAllArticles" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -181,21 +235,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="conseil: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="conseil/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Docker.conseil: Compose Deployment" />
       <item itemvalue="JUnit.AuthenticationServiceTest.testSignup_Visiteur" />
       <item itemvalue="JUnit.AuthenticationServiceTest.testSignup_VisiteurRole" />
       <item itemvalue="JUnit.ArticleServiceTest" />
       <item itemvalue="JUnit.ArticleServiceTest.testAddArticle_Success" />
-      <item itemvalue="JUnit.ArticleServiceTest.getAllArticles" />
       <item itemvalue="Spring Boot.ConseilApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.conseil: Compose Deployment" />
         <item itemvalue="JUnit.AuthenticationServiceTest.testSignup_VisiteurRole" />
         <item itemvalue="JUnit.AuthenticationServiceTest.testSignup_Visiteur" />
         <item itemvalue="JUnit.ArticleServiceTest" />
         <item itemvalue="JUnit.ArticleServiceTest.testAddArticle_Success" />
-        <item itemvalue="JUnit.ArticleServiceTest.getAllArticles" />
       </list>
     </recent_temporary>
   </component>
@@ -237,7 +305,16 @@
       <workItem from="1728486712467" duration="13984000" />
       <workItem from="1728548237211" duration="24292000" />
       <workItem from="1728640209016" duration="2280000" />
-      <workItem from="1728642644552" duration="4152000" />
+      <workItem from="1728642644552" duration="7182000" />
+      <workItem from="1728654964163" duration="12882000" />
+      <workItem from="1728733679559" duration="11534000" />
+      <workItem from="1728754925855" duration="91000" />
+      <workItem from="1728755041488" duration="21947000" />
+      <workItem from="1728824174888" duration="16061000" />
+      <workItem from="1728863211649" duration="423000" />
+      <workItem from="1728863661054" duration="300000" />
+      <workItem from="1728864177598" duration="5245000" />
+      <workItem from="1728899348750" duration="22155000" />
     </task>
     <servers />
   </component>

@@ -1,26 +1,26 @@
 import { Injectable } from '@angular/core';
 import {Observable} from "rxjs";
 import {HttpClient} from "@angular/common/http";
+import {RecipeDto} from "../dto/recipe-dto";
 
 @Injectable({
   providedIn: 'root'
 })
 export class FavrecipeService {
 
-  private apiUrl = 'http://localhost:8081/api';
-
+  private apiUrl = 'http://localhost:8081/api/favorites';
   constructor(private http: HttpClient) {}
 
-  getRecipe(id: number): Observable<any> {
-    return this.http.get(`${this.apiUrl}/recipes/${id}`);
+  addFavorite(visiteurId: number, recipeId: number): Observable<void> {
+    return this.http.post<void>(`${this.apiUrl}/${visiteurId}/${recipeId}`, {});
   }
 
-  addRating(recipeId: number, visiteurId: number, value: number): Observable<any> {
-    return this.http.post(`${this.apiUrl}/ratings`, { recipeId, visiteurId, value });
+  removeFavorite(visiteurId: number, recipeId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiUrl}/${visiteurId}/${recipeId}`);
   }
 
-  getAverageRating(recipeId: number): Observable<number> {
-    return this.http.get<number>(`${this.apiUrl}/ratings/average/${recipeId}`);
+  getFavorites(visiteurId: number): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiUrl}/${visiteurId}`);
   }
 
 }

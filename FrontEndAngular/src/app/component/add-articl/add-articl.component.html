@@ -1,35 +1,179 @@
-<div class="article-container">
-<h1>Create an Article</h1>
+<!--<div class="article-container">-->
+<!--  <h1>Create an Article</h1>-->
+<!--  <form [formGroup]="formArticle" (ngSubmit)="onSubmit()">-->
+<!--    <h3 class="upload-cover">-->
+<!--      <mat-icon class="custom-icon">crop_original</mat-icon> Upload cover-->
+<!--    </h3>-->
+<!--    <div class="placeholder">-->
+<!--      <h6>Upload the Article cover</h6>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Image input field &ndash;&gt;-->
+<!--    <div class="form-group">-->
+<!--      <label for="image">Image</label>-->
+<!--      <input type="file" id="image" (change)="onFileChange($event)" formControlName="image" required />-->
+<!--      <div *ngIf="formArticle.get('image')?.invalid && formArticle.get('image')?.touched" class="error">-->
+<!--        Image is required-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    <hr class="custom-line" />-->
+<!--    <h3 class="upload-cover">-->
+<!--      <mat-icon class="custom-icon">info</mat-icon> General information-->
+<!--    </h3>-->
+
+<!--    &lt;!&ndash; Title input field &ndash;&gt;-->
+<!--    <div class="form-group">-->
+<!--      <label for="titre">Name</label>-->
+<!--      <input type="text" id="titre" formControlName="titre" />-->
+<!--      <div *ngIf="formArticle.get('titre')?.invalid && formArticle.get('titre')?.touched" class="error">-->
+<!--        <div *ngIf="formArticle.get('titre')?.errors?.['required']">Title is required</div>-->
+<!--        <div *ngIf="formArticle.get('titre')?.errors?.['minlength']">Title must be at least 3 characters</div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Content input field &ndash;&gt;-->
+<!--    <div class="form-group">-->
+<!--      <label for="contenu">Content</label>-->
+<!--      <input type="text" id="contenu" formControlName="contenu" />-->
+<!--      <div *ngIf="formArticle.get('contenu')?.invalid && formArticle.get('contenu')?.touched" class="error">-->
+<!--        <div *ngIf="formArticle.get('contenu')?.errors?.['required']">Content is required</div>-->
+<!--        <div *ngIf="formArticle.get('contenu')?.errors?.['minlength']">Content must be at least 10 characters</div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Submit button &ndash;&gt;-->
+<!--    <button type="submit" class="btn btn-primary" [disabled]="formArticle.invalid">Submit</button>-->
+<!--  </form>-->
+<!--</div>-->
+
+
+<!--<div class="article-form-container">-->
+<!--  <h3 class="section-header">-->
+<!--    <mat-icon class="custom-icon">info</mat-icon> Create an Article-->
+<!--  </h3>-->
+
+<!--  <form [formGroup]="formArticle" (ngSubmit)="onSubmit()">-->
+<!--    &lt;!&ndash; Upload Cover Section &ndash;&gt;-->
+<!--    <div class="section upload-section">-->
+
+<!--      <p class="section-subtitle"> <mat-icon STYLE="Color: #bd7fe1;font-size: 22px;">crop_original</mat-icon>Upload the Article cover</p>-->
+
+<!--      <div class="form-group upload-group">-->
+<!--        <label for="image" class="upload-label"></label>-->
+<!--        <input type="file" id="image" (change)="onFileChange($event)" formControlName="image" />-->
+<!--        <div *ngIf="formArticle.get('image')?.invalid && formArticle.get('image')?.touched" class="error">-->
+<!--          Image is required-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Create Article Section &ndash;&gt;-->
+<!--    <div class="section article-details">-->
+
+
+<!--      &lt;!&ndash; Title Input &ndash;&gt;-->
+<!--      <div class="form-group">-->
+<!--        <label for="titre" class="form-label">Name <span class="required">*</span></label>-->
+<!--        <input type="text" id="titre" formControlName="titre" placeholder="Make it catchy and memorable" />-->
+<!--        <div *ngIf="formArticle.get('titre')?.invalid && formArticle.get('titre')?.touched" class="error">-->
+<!--          <div *ngIf="formArticle.get('titre')?.errors?.['required']">Title is required</div>-->
+<!--          <div *ngIf="formArticle.get('titre')?.errors?.['minlength']">Title must be at least 3 characters</div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      &lt;!&ndash; Content Input &ndash;&gt;-->
+<!--      <div class="form-group">-->
+<!--        <label for="contenu" class="form-label">Content</label>-->
+<!--        <textarea-->
+<!--          id="contenu"-->
+<!--          formControlName="contenu"-->
+<!--          placeholder="Provide essential article details"-->
+<!--          rows="5"-->
+<!--        ></textarea>-->
+<!--        <div *ngIf="formArticle.get('contenu')?.invalid && formArticle.get('contenu')?.touched" class="error">-->
+<!--          <div *ngIf="formArticle.get('contenu')?.errors?.['required']">Content is required</div>-->
+<!--          <div *ngIf="formArticle.get('contenu')?.errors?.['minlength']">Content must be at least 10 characters</div>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+
+<!--    &lt;!&ndash; Submit Button &ndash;&gt;-->
+<!--    <div class="button-container">-->
+<!--      <button type="submit" class="btn-submit" [disabled]="formArticle.invalid">Publish</button>-->
+<!--    </div>-->
+<!--  </form>-->
+<!--</div>-->
+
+
+<div class="article-form-container container mt-5 p-5 shadow-lg rounded-4">
+  <h3 class="section-header mb-4">
+    <mat-icon class="custom-icon me-2">info</mat-icon> Create an Article
+  </h3>
+
   <form [formGroup]="formArticle" (ngSubmit)="onSubmit()">
-      <h3 class="upload-cover"> <mat-icon class="custom-icon">crop_original</mat-icon> Upload cover</h3>
-    <div class="placeholder">
-      <h6>Upload the Article cover</h6>
+    <!-- Upload Cover Section -->
+    <div class="section upload-section mb-4">
+      <p class="section-subtitle text-muted mb-3">
+        <mat-icon style="color: #bd7fe1; font-size: 22px;">crop_original</mat-icon> Upload the Article Cover
+      </p>
+
+      <div class="form-group mb-3">
+        <input
+          type="file"
+          id="image"
+          class="form-control"
+          (change)="onFileChange($event)"
+          formControlName="image"
+        />
+        <div
+          *ngIf="formArticle.get('image')?.invalid && formArticle.get('image')?.touched"
+          class="error mt-1">
+          Image is required
+        </div>
+      </div>
     </div>
 
+    <!-- Create Article Section -->
+    <div class="section article-details">
+      <!-- Title Input -->
+      <div class="form-group mb-3">
+        <label for="titre" class="form-label">Title <span class="text-danger">*</span></label>
+        <input
+          type="text"
+          id="titre"
+          class="form-control"
+          formControlName="titre"
+          placeholder="Make it catchy and memorable"
+        />
+        <div *ngIf="formArticle.get('titre')?.invalid && formArticle.get('titre')?.touched" class="error mt-1">
+          <div *ngIf="formArticle.get('titre')?.errors?.['required']">Title is required</div>
+          <div *ngIf="formArticle.get('titre')?.errors?.['minlength']">Title must be at least 3 characters</div>
+        </div>
+      </div>
 
-    <div class="form-group">
-      <label for="image">Image</label>
-      <input type="file" id="image" (change)="onFileChange($event)" formControlName="image" required />
+      <!-- Content Input -->
+      <div class="form-group mb-3">
+        <label for="contenu" class="form-label">Content</label>
+        <textarea
+          id="contenu"
+          class="form-control"
+          formControlName="contenu"
+          placeholder="Provide essential article details"
+          rows="5"
+        ></textarea>
+        <div *ngIf="formArticle.get('contenu')?.invalid && formArticle.get('contenu')?.touched" class="error mt-1">
+          <div *ngIf="formArticle.get('contenu')?.errors?.['required']">Content is required</div>
+          <div *ngIf="formArticle.get('contenu')?.errors?.['minlength']">Content must be at least 10 characters</div>
+        </div>
+      </div>
     </div>
 
-
-
-    <hr class="custom-line">
-    <h3 class="upload-cover"> <mat-icon class="custom-icon">info</mat-icon> General information</h3>
-    <div class="form-group">
-      <label for="titre">name</label>
-      <input type="text" id="titre" formControlName="titre" />
+    <!-- Submit Button -->
+    <div class="button-container mt-4">
+      <button type="submit" class="btn btn-lg btn-violet w-100" [disabled]="formArticle.invalid">
+        Publish
+      </button>
     </div>
-    <div class="form-group">
-      <label for="contenu">contenu</label>
-      <input type="text" id="contenu" formControlName="contenu" />
-    </div>
-
-
-    <button type="submit" class="btn btn-primary" [disabled]="formArticle.invalid">Submit Order</button>
   </form>
-
 </div>
-
-
-

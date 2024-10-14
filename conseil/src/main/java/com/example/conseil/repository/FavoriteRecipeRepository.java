@@ -5,11 +5,17 @@ import com.example.conseil.entities.Recipe;
 import com.example.conseil.entities.Visiteur;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 
+import java.util.List;
 import java.util.Optional;
 
 public interface FavoriteRecipeRepository extends JpaRepository<FavoriteRecipe,Long> {
-    Optional<FavoriteRecipe> findByRecipeAndVisiteur(Recipe recipe, Visiteur visiteur);
-    @Query("SELECT AVG(f.value) FROM FavoriteRecipe f WHERE f.recipe = :recipe")
-    double getAverageRatingForRecipe(Recipe recipe);
+
+    @Query("SELECT f FROM FavoriteRecipe f WHERE f.visiteur.id = :visiteurId AND f.recipe.id = :recipeId")
+    Optional<FavoriteRecipe> findByVisiteurIdAndRecipeId(@Param("visiteurId") Long visiteurId,
+                                                         @Param("recipeId") Long recipeId);
+
+    List<FavoriteRecipe> findByVisiteurId(Long visiteurId);
+    boolean existsByVisiteurIdAndRecipeId(Long visiteurId, Long recipeId);
 }

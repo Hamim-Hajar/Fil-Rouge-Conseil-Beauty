@@ -9,6 +9,7 @@ export interface RecipeDto {
   image?: string;
   commentIds: number[];
   favoriteRecipeIds: number[];
+  category: string;
 
 
 }

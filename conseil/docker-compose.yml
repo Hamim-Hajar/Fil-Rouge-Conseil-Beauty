@@ -29,7 +29,6 @@
 #  myconseil-network:
 #    driver: bridge
 
-
 version: "3.8"
 
 services:
@@ -45,7 +44,7 @@ services:
     ports:
       - '3307:3306'
 
-  cake_app:
+  conseil-app:
     image: hajarhamim/fil-rouge-conseil:latest
     ports:
       - "8081:8081"

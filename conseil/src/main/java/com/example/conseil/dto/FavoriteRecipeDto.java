@@ -14,7 +14,10 @@ public class FavoriteRecipeDto {
     private Long id;
     private String recipeName;
     private int value;
-    private Long recipeId;
+
+    private RecipeDto recipe; // Nested RecipeDto object
     private Long visiteurId;
+
+
 }
 

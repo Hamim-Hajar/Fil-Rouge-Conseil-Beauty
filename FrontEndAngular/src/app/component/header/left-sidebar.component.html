@@ -11,16 +11,23 @@
       <mat-icon>add</mat-icon>
       Login
     </button>
+
   </ng-container>
 
   <ng-template #loggedIn>
     <button mat-raised-button  routerLink="/add" style="background-color: #D562F2; color: white; margin-right: 10px;">
-      <mat-icon>home</mat-icon>
+      <mat-icon>dashboard</mat-icon>
       To my Dashboard
     </button>
-    <button mat-raised-button (click)="logout()" style="background-color: #D562F2; color: white">
+    <button *ngIf="!isMainPage" mat-raised-button routerLink="/main"
+            style="background-color: #D562F2; color: white; margin-right: 10px;">
+      <mat-icon>home</mat-icon>
+      go home
+    </button>
+    <button mat-raised-button (click)="logout()"  style="background-color: #D562F2; color: white">
       <mat-icon>exit_to_app</mat-icon>
       Logout
     </button>
+
   </ng-template>
 </mat-toolbar>

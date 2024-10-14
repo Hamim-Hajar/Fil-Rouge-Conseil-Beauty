@@ -1,41 +1,151 @@
-<div class="article-container">
-  <h1>Create an Article</h1>
+<!--<div class="article-container">-->
+<!--  <h1>Create an Article</h1>-->
+<!--  <form [formGroup]="formRecipe" (ngSubmit)="onSubmit()">-->
+<!--    <h3 class="upload-cover"> <mat-icon class="custom-icon">crop_original</mat-icon> Upload cover</h3>-->
+<!--    <div class="placeholder">-->
+<!--      <h6>Upload the Article cover</h6>-->
+<!--    </div>-->
+
+
+<!--    <div class="form-group">-->
+<!--      <label for="image">Image</label>-->
+<!--      <input type="file" id="image" (change)="onFileChange($event)" formControlName="image" required />-->
+<!--    </div>-->
+
+
+
+
+<!--    <hr class="custom-line">-->
+<!--    <h3 class="upload-cover"> <mat-icon class="custom-icon">info</mat-icon> General information</h3>-->
+<!--    <div class="form-group">-->
+<!--      <label for="name"> recipe title </label>-->
+<!--      <input type="name" id="name" formControlName="name" />-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="description">description</label>-->
+<!--      <input type="description" id="description" formControlName="description" />-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="ingredients">ingredients</label>-->
+<!--      <input type="ingredients" id="ingredients" formControlName="ingredients" />-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="instructions">instructions</label>-->
+<!--      <input type="instructions" id="instructions" formControlName="instructions" />-->
+<!--    </div>-->
+
+
+<!--    <button type="submit" class="btn btn-primary" [disabled]="formRecipe.invalid">Submit Order</button>-->
+<!--  </form>-->
+
+<!--</div>-->
+
+
+
+<div class="article-container container p-5 shadow-lg rounded-4 mt-5">
+  <h1 class="text-center mb-4">Create a Recipe</h1>
+
   <form [formGroup]="formRecipe" (ngSubmit)="onSubmit()">
-    <h3 class="upload-cover"> <mat-icon class="custom-icon">crop_original</mat-icon> Upload cover</h3>
-    <div class="placeholder">
-      <h6>Upload the Article cover</h6>
+
+    <!-- Upload Cover Section -->
+    <h3 class="upload-cover mb-3 text-violet">
+      <mat-icon class="custom-icon me-2">crop_original</mat-icon> Upload Cover
+    </h3>
+    <div class="placeholder text-center border-dashed rounded-3 p-4 mb-4">
+      <h6 class="text-muted">Upload the Article Cover</h6>
     </div>
 
-
-    <div class="form-group">
-      <label for="image">Image</label>
-      <input type="file" id="image" (change)="onFileChange($event)" formControlName="image" required />
+    <!-- Image Upload -->
+    <div class="form-group mb-3">
+      <label for="image" class="form-label fw-bold text-violet">Image</label>
+      <input
+        type="file"
+        id="image"
+        class="form-control"
+        (change)="onFileChange($event)"
+        formControlName="image"
+        required
+      />
     </div>
 
+    <hr class="custom-line my-5" />
 
+    <!-- General Information Section -->
+    <h3 class="upload-cover mb-3 text-violet">
+      <mat-icon class="custom-icon me-2">info</mat-icon> General Information
+    </h3>
 
-
-    <hr class="custom-line">
-    <h3 class="upload-cover"> <mat-icon class="custom-icon">info</mat-icon> General information</h3>
-    <div class="form-group">
-      <label for="name"> recipe title </label>
-      <input type="name" id="name" formControlName="name" />
-    </div>
-    <div class="form-group">
-      <label for="description">description</label>
-      <input type="description" id="description" formControlName="description" />
-    </div>
-    <div class="form-group">
-      <label for="ingredients">ingredients</label>
-      <input type="ingredients" id="ingredients" formControlName="ingredients" />
-    </div>
-    <div class="form-group">
-      <label for="instructions">instructions</label>
-      <input type="instructions" id="instructions" formControlName="instructions" />
+    <!-- Recipe Title -->
+    <div class="form-group mb-3">
+      <label for="name" class="form-label fw-bold text-violet">Recipe Title</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        formControlName="name"
+        placeholder="Enter the title"
+        required
+      />
     </div>
 
+    <!-- Description -->
+    <div class="form-group mb-3">
+      <label for="description" class="form-label fw-bold text-violet">Description</label>
+      <textarea
+        id="description"
+        class="form-control"
+        rows="3"
+        formControlName="description"
+        placeholder="Enter a brief description"
+        required
+      ></textarea>
+    </div>
 
-    <button type="submit" class="btn btn-primary" [disabled]="formRecipe.invalid">Submit Order</button>
-  </form>
+    <!-- Ingredients -->
+    <div class="form-group mb-3">
+      <label for="ingredients" class="form-label fw-bold text-violet">Ingredients</label>
+      <input
+        type="text"
+        id="ingredients"
+        class="form-control"
+        formControlName="ingredients"
+        placeholder="List ingredients"
+      />
+    </div>
+
+    <!-- Instructions -->
+    <div class="form-group mb-4">
+      <label for="instructions" class="form-label fw-bold text-violet">Instructions</label>
+      <textarea
+        id="instructions"
+        class="form-control"
+        rows="4"
+        formControlName="instructions"
+        placeholder="Describe the instructions"
+      ></textarea>
+    </div>
+    <!-- Category Selector -->
+    <div class="form-group mb-4">
+      <label for="category" class="form-label">Category <span class="text-danger">*</span></label>
+      <select id="category" class="form-select" formControlName="category" required>
+        <option value="">Select Category</option>
+        <option value="HAIR">Hair</option>
+        <option value="FACE">Face</option>
+      </select>
+      <div *ngIf="formRecipe.get('category')?.invalid && formRecipe.get('category')?.touched" class="error mt-1">
+        Category is required
+      </div>
 
 </div>
+
+    <!-- Submit Button -->
+    <button
+      type="submit"
+      class="btn btn-violet btn-lg w-100"
+      [disabled]="formRecipe.invalid"
+    >
+      Submit Order
+    </button>
+  </form>
+</div>
+

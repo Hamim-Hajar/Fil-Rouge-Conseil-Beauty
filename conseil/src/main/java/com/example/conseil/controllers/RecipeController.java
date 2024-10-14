@@ -31,6 +31,7 @@ private RecipeService recipeService;
                                                @RequestParam String description,
                                                 @RequestParam String ingredients,
                                                @RequestParam String instructions,
+                                               @RequestParam RecipeCategory category,
                                                @RequestParam Long specialist_id,
                                                @RequestPart("image") MultipartFile image
                                                )  throws IOException{
@@ -41,6 +42,7 @@ private RecipeService recipeService;
                 .description(description)
                 .ingredients(ingredients)
                 .instructions(instructions)
+                .category(category)
                 .build();
 
         RecipeDto addRecipe = recipeService.addRecipe(recipeDto,specialist_id ,imageBytes );
@@ -61,7 +63,8 @@ private RecipeService recipeService;
     public ResponseEntity<RecipeDto> updateRecipe(@PathVariable Long id,
                                                   @RequestParam("name") String name,
                                                   @RequestParam("ingredients") String ingredients,
-                                                          @RequestParam("instructions") String instructions,
+                                                  @RequestParam("category") RecipeCategory category,
+                                                  @RequestParam("instructions") String instructions,
                                                   @RequestParam("description") String description,
                                                   @RequestParam(value = "image", required = false) MultipartFile image)
      {
@@ -79,6 +82,7 @@ private RecipeService recipeService;
          recipeDto.setIngredients(ingredients);
          recipeDto.setInstructions(instructions);
          recipeDto.setDescription(description);
+         recipeDto.setCategory(category);
 
 
         RecipeDto updatedRecipe = recipeService.updateRecipe(id, recipeDto, imageBytes);
@@ -91,4 +95,12 @@ private RecipeService recipeService;
     public ResponseEntity<Void> deleteRecipe(@PathVariable Long id) {
         recipeService.deleteRecipe(id);
         return ResponseEntity.noContent().build();
-    }}
+    }
+    @GetMapping("/category/{category}")
+    public ResponseEntity<List<RecipeDto>> getRecipesByCategory(
+            @PathVariable RecipeCategory category) {
+        List<RecipeDto> recipes = recipeService.getRecipesByCategory(category);
+        return ResponseEntity.ok(recipes);
+    }
+
+}

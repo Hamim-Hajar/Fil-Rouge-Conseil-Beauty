@@ -65,6 +65,7 @@ public class RecipeService {
         existingRecipe.setDescription(recipeDto.getDescription());
         existingRecipe.setIngredients(recipeDto.getIngredients());
         existingRecipe.setInstructions(recipeDto.getInstructions());
+        existingRecipe.setCategory(recipeDto.getCategory());
         if (imageBytes != null && imageBytes.length > 0) {
             existingRecipe.setImage(imageBytes);
         }

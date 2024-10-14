@@ -1,108 +1,269 @@
-/* General container styling */
-.email-contact-container {
+/*!* General container styling *!*/
+/*.email-contact-container {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  align-items: center;*/
+/*  height: 130vh;*/
+/*  background-color: #f0f0f5; !* Light background for contrast *!*/
+/*}*/
+
+/*.email-form-wrapper {*/
+/*  background-color: white;*/
+/*  padding: 50px;*/
+/*  border-radius: 10px;*/
+/*  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);*/
+/*  max-width: 400px;*/
+/*  width: 100%;*/
+/*  text-align: center;*/
+/*}*/
+
+/*!* Heading styling *!*/
+/*.email-title {*/
+/*  font-size: 28px;*/
+/*  font-weight: 700;*/
+/*  color: #333;*/
+/*  margin-bottom: 10px;*/
+/*}*/
+
+/*.highlight {*/
+/*  color: #bd7fe1; !* Pink highlight for 'Email' *!*/
+/*}*/
+
+/*.email-subtitle {*/
+/*  font-size: 16px;*/
+/*  color: #777;*/
+/*  margin-bottom: 40px;*/
+/*}*/
+
+/*!* Input field styling *!*/
+/*.input-wrapper {*/
+/*  margin-bottom: 30px;*/
+/*  position: relative;*/
+/*}*/
+
+/*.input-label {*/
+/*  font-size: 14px;*/
+/*  text-transform: uppercase;*/
+/*  letter-spacing: 1px;*/
+/*  color: #333;*/
+/*  font-weight: bold;*/
+/*  display: block;*/
+/*  text-align: left;*/
+/*  margin-bottom: 8px;*/
+/*}*/
+
+/*.input-placeholder {*/
+/*  width: 100%;*/
+/*  border: none;*/
+/*  border-bottom: 2px solid #ccc;*/
+/*  padding: 10px;*/
+/*  font-size: 14px;*/
+/*  color: #555;*/
+/*  outline: none;*/
+/*  transition: border-color 0.3s;*/
+/*}*/
+
+/*.input-placeholder:focus {*/
+/*  border-bottom-color: #7c00ff; !* Violet on focus *!*/
+/*}*/
+
+/*textarea.input-placeholder {*/
+/*  height: 100px;*/
+/*  resize: none;*/
+/*}*/
+
+/*!* Underline effect for input fields *!*/
+/*.input-underline {*/
+/*  height: 2px;*/
+/*  background: linear-gradient(to right, #7c00ff, #ff69b4); !* Violet to pink gradient *!*/
+/*  position: absolute;*/
+/*  bottom: -2px;*/
+/*  left: 0;*/
+/*  right: 0;*/
+/*}*/
+
+/*!* Submit button styling *!*/
+/*.submit-button {*/
+/*  width: 100%;*/
+/*  padding: 12px;*/
+/*  background: linear-gradient(to right, #ff69b4, #7c00ff);*/
+/*  border: none;*/
+/*  border-radius: 5px;*/
+/*  color: white;*/
+/*  text-transform: uppercase;*/
+/*  font-weight: bold;*/
+/*  font-size: 16px;*/
+/*  cursor: pointer;*/
+/*  transition: background 0.3s;*/
+/*}*/
+
+/*.submit-button:hover {*/
+/*  background: linear-gradient(to right, #7c00ff, #ff69b4); !* Reverse gradient on hover *!*/
+/*}*/
+
+/*!* Optional additional global styles *!*/
+/*body {*/
+/*  margin: 0;*/
+/*  font-family: 'Arial', sans-serif;*/
+/*}*/
+
+
+
+.email-contact-section {
   display: flex;
+  flex-direction: column;
+  max-width: none !important;
+}
+
+.contact-container {
+  background-color: #fafafb;
+  box-shadow: 0 3px 6px rgba(18, 15, 40, 0.12);
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  overflow: hidden;
+  align-items: flex-start;
   justify-content: center;
+  padding:  60px 200px ;
+
+}
+
+.content-wrapper {
+  display: flex;
+  margin-bottom: -27px;
+  width: 953px;
+  max-width: 100%;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.progress-indicator {
+  align-self: flex-start;
+  display: flex;
+  margin-top: 65px;
+  flex-direction: column;
+}
+
+.progress-dot {
+  border-radius: 50%;
+  display: flex;
+  height: 22px;
+}
+
+
+
+.progress-line {
+  aspect-ratio: 0.01;
+  object-fit: contain;
+  object-position: center;
+  width: 2px;
+  align-self: center;
+  margin-top: 13px;
+}
+
+.form-container {
+  border-radius: 6px;
+  background-color: #fff;
+  box-shadow: 0 0 2px rgba(23, 26, 31, 0.12);
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  height: 130vh;
-  background-color: #f0f0f5; /* Light background for contrast */
+  padding: 38px 80px 87px ;
+  font: 14px/2 Mulish, sans-serif;
 }
 
-.email-form-wrapper {
-  background-color: white;
-  padding: 50px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  max-width: 400px;
-  width: 100%;
-  text-align: center;
+.form-title {
+  color: #171a1f;
+  font: 700 48px/1 Encode Sans, sans-serif;
 }
 
-/* Heading styling */
-.email-title {
-  font-size: 28px;
+.form-subtitle {
+  color: #909590;
+  margin: 8px 0 0 19px;
+  font: 400 18px/2 Encode Sans, sans-serif;
+}
+
+.form-field {
+  border-radius: 6px 6px 0 0;
+  background-color: transparent;
+  display: flex;
+  margin-top: 38px;
+  width: 492px;
+  max-width: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 2px 0;
+}
+
+.form-label {
+  color: #424955;
   font-weight: 700;
-  color: #333;
-  margin-bottom: 10px;
 }
 
-.highlight {
-  color: #bd7fe1; /* Pink highlight for 'Email' */
-}
-
-.email-subtitle {
-  font-size: 16px;
-  color: #777;
-  margin-bottom: 40px;
-}
-
-/* Input field styling */
-.input-wrapper {
-  margin-bottom: 30px;
-  position: relative;
-}
-
-.input-label {
-  font-size: 14px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #333;
-  font-weight: bold;
-  display: block;
-  text-align: left;
-  margin-bottom: 8px;
-}
-
-.input-placeholder {
+.form-input {
+  color: #bcbcca;
+  font-weight: 400;
   width: 100%;
   border: none;
-  border-bottom: 2px solid #ccc;
-  padding: 10px;
-  font-size: 14px;
-  color: #555;
-  outline: none;
-  transition: border-color 0.3s;
+  border-bottom: 1px solid #bcbcca;
+  padding: 5px 0;
 }
 
-.input-placeholder:focus {
-  border-bottom-color: #7c00ff; /* Violet on focus */
-}
-
-textarea.input-placeholder {
-  height: 100px;
-  resize: none;
-}
-
-/* Underline effect for input fields */
-.input-underline {
-  height: 2px;
-  background: linear-gradient(to right, #7c00ff, #ff69b4); /* Violet to pink gradient */
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  right: 0;
-}
-
-/* Submit button styling */
-.submit-button {
-  width: 100%;
-  padding: 12px;
-  background: linear-gradient(to right, #ff69b4, #7c00ff);
-  border: none;
-  border-radius: 5px;
-  color: white;
-  text-transform: uppercase;
-  font-weight: bold;
+.form-button {
+  border-radius: 6px;
+  background-color: #ecbaf0;
+  box-shadow: 0 0 2px rgba(242, 98, 152, 0.12);
+  margin-top: 82px;
+  width: 359px;
+  max-width: 100%;
+  overflow: hidden;
   font-size: 16px;
+  color: #fff;
+  font-weight: 700;
+  line-height: 2;
+  padding: 9px 70px;
+  border: none;
   cursor: pointer;
-  transition: background 0.3s;
 }
 
-.submit-button:hover {
-  background: linear-gradient(to right, #7c00ff, #ff69b4); /* Reverse gradient on hover */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
-/* Optional additional global styles */
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
+@media (max-width: 991px) {
+  .contact-container {
+    max-width: 100%;
+    padding: 100px 20px;
+  }
+
+  .content-wrapper {
+    margin-bottom: 10px;
+  }
+
+  .progress-indicator {
+    margin-top: 40px;
+  }
+
+  .form-container {
+    max-width: 100%;
+    padding: 0 20px;
+  }
+
+  .form-title {
+    font-size: 40px;
+  }
+
+  .form-button {
+    margin-top: 40px;
+    padding: 9px 20px;
+  }
 }

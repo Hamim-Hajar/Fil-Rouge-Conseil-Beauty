@@ -23,6 +23,7 @@ export class RecipeService {
     formData.append('ingredients',recipeDto.ingredients);
     formData.append('instructions',recipeDto.instructions);
     formData.append('specialist_id', specialist_id.toString());
+    formData.append('category',recipeDto.category);
     formData.append('image', image);
     return this.http.post<RecipeDto>(`${this.apiUrl}/add`, formData,);
   }
@@ -56,13 +57,17 @@ export class RecipeService {
   }
 
 
-  // Get recipes by category
-  getRecipesByCategory(category: RecipeCategory): Observable<Recipe[]> {
-    return this.http.get<Recipe[]>(`${this.apiUrl}/category/${category}`)
+  // // Get recipes by category
+  // getRecipesByCategory(category: RecipeCategory): Observable<Recipe[]> {
+  //   return this.http.get<Recipe[]>(`${this.apiUrl}/category/${category}`)
+  //     .pipe(catchError(this.handleError));
+  // }
+
+  getRecipesByCategory(category: RecipeCategory): Observable<RecipeDto[]> {
+    return this.http.get<RecipeDto[]>(`${this.apiUrl}/category/${category}`)
       .pipe(catchError(this.handleError));
   }
-
-  // Handle errors from the API
+    // Handle errors from the API
   private handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {
       // Client-side or network error

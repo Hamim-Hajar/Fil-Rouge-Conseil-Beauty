@@ -1,21 +1,4 @@
-
-<!--<mat-toolbar class="custom-toolbar">-->
-<!--  <img src="assets/images/beautb.png" alt="Icon" style="width: 74px; height: 74px; margin-right: 8px;">-->
-<!--  <h2>-->
-<!--    <span style="color: black;">Your</span>-->
-<!--    <span style="color: #D562F2;">Beauty</span>-->
-<!--  </h2>-->
-<!--  <span style="flex: auto"></span>-->
-
-<!--  <button mat-raised-button routerLink="/login" style="background-color: #D562F2;color: white">-->
-<!--    <mat-icon>add</mat-icon>-->
-<!--    Login</button>-->
-
-<!--  <button mat-raised-button routerLink="/login" style="background-color: #D562F2;color: white">-->
-<!--    <mat-icon>add</mat-icon>-->
-<!--    Signup</button>-->
-<!--</mat-toolbar>-->
-
+<!-- User Role-based Header -->
 <div *ngIf="userRole === 'VISITEUR'">
   <app-headertwo></app-headertwo>
 </div>
@@ -23,99 +6,143 @@
 <div *ngIf="userRole === 'SPECIALIST'">
   <app-left-sidebar></app-left-sidebar>
 </div>
+
 <div *ngIf="userRole === ''">
- <app-headerthree></app-headerthree>
+  <app-headerthree></app-headerthree>
 </div>
 
+<!-- Main Image Section -->
 <section class="image-container">
-  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/9eb7c3518f9f29c52dc1d1fc22fe3406a03f02d5487abfeb752f61798aee398f?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" class="full-width-image" alt="Description of the image" />
+  <img
+    loading="lazy"
+    src="https://cdn.builder.io/api/v1/image/assets/TEMP/9eb7c3518f9f29c52dc1d1fc22fe3406a03f02d5487abfeb752f61798aee398f?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27"
+    class="img-fluid full-width-image"
+    alt="Description of the image"
+  />
 </section>
-<section class="events-container">
-  <div class="events-wrapper">
-    <div class="events-content">
-      <header class="events-header">
-        <div class="events-title-wrapper">
-          <h2 class="events-title">Our recipe</h2>
-          <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/74bb04fc422bd2bb08a82342baa004d8ca97b0b11c70f292c37262f0360e991a?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="events-icon" />
-        </div>
-        <button class="view-more-btn">View more</button>
-      </header>
-      <nav class="events-menu">
-        <div class="menu-item menu-item-active">All</div>
-        <div class="menu-item menu-item-inactive">Hair</div>
-        <div class="menu-item menu-item-inactive">Face</div>
-        <div class="menu-item menu-item-inactive">Face Caire</div>
-        <div class="menu-item menu-item-inactive">Health Food</div>
-        <div class="menu-item menu-item-inactive" routerLink="/login">log in</div>
-        <div class="menu-item menu-item-inactive"></div>
-      </nav>
-      <div class="events-list">
-        <div class="events-grid">
-          <article class="event-column" *ngFor="let article of listArticle">
-            <div class="event-card">
-              <div class="product_image">
-                <img [src]="'data:image/png;base64,'+article.image" alt="" style="width: 100%; height: 100%;">
 
-              </div>
-              <div class="event-details">
-                <div class="event-header">
-                  <h3 class="event-name">{{article.titre}}</h3>
-                  <p class="event-price">From $10</p>
-                </div>
-                <div class="event-date">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a9a339a244ae4c563f954c857f559c29096daa1b246650c40c38b64a67f6ef14?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="event-icon" />
-                  <time class="event-datetime">{{ article.datePublication }} </time>
-                </div>
-                <div class="event-location">
-                  <button id="read_btn" [routerLink]="['/home', { idarticle: article.id }]">show more</button>
-                </div>
-              </div>
-            </div>
-          </article>
+<!-- Search Bar -->
+<div class="container d-flex justify-content-center align-items-center mt-5">
+  <div class="search-container d-flex align-items-center shadow-lg rounded p-3">
+    <i class="bi bi-search search-icon"></i>
+    <input
+      type="text"
+      class="form-control search-input border-0"
+      placeholder="Search here"
+      value="hair"
+    />
+    <div class="divider mx-3"></div>
+    <button class="btn btn-primary search-button">Search</button>
+  </div>
+</div>
 
+<!-- Events Section -->
+<section class="events-container bg-white py-5">
+  <div class="container">
+    <h2 class="mb-4">Our Recipes</h2>
+    <nav class="events-menu mb-3">
+      <div
+        class="menu-item"
+        [ngClass]="{ 'menu-item-active': selectedCategory === null }"
+        (click)="fetchAllRecipes()">
+        All
+      </div>
+      <div
+        class="menu-item"
+        [ngClass]="{ 'menu-item-active': selectedCategory === RecipeCategory.HAIR }"
+        (click)="onCategoryClick(RecipeCategory.HAIR)">
+        Hair
+      </div>
+      <div
+        class="menu-item"
+        [ngClass]="{ 'menu-item-active': selectedCategory === RecipeCategory.FACE }"
+        (click)="onCategoryClick(RecipeCategory.FACE)">
+        Face
+      </div>
+    </nav>
+    <div class="menu-item" routerLink="/login">Log in</div>
+
+    <ng-template #noRecipes>
+      <p class="text-center text-muted">No recipes found for the selected category.</p>
+    </ng-template>
+    <div class="row g-4" *ngIf="listRecipe.length > 0; else noRecipes">
+      <div class="col-md-4" *ngFor="let recipe of listRecipe">
+        <div class="card event-card">
+          <div class="card-image-wrapper">
+            <img
+              [src]="'data:image/png;base64,' + recipe.image"
+              class="card-img"
+              alt="Recipe Image"
+            />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ recipe.name }}</h5>
+            <p class="card-text">{{ recipe.description }}</p>
+            <button (click)="addFavorite(recipe.id)">Add to Favorites</button>
+            <button *ngIf="isFavorite(recipe.id)" (click)="removeFavorite(recipe.id)">
+              Remove from Favorites
+            </button>
+            <p class="text-muted mb-2">
+              <i class="bi bi-calendar-date"></i> {{ recipe.datePublication | date }}
+            </p>
+            <a
+              [routerLink]="['/home', { idrecipe: recipe.id }]"
+              class="btn btn-violet w-100"
+            >
+              Show More
+            </a>
+          </div>
         </div>
       </div>
     </div>
+
+
+
   </div>
 </section>
-<section class="articles-section">
-  <div class="articles-container">
-    <div class="articles-wrapper">
-      <header class="articles-header">
-        <h2 class="articles-title">Our Articles</h2>
-        <button class="view-more-btn">View more</button>
-      </header>
-      <div class="articles-grid">
-        <div class="articles-row">
-          <article class="event-column" *ngFor="let recipe of listRecipe">
-            <div class="event-card">
-              <div class="product_image">
-                <img [src]="'data:image/png;base64,'+recipe.image" alt="" style="width: 100%; height: 100%;">
-
-              </div>
-              <div class="event-details">
-                <div class="event-header">
-                  <h3 class="event-name">{{recipe.name}}</h3>
-                  <p class="event-price">From $10</p>
-                </div>
-                <div class="event-date">
-                  <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/a9a339a244ae4c563f954c857f559c29096daa1b246650c40c38b64a67f6ef14?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="" class="event-icon" />
-                  <time class="event-datetime">{{ recipe.datePublication}} </time>
-                </div>
-                <div class="event-location">
-                  <button id="read_btnn" [routerLink]="['/home', { idrecipe: recipe.id}]">show more</button>
-                </div>
-              </div>
-            </div>
-          </article>
+<!-- Recipes Section -->
+<section class="articles-section bg-violet-light py-5">
+  <div class="container">
+    <h2 class="mb-4">Our Articles</h2>
 
 
+    <div class="row g-4">
+      <div class="col-md-4" *ngFor="let article of listArticle">
+        <div class="card event-card">
+          <div class="card-image-wrapper">
+            <img
+              [src]="'data:image/png;base64,' + article.image"
+              class="card-img"
+              alt="Article Image"
+            />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title">{{ article.titre }}</h5>
+            <p class="card-text">From $10</p>
+            <p class="text-muted mb-2">
+              <i class="bi bi-calendar-date"></i> {{ article.datePublication }}
+            </p>
+            <a
+              [routerLink]="['/home', { idarticle: article.id }]"
+              class="btn btn-violet w-100"
+            >
+              Show More
+            </a>
+          </div>
         </div>
       </div>
     </div>
+
+    <!-- No Recipes Template -->
+    <ng-template #noRecipes>
+      <p class="text-center text-muted">No recipes found for the selected category.</p>
+    </ng-template>
   </div>
 </section>
-<section class="image-container">
-  <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/TEMP/d26e84103506ec651905d09a0e384dfdcbc61b32a620562368df28db304c7c04?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" class="full-width-image" alt="Description of the image" />
-</section>
+
+
+
+
+
+<!-- Footer -->
 <app-footer></app-footer>

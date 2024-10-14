@@ -1,3 +1,62 @@
-.table-div{
-  border-radius: 5%;
+/*.table-div{*/
+/*  border-radius: 5%;*/
+/*}*/
+
+.table-div {
+  background-color: #f5f5fa; /* Soft white background */
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.bg-violet {
+  background-color: #bd7fe1 !important; /* Violet background */
+}
+
+.text-white {
+  color: #ffffff !important;
+}
+
+.mat-elevation-z8 {
+  box-shadow: 0px 8px 16px rgba(168, 118, 234, 0.4); /* Soft violet shadow */
+}
+
+.alert-secondary {
+  background-color: #e8eaf6;
+  color: #bd7fe1;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(106, 27, 154, 0.1); /* Light violet hover */
+}
+
+
+/* Violet Outline Button for Delete */
+.btn-violet-outline {
+  border: 2px solid #6a1b9a;
+  color: #6a1b9a;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-violet-outline:hover {
+  background-color: #6a1b9a;
+  color: #fff;
+}
+
+/* Soft Pink Outline Button for Update */
+.btn-pink-outline {
+  border: 2px solid #f48fb1;
+  color: #f48fb1;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-pink-outline:hover {
+  background-color: #f48fb1;
+  color: #fff;
+}
+.button-group {
+  display: flex;
+  gap: 8px; /* Adjust this value to control spacing */
+  align-items: center;
 }

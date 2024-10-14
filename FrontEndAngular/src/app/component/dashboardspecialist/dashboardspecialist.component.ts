@@ -24,7 +24,7 @@ export class DashboardspecialistComponent implements AfterViewInit {
 
   logout(): void {
     localStorage.removeItem("token");
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('/main');
   }
 
   loadComponent(componentName: string): void {

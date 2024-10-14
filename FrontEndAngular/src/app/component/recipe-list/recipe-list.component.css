@@ -1,0 +1,211 @@
+/*.recipe-list-container {*/
+/*  padding: 20px;*/
+/*  border-radius: 12px;*/
+/*  font-family: 'Roboto', sans-serif;*/
+/*  background-color: #f9f9f9; !* Light background for better contrast *!*/
+/*  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); !* Subtle shadow for depth *!*/
+/*}*/
+
+/*.header {*/
+/*  margin-bottom: 20px; !* Space between header and content *!*/
+/*}*/
+
+/*.recipe-container {*/
+/*  background-color: #ffffff; !* White background for the table *!*/
+/*  border-radius: 12px; !* Rounded corners *!*/
+/*  padding: 20px; !* Padding for internal spacing *!*/
+/*  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); !* Soft shadow for depth *!*/
+/*}*/
+
+/*.filter-form-container {*/
+/*  margin-bottom: 20px; !* Space below the filter form *!*/
+/*}*/
+
+/*.filter-form {*/
+/*  display: flex;*/
+/*  justify-content: space-between;*/
+/*  flex-wrap: wrap; !* Allows wrapping on smaller screens *!*/
+/*}*/
+
+/*.filter-input {*/
+/*  width: 30%;*/
+/*  min-width: 200px; !* Ensures minimum width for input fields *!*/
+/*  margin-right: 10px; !* Space between inputs *!*/
+/*}*/
+
+/*table {*/
+/*  width: 100%;*/
+/*  border-spacing: 0 10px;*/
+/*  border-radius: 12px; !* Matches the container's border radius *!*/
+/*  overflow: hidden; !* Ensures rounded corners work *!*/
+/*}*/
+
+/*.mat-header-cell {*/
+/*  background-color: #0064cf; !* Header background color *!*/
+/*  color: #fff; !* Header text color *!*/
+/*  font-weight: bold;*/
+/*  font-size: 16px;*/
+/*}*/
+
+/*.mat-header-cell.mat-sort-header-sorted {*/
+/*  color: #004187; !* Different color for sorted header *!*/
+/*}*/
+
+/*.mat-cell {*/
+/*  background-color: #ffffff; !* Cell background color *!*/
+/*  border-radius: 8px; !* Rounded corners for cells *!*/
+/*  padding: 10px;*/
+/*  font-size: 14px;*/
+/*  color: #333; !* Text color *!*/
+/*}*/
+
+/*.mat-header-row,*/
+/*.mat-row {*/
+/*  height: 60px; !* Consistent row height *!*/
+/*}*/
+
+/*.mat-row:hover {*/
+/*  background-color: #e0e0e0; !* Hover effect for rows *!*/
+/*}*/
+
+/*.mat-elevation-z8 {*/
+/*  border-radius: 8px; !* Rounded corners for elevation *!*/
+/*}*/
+
+/*mat-paginator {*/
+/*  margin-top: 15px; !* Space above paginator *!*/
+/*  background-color: #fff; !* Paginator background color *!*/
+/*  border-radius: 8px; !* Rounded corners *!*/
+/*  padding: 10px; !* Internal padding *!*/
+/*}*/
+
+/*button[mat-button] {*/
+/*  display: inline-flex;*/
+/*  align-items: center;*/
+/*}*/
+
+/*button[mat-button] mat-icon {*/
+/*  margin-right: 5px; !* Space between icon and text *!*/
+/*}*/
+
+/*!* Style for editable input fields *!*/
+/*.inputedit {*/
+/*  background-color: #f3f3f3; !* Light grey background *!*/
+/*  border: none; !* No border *!*/
+/*  border-bottom: 2px solid #0064cf; !* Bottom border for focus *!*/
+/*  padding: 5px;*/
+/*  width: 100%;*/
+/*  font-size: 14px; !* Font size for input *!*/
+/*  border-radius: 4px; !* Rounded corners *!*/
+/*}*/
+
+/*.inputedit:focus {*/
+/*  outline: none; !* No outline on focus *!*/
+/*  border-bottom: 2px solid #004187; !* Darker border on focus *!*/
+/*  background-color: #ffffff; !* White background on focus *!*/
+/*  transition: border-bottom-color 0.3s ease-in-out, background-color 0.3s ease-in-out; !* Transition effect *!*/
+/*}*/
+
+/*.inputedit::placeholder {*/
+/*  color: #757575; !* Placeholder text color *!*/
+/*}*/
+
+/*.inputedit:hover {*/
+/*  background-color: #ffffff; !* Change background on hover *!*/
+/*  border-bottom-color: #0064cf; !* Change border color on hover *!*/
+/*}*/
+
+/*!* Custom paginator style *!*/
+/*::ng-deep .mat-paginator {*/
+/*  background-color: #f5f5f5; !* Light background color *!*/
+/*  padding: 10px; !* Internal padding *!*/
+/*  border-radius: 8px; !* Rounded corners *!*/
+/*  display: flex; !* Flexbox for alignment *!*/
+/*  justify-content: space-between; !* Space between paginator elements *!*/
+/*}*/
+
+/*::ng-deep .mat-paginator-navigation button {*/
+/*  background-color: #6200ea; !* Button background color *!*/
+/*  color: white; !* Button text color *!*/
+/*  border-radius: 50%; !* Circular buttons *!*/
+/*  margin: 0 5px; !* Space between buttons *!*/
+/*  width: 40px; !* Button width *!*/
+/*  height: 40px; !* Button height *!*/
+/*}*/
+
+/*::ng-deep .mat-paginator-navigation button:hover {*/
+/*  background-color: #3700b3; !* Darker on hover *!*/
+/*}*/
+
+/*::ng-deep .mat-paginator-navigation .mat-button-wrapper {*/
+/*  font-size: 1.2rem; !* Bigger button text *!*/
+/*}*/
+
+/*::ng-deep .mat-paginator-range-label {*/
+/*  font-size: 1.1rem; !* Larger range label text *!*/
+/*  font-weight: bold; !* Bold range label *!*/
+/*}*/
+
+/*::ng-deep .mat-select-trigger {*/
+/*  font-size: 1.1rem; !* Larger page size text *!*/
+/*  padding: 5px; !* Padding for better click area *!*/
+/*}*/
+
+
+
+
+.table-div {
+  background-color: #f5f5fa; /* Soft white background */
+  border-radius: 15px;
+  padding: 20px;
+}
+
+.bg-violet {
+  background-color: #bd7fe1 !important; /* Violet background */
+}
+
+.text-white {
+  color: #ffffff !important;
+}
+
+.mat-elevation-z8 {
+  box-shadow: 0px 8px 16px rgba(106, 27, 154, 0.4); /* Soft violet shadow */
+}
+
+.alert-secondary {
+  background-color: #e8eaf6;
+  color: #bd7fe1;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(106, 27, 154, 0.1); /* Light violet hover */
+}
+
+.mat-paginator {
+  color: white !important;
+}
+/* Violet Outline Button for Delete */
+.btn-violet-outline {
+  border: 2px solid #6a1b9a;
+  color: #6a1b9a;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-violet-outline:hover {
+  background-color: #6a1b9a;
+  color: #fff;
+}
+
+/* Soft Pink Outline Button for Update */
+.btn-pink-outline {
+  border: 2px solid #f48fb1;
+  color: #f48fb1;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-pink-outline:hover {
+  background-color: #f48fb1;
+  color: #fff;
+}

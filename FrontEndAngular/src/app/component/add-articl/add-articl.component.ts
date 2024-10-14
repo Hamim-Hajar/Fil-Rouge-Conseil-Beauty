@@ -58,11 +58,23 @@ getId(){
     }
   }
 
+  // onFileChange(event: any) {
+  //   if (event.target.files.length > 0) {
+  //     this.selectedImage = event.target.files[0]; // Get the actual File object
+  //   }
+  // }
   onFileChange(event: any) {
-    if (event.target.files.length > 0) {
-      this.selectedImage = event.target.files[0]; // Get the actual File object
+    const file = event.target.files[0];
+    if (file) {
+      this.selectedImage = file;
+      // Additional validation can be done here, e.g. file type or size
+      if (file.size > 2 * 1024 * 1024) { // Example: limit file size to 2MB
+        console.error('File is too large');
+        this.formArticle.get('image')?.setErrors({ tooLarge: true });
+      }
     }
   }
+
   fetchIdUpdate(){
     this.route.params.subscribe(params =>{
       this.articleid= +params['id'];

@@ -40,7 +40,7 @@ export class VisiteurDashboardComponent implements AfterViewInit , OnInit {
 
   logout(): void {
     localStorage.removeItem("token");
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('/main');
   }
 
   loadComponent(componentName: string): void {

@@ -1,46 +1,122 @@
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 500px;
-  margin: 0 auto;
-}
-label {
-  font-weight: bold;
-}
-input, textarea {
-  width: 100%;
-  padding: 5px;
-}
-button {
-  padding: 10px;
+/*form {*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  gap: 10px;*/
+/*  max-width: 500px;*/
+/*  margin: 0 auto;*/
+/*}*/
+/*label {*/
+/*  font-weight: bold;*/
+/*}*/
+/*input, textarea {*/
+/*  width: 100%;*/
+/*  padding: 5px;*/
+/*}*/
+/*button {*/
+/*  padding: 10px;*/
 
-  color: white;
-  border: none;
-  cursor: pointer;
+/*  color: white;*/
+/*  border: none;*/
+/*  cursor: pointer;*/
+/*}*/
+/*button:disabled {*/
+/*  background-color: #cccccc;*/
+/*}*/
+/*.upload-cover {*/
+/*  display: flex;*/
+/*  align-items: center;*/
+/*}*/
+
+/*.upload-cover mat-icon {*/
+/*  margin-right: 8px;*/
+/*}*/
+/*.placeholder h6 {*/
+/*  color: #a9a9a9; !* Couleur grise comme un placeholder *!*/
+/*  font-style: italic;*/
+/*}*/
+/*.custom-line {*/
+/*  border: none;*/
+/*  height: 1px;*/
+/*  background-color: darkgrey; !* Couleur de la ligne *!*/
+/*  margin: 20px 0; !* Espacement au-dessus et en dessous de la ligne *!*/
+/*}*/
+/*.custom-icon {*/
+/*  color: #f36588;*/
+/*}*/
+
+
+/* General Styling */
+.article-container {
+  background-color: #faf5ff; /* Soft violet background */
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 15px;
 }
-button:disabled {
-  background-color: #cccccc;
-}
+
+/* Section Titles and Labels */
 .upload-cover {
+  font-size: 1.5rem;
+  color: #6a1b9a; /* Violet color */
   display: flex;
   align-items: center;
+  font-weight: bold;
 }
 
-.upload-cover mat-icon {
-  margin-right: 8px;
+.form-label {
+  font-weight: 600;
+  color: #6a1b9a; /* Violet for labels */
 }
-.placeholder h6 {
-  color: #a9a9a9; /* Couleur grise comme un placeholder */
-  font-style: italic;
+
+/* Form Controls */
+input[type="text"],
+textarea,
+input[type="file"] {
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  padding: 12px;
+  font-size: 1rem;
 }
-.custom-line {
+
+input:focus,
+textarea:focus,
+input[type="file"]:focus {
+  border-color: #bd7fe1;
+  box-shadow: 0 0 8px rgba(189, 127, 225, 0.4);
+  outline: none;
+}
+
+/* Dashed Placeholder for Image Upload */
+.border-dashed {
+  border: 2px dashed #d3b3e9;
+  background-color: #fefbff;
+  transition: background-color 0.3s ease;
+}
+
+.border-dashed:hover {
+  background-color: #f2e7fc;
+}
+
+/* Button Styling */
+.btn-violet {
+  background-color: #bd7fe1;
   border: none;
-  height: 1px;
-  background-color: darkgrey; /* Couleur de la ligne */
-  margin: 20px 0; /* Espacement au-dessus et en dessous de la ligne */
-}
-.custom-icon {
-  color: #f36588;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  padding: 12px;
+  transition: background-color 0.3s ease;
 }
 
+.btn-violet:disabled {
+  background-color: #e2b6f2;
+}
+
+.btn-violet:hover:not(:disabled) {
+  background-color: #9b59b6;
+}
+
+/* Custom Horizontal Line */
+.custom-line {
+  border-top: 2px solid #bd7fe1;
+}

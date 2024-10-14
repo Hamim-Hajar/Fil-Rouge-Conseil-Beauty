@@ -9,13 +9,15 @@ import {Router} from "@angular/router";
 })
 export class LeftSidebarComponent implements OnInit {
   isAuthenticated$ = this.authService.isAuthenticated();
-
+  isMainPage: boolean = false;
   constructor(private authService: AuthService, private router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() { this.router.events.subscribe(() => {
+    this.isMainPage = this.router.url === '/main';
+  });}
 
   logout() {
     this.authService.logout();
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('/main');
   }
 }

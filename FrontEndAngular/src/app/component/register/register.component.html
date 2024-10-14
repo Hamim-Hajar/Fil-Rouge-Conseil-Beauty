@@ -64,12 +64,11 @@
 <div class="wrapper">
   <div class="main">
     <div class="right_img">
+         <img src="assets/images/2.png">
 
     </div>
     <div class="left_signup">
       <form [formGroup]="signUpForm" (ngSubmit)="signUp()" >
-
-
         <div class="form-group">
           <label for="userName">userName</label>
           <input type="text" id="userName" formControlName="userName" placeholder="enter your user name" />
@@ -94,7 +93,7 @@
         <button type="submit" class="btn btn-primary">Sign up</button>
       </form>
 
-      <p>Already have an ccount? <a routerLink="/main/signin">Log in</a>  </p>
+      <p>Already have an ccount? <a routerLink="/login">Log in</a>  </p>
     </div>
   </div>
 </div>

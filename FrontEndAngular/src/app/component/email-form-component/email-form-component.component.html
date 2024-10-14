@@ -1,33 +1,65 @@
-<section class="email-contact-container">
-  <div class="email-form-wrapper">
-    <h1 class="email-title">Send <span class="highlight">Email</span></h1>
-    <p class="email-subtitle">Contact Your Specialist</p>
+<!--<section class="email-contact-container">-->
+<!--  <div class="email-form-wrapper">-->
+<!--    <h1 class="email-title">Send <span class="highlight">Email</span></h1>-->
+<!--    <p class="email-subtitle">Contact Your Specialist</p>-->
 
-    <form (ngSubmit)="onSubmit()" class="email-form">
-      <!-- Email TO field -->
-      <div class="input-wrapper">
-        <label for="email-to" class="input-label">TO</label>
-        <input [(ngModel)]="to" name="to" type="email" id="email-to" class="input-placeholder" placeholder="example.email@gmail.com" required>
-        <div class="input-underline"></div>
-      </div>
+<!--    <form (ngSubmit)="onSubmit()" class="email-form">-->
+<!--      &lt;!&ndash; Email TO field &ndash;&gt;-->
+<!--      <div class="input-wrapper">-->
+<!--        <label for="email-to" class="input-label">TO</label>-->
+<!--        <input [(ngModel)]="to" name="to" type="email" id="email-to" class="input-placeholder" placeholder="example.email@gmail.com" required>-->
+<!--        <div class="input-underline"></div>-->
+<!--      </div>-->
 
-      <!-- Email Subject field -->
-      <div class="input-wrapper">
-        <label for="email-object" class="input-label">OBJECT</label>
-        <input [(ngModel)]="subject" name="subject" type="text" id="email-object" class="input-placeholder" placeholder="Enter the object" required>
-        <div class="input-underline"></div>
-      </div>
+<!--      &lt;!&ndash; Email Subject field &ndash;&gt;-->
+<!--      <div class="input-wrapper">-->
+<!--        <label for="email-object" class="input-label">OBJECT</label>-->
+<!--        <input [(ngModel)]="subject" name="subject" type="text" id="email-object" class="input-placeholder" placeholder="Enter the object" required>-->
+<!--        <div class="input-underline"></div>-->
+<!--      </div>-->
 
-      <!-- Email Body field -->
-      <div class="input-wrapper">
-        <label for="email-text" class="input-label">TEXT</label>
-        <textarea [(ngModel)]="body" name="body" id="email-text" class="input-placeholder" placeholder="Enter your message" required></textarea>
-        <div class="input-underline"></div>
-      </div>
+<!--      &lt;!&ndash; Email Body field &ndash;&gt;-->
+<!--      <div class="input-wrapper">-->
+<!--        <label for="email-text" class="input-label">TEXT</label>-->
+<!--        <textarea [(ngModel)]="body" name="body" id="email-text" class="input-placeholder" placeholder="Enter your message" required></textarea>-->
+<!--        <div class="input-underline"></div>-->
+<!--      </div>-->
 
-      <!-- Submit button -->
-      <button type="submit" class="submit-button">SEND</button>
-    </form>
+<!--      &lt;!&ndash; Submit button &ndash;&gt;-->
+<!--      <button type="submit" class="submit-button">SEND</button>-->
+<!--    </form>-->
 
+<!--  </div>-->
+<!--</section>-->
+<section class="email-contact-section">
+  <div class="contact-container">
+    <div class="content-wrapper">
+      <!-- Form for sending email -->
+      <form (ngSubmit)="onSubmit()" class="form-container">
+        <h2 class="form-title">Send <span style="color: #cd38f3;">Email</span></h2>
+        <p class="form-subtitle">Contact Your Specialist</p>
+
+        <!-- Email TO field -->
+        <div class="form-field">
+          <label for="email-to" class="form-label">TO</label>
+          <input [(ngModel)]="to" name="to" type="email" id="email-to" class="form-input" placeholder="example.email@gmail.com" required />
+        </div>
+
+        <!-- Email Subject field -->
+        <div class="form-field">
+          <label for="email-subject" class="form-label">OBJECT</label>
+          <input [(ngModel)]="subject" name="subject" type="text" id="email-subject" class="form-input" placeholder="Enter the object" required />
+        </div>
+
+        <!-- Email Body field -->
+        <div class="form-field">
+          <label for="email-message" class="form-label">TEXT</label>
+          <textarea [(ngModel)]="body" name="body" id="email-message" class="form-input" placeholder="Enter your message" required></textarea>
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="form-button">SEND</button>
+      </form>
+    </div>
   </div>
 </section>

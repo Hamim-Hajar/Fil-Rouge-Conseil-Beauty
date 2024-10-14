@@ -9,7 +9,7 @@ import { AppComponent } from './app.component';
 import { EmailFormComponentComponent } from './component/email-form-component/email-form-component.component';
 import { AddArticlComponent } from './component/add-articl/add-articl.component';
 import { LoginComponent } from './component/login/login.component';
-import { FavoritComponent } from './component/favorit/favorit.component';
+
 import { DashboardspecialistComponent } from './component/dashboardspecialist/dashboardspecialist.component';
 
 // Services & Interceptors
@@ -44,6 +44,17 @@ import { HeaderthreeComponent } from './component/headerthree/headerthree.compon
 
 import {JwtModule} from "@auth0/angular-jwt";
 import { UpdaterecipeComponent } from './component/updaterecipe/updaterecipe.component';
+import { ConfirmDialogComponent } from './component/confirm-dialog/confirm-dialog.component';
+import {MatDialogModule} from "@angular/material/dialog";
+import { AdmindashboardComponent } from './admindashboard/admindashboard.component';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatSelectModule} from "@angular/material/select";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatSortModule} from "@angular/material/sort";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatInputModule} from "@angular/material/input";
+import {MatNativeDateModule} from "@angular/material/core";
+import { FavoritesComponent } from './favorites/favorites.component';
 
 @NgModule({
   declarations: [
@@ -51,7 +62,7 @@ import { UpdaterecipeComponent } from './component/updaterecipe/updaterecipe.com
     EmailFormComponentComponent,
     AddArticlComponent,
     LoginComponent,
-    FavoritComponent,
+
     DashboardspecialistComponent,
     LeftSidebarComponent,
     MainComponent,
@@ -66,6 +77,10 @@ import { UpdaterecipeComponent } from './component/updaterecipe/updaterecipe.com
     UpdatearticleComponent,
     HeaderthreeComponent,
     UpdaterecipeComponent,
+    ConfirmDialogComponent,
+    AdmindashboardComponent,
+    FavoritesComponent,
+
 
 
   ],
@@ -82,16 +97,18 @@ import { UpdaterecipeComponent } from './component/updaterecipe/updaterecipe.com
     MatIconModule,
     MatMenuModule,
     MatSidenavModule,
-    MatListModule, RouterModule, CommonModule, MatTableModule,
+    MatListModule, RouterModule, CommonModule, MatTableModule, MatDialogModule,
+    MatNativeDateModule, MatPaginatorModule,
+
 
     JwtModule.forRoot(
       {
-        config:{
-          tokenGetter:() => localStorage.getItem('token'),
+        config: {
+          tokenGetter: () => localStorage.getItem('token'),
           allowedDomains: ['http://localhost:8081/login']
         }
       }
-    )
+    ), MatFormFieldModule, MatSelectModule, MatDatepickerModule, MatSortModule, MatPaginatorModule, MatInputModule
 
 
   ],
@@ -100,6 +117,7 @@ import { UpdaterecipeComponent } from './component/updaterecipe/updaterecipe.com
       provide: HTTP_INTERCEPTORS,
       useClass: Interciptor,
       multi: true}
+
 
   ],
   bootstrap: [AppComponent]

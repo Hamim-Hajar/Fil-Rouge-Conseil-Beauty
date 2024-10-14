@@ -8,34 +8,31 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
-@RequestMapping("/api/favrecipe")
+@RequestMapping("/api/favorites")
 @CrossOrigin(origins = "http://localhost:4200")
 public class FavoriteRecipeCotroller {
 
     @Autowired
     private FavRcService favRcService;
 
-    @PostMapping("/{recipeId}/ratings")
-    public ResponseEntity<FavoriteRecipeDto> addRating(
-            @PathVariable Long recipeId,
-            @RequestParam Long visiteurId,
-            @RequestParam int value) {
-        FavoriteRecipeDto rating = favRcService.addRating(recipeId, visiteurId, value);
-        return new ResponseEntity<>(rating, HttpStatus.CREATED);
+
+    @PostMapping("/{visiteurId}/{recipeId}")
+    public String addFavorite(@PathVariable Long visiteurId, @PathVariable Long recipeId) {
+        favRcService.addFavoriteRecipe(visiteurId, recipeId);
+        return "Recipe added to favorites.";
     }
 
-    @GetMapping("/{recipeId}/average-rating")
-    public ResponseEntity<Double> getAverageRating(@PathVariable Long recipeId) {
-        double averageRating = favRcService.getAverageRating(recipeId);
-        return new ResponseEntity<>(averageRating, HttpStatus.OK);
+    @DeleteMapping("/{visiteurId}/{recipeId}")
+    public String removeFavorite(@PathVariable Long visiteurId, @PathVariable Long recipeId) {
+        favRcService.removeFavoriteRecipe(visiteurId, recipeId);
+        return "Recipe removed from favorites.";
     }
 
-    @PutMapping("/ratings/{ratingId}")
-    public ResponseEntity<FavoriteRecipeDto> updateRating(
-            @PathVariable Long ratingId,
-            @RequestParam int newValue) {
-        FavoriteRecipeDto updatedRating = favRcService.updateRating(ratingId, newValue);
-        return new ResponseEntity<>(updatedRating, HttpStatus.OK);
+    @GetMapping("/{visiteurId}")
+    public List<FavoriteRecipe> getFavorites(@PathVariable Long visiteurId) {
+        return favRcService.getFavoritesByVisiteur(visiteurId);
     }
 }

@@ -6,147 +6,122 @@
 <div *ngIf="userRole === 'SPECIALIST'">
   <app-left-sidebar></app-left-sidebar>
 </div>
+
 <div *ngIf="userRole === ''">
   <app-headerthree></app-headerthree>
 </div>
 
+<!-- Article Section -->
 <section class="event-container">
-  <div class="event-column">
-
+  <div class="event-content">
+    <!-- Article Details -->
     <article class="event-details" *ngIf="selectedArticle">
       <header class="event-header">
-        <h2 class="section-title">Article <span style="color: #cd38f3;"> Details</span></h2>
-        <h1 class="event-title" >{{ selectedArticle.titre }}</h1>
-        <time class="event-date" datetime="2024-02-20T20:00">{{ selectedArticle.datePublication }}</time>
+        <h1 class="event-title">{{ selectedArticle.titre }}</h1>
+        <time class="event-date">
+          {{ selectedArticle.datePublication }}
+        </time>
       </header>
-      <p class="event-description">
-     <br>
-        {{ selectedArticle.contenu }}
-      </p>
-      <p class="additional-info">
-        La lavande est une plante aromatique connue pour son parfum délicat et ses propriétés apaisantes. Originaires des régions méditerranéennes, elle est cultivée dans le monde entier pour ses fleurs violettes et son huile essentielle.
-      </p>
-      <p class="extra-details">
-        La lavande est une plante aromatique connue pour son parfum délicat et ses propriétés apaisantes. Originaires des régions méditerranéennes, elle est cultivée dans le monde entier pour ses fleurs violettes et son huile essentielle.
-      </p>
 
+      <p class="event-description">{{ selectedArticle.contenu }}</p>
+      <p class="additional-info">
+        La lavande est une plante aromatique connue pour son parfum délicat et ses propriétés apaisantes.
+      </p>
     </article>
-  </div>
-  <div class="image-column" *ngIf="selectedArticle" >
-    <figure class="image-wrapper">
-      <img [src]="'data:image/png;base64,'+selectedArticle.image" alt="" style="width: 600px; height: 200px;">
+
+    <!-- Image Section -->
+    <figure class="event-image" *ngIf="selectedArticle">
+      <img [src]="'data:image/png;base64,' + selectedArticle.image" alt="Lavande Image" />
       <figcaption class="image-caption">
-        La lavande est utilisée de diverses manières :<br>
-        Aromathérapie : Son huile essentielle est souvent employée pour réduire l'anxiété, favoriser le sommeil et soulager les maux de tête.<br>
-        Cosmétique : La lavande est un ingrédient courant dans les produits de beauté, notamment les crèmes et les savons, en raison de ses propriétés antibactériennes et anti-inflammatoires.<br>
-        Culinaire : Les fleurs de lavande peuvent être ajoutées à des plats sucrés ou salés pour apporter une touche unique. Elle est également utilisée dans les infusions.<br>
-        Aromathérapie : Son huile esse
+        Aromathérapie : Utilisée pour réduire l’anxiété.<br />
+        Cosmétique : Présente dans les produits de beauté.<br />
+        Culinaire : Apporte une touche unique aux plats.
       </figcaption>
     </figure>
   </div>
 </section>
-<!-- RECIPE-->
-<section class="event-container" >
-  <div class="event-column">
+
+<!-- Recipe Section -->
+<section class="event-container">
+  <div class="event-content">
     <article class="event-details" *ngIf="selectedRecipe">
       <header class="event-header">
-        <h1 class="event-title" >{{ selectedRecipe.name }}</h1>
-        <time class="event-date" datetime="2024-02-20T20:00">{{ selectedRecipe.datePublication }}</time>
+        <h1 class="event-title">{{ selectedRecipe.name }}</h1>
+        <time class="event-date">
+          {{ selectedRecipe.datePublication | date: 'yyyy-MM-dd' }}
+        </time>
       </header>
-      <p class="event-description">
 
-      <ul class="event-description">
-        <section>
-
-          <h2 class="section-title">Recipe <span style="color: #cd38f3;"> Details</span></h2>
-          <li><strong> Recipe Title :</strong>{{ selectedRecipe.name}}</li>
-          <li><strong>Instructions:</strong>{{ selectedRecipe.instructions }}</li>
-          <li><strong>description :</strong>{{ selectedRecipe.description}}</li>
-          <li><strong>ingredients :</strong>{{ selectedRecipe.ingredients}}</li>
-          <li><strong>Published on:</strong> {{ selectedRecipe.datePublication }}</li>
-        </section>
+      <ul class="recipe-details">
+        <li><strong>Recipe Title:</strong> {{ selectedRecipe.name }}</li>
+        <li><strong>Instructions:</strong> {{ selectedRecipe.instructions }}</li>
+        <li><strong>Description:</strong> {{ selectedRecipe.description }}</li>
+        <li><strong>Ingredients:</strong> {{ selectedRecipe.ingredients }}</li>
+        <li><strong>Category:</strong> {{ selectedRecipe.category }}</li>
       </ul>
-
-      <p class="additional-info">
-        La lavande est une plante aromatique connue pour son parfum délicat et ses propriétés apaisantes. Originaires des régions méditerranéennes, elle est cultivée dans le monde entier pour ses fleurs violettes et son huile essentielle.
-      </p>
-      <p class="extra-details">
-        La lavande est une plante aromatique connue pour son parfum délicat et ses propriétés apaisantes. Originaires des régions méditerranéennes, elle est cultivée dans le monde entier pour ses fleurs violettes et son huile essentielle.
-      </p>
-
     </article>
-  </div>
-  <div class="image-column" *ngIf="selectedRecipe" >
-    <figure class="image-wrapper">
-      <img [src]="'data:image/png;base64,'+selectedRecipe.image" alt="" style="width: 600px; height: 200px;">
+
+    <figure class="event-image" *ngIf="selectedRecipe">
+      <img [src]="'data:image/png;base64,' + selectedRecipe.image" alt="Recipe Image" />
       <figcaption class="image-caption">
-        La lavande est utilisée de diverses manières :<br>
-        Aromathérapie : Son huile essentielle est souvent employée pour réduire l'anxiété, favoriser le sommeil et soulager les maux de tête.<br>
-        Cosmétique : La lavande est un ingrédient courant dans les produits de beauté, notamment les crèmes et les savons, en raison de ses propriétés antibactériennes et anti-inflammatoires.<br>
-        Culinaire : Les fleurs de lavande peuvent être ajoutées à des plats sucrés ou salés pour apporter une touche unique. Elle est également utilisée dans les infusions.<br>
-        Aromathérapie : Son huile esse
+        Aromathérapie : Réduit l’anxiété.<br />
+        Cosmétique : Présente dans les crèmes.<br />
+        Culinaire : Ajoutée aux plats sucrés.
       </figcaption>
     </figure>
   </div>
 </section>
 
 
+<!-- Comment Section -->
 <section class="comment-section">
-  <h2 class="section-title">Add <span style="color: #cd38f3;">Comment</span></h2>
+  <h2 class="section-title">Add <span class="highlight">Comment</span></h2>
   <form class="comment-form" (ngSubmit)="addComment()">
-    <div class="form-group">
-
-      <textarea id="commentInput" class="comment-input"
-                [(ngModel)]="commentaire"
-                name="commentaire"
-                placeholder="Enter your comment"
-                aria-label="Enter your comment"></textarea>
-      <button type="submit" class="submit-button">Comment</button>
-    </div>
+    <textarea
+      id="commentInput"
+      class="comment-input"
+      [(ngModel)]="commentaire"
+      name="commentaire"
+      placeholder="Enter your comment"
+      aria-label="Enter your comment">
+    </textarea>
+    <button type="submit" class="submit-button">Comment</button>
   </form>
-
-  <article class="comment-card">
-    <div class="user-info">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7229d2572b84c7a8ef1e7d9b015b4435a3ff066653e8668c2e448e7ce101368b?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="User avatar" class="user-avatar">
-      <p class="user-name">Amanda Smith</p>
-    </div>
-    <div class="comment-content">
-      <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed ur</p>
-      <div class="comment-code">
-        <span class="code-label">Code</span>
-        <span class="code-value">MRCE-934912</span>
-      </div>
-    </div>
-  </article>
-
-  <article class="comment-card">
-    <div class="user-info">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7229d2572b84c7a8ef1e7d9b015b4435a3ff066653e8668c2e448e7ce101368b?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="User avatar" class="user-avatar">
-      <p class="user-name">Amanda Smith</p>
-    </div>
-    <div class="comment-content">
-      <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed ur</p>
-      <div class="comment-code">
-        <span class="code-label">Code</span>
-        <span class="code-value">MRCE-934912</span>
-      </div>
-    </div>
-  </article>
-
-  <article class="comment-card">
-    <div class="user-info">
-      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7229d2572b84c7a8ef1e7d9b015b4435a3ff066653e8668c2e448e7ce101368b?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="User avatar" class="user-avatar">
-      <p class="user-name">Amanda Smith</p>
-    </div>
-    <div class="comment-content">
-      <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed ur</p>
-      <div class="comment-code">
-        <span class="code-label">Code</span>
-        <span class="code-value">MRCE-934912</span>
-      </div>
-    </div>
-  </article>
 </section>
+
+<!-- Comments Section -->
+<section class="comment-section">
+  <h3>Comments</h3>
+
+  <!-- Display comments -->
+  <div *ngIf="comments.length > 0; else noComments">
+    <div *ngFor="let comment of comments" class="comment">
+      <p><strong>{{ name }}</strong> - {{ comment.timestamp }}</p>
+      <p>{{ comment.content }}</p>
+    </div>
+  </div>
+
+  <!-- Message if no comments yet -->
+  <ng-template #noComments>
+    <p>No comments yet. Be the first to comment!</p>
+  </ng-template>
+</section>
+
+
+<!--  <article class="comment-card">-->
+<!--    <div class="user-info">-->
+<!--      <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/7229d2572b84c7a8ef1e7d9b015b4435a3ff066653e8668c2e448e7ce101368b?placeholderIfAbsent=true&apiKey=4de05f88efb54b6cb116a3e42dffdf27" alt="User avatar" class="user-avatar">-->
+<!--      <p class="user-name">Amanda Smith</p>-->
+<!--    </div>-->
+<!--    <div class="comment-content">-->
+<!--      <p class="comment-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed ur</p>-->
+<!--      <div class="comment-code">-->
+<!--        <span class="code-label">Code</span>-->
+<!--        <span class="code-value">MRCE-934912</span>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--  </article>-->
+
 
 <!--<section class="event-container"   >-->
 

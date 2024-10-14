@@ -17,6 +17,8 @@ import {HeadertwoComponent} from "./component/headertwo/headertwo.component";
 import {UpdatearticleComponent} from "./component/updatearticle/updatearticle.component";
 import {HeaderthreeComponent} from "./component/headerthree/headerthree.component";
 import {UpdaterecipeComponent} from "./component/updaterecipe/updaterecipe.component";
+import {AdmindashboardComponent} from "./admindashboard/admindashboard.component";
+import {FavoritesComponent} from "./favorites/favorites.component";
 
 
 const routes: Routes = [
@@ -38,6 +40,8 @@ const routes: Routes = [
   {path: 'visitor-dashboard', component: VisiteurDashboardComponent},
   {path:'updaterecipe/:id',component:UpdaterecipeComponent},
   {path: 'update/:id', component: UpdatearticleComponent},
+  {path: 'admin', component: AdmindashboardComponent},
+  {path: 'favorites', component: FavoritesComponent},
   { path: '', redirectTo: 'main', pathMatch: 'full' },
 
 ];

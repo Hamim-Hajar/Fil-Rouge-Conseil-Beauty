@@ -1,46 +1,65 @@
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 500px;
-  margin: 0 auto;
-}
-label {
-  font-weight: bold;
-}
-input, textarea {
-  width: 100%;
-  padding: 5px;
-}
-button {
-  padding: 10px;
 
-  color: white;
-  border: none;
-  cursor: pointer;
+
+.article-container {
+  background-color: #eae0ef;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(154, 87, 201, 0.2);
 }
-button:disabled {
-  background-color: #cccccc;
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #bd7fe1;
 }
+
+h1 span {
+  color: #bd7fe1;
+}
+
 .upload-cover {
-  display: flex;
-  align-items: center;
+  color: #bd7fe1;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
 }
 
-.upload-cover mat-icon {
-  margin-right: 8px;
-}
 .placeholder h6 {
-  color: #a9a9a9; /* Couleur grise comme un placeholder */
+  color: #bd7fe1;
   font-style: italic;
-}
-.custom-line {
-  border: none;
-  height: 1px;
-  background-color: darkgrey; /* Couleur de la ligne */
-  margin: 20px 0; /* Espacement au-dessus et en dessous de la ligne */
-}
-.custom-icon {
-  color: #f36588;
+  font-size: 1rem;
 }
 
+input,
+textarea,
+select {
+  border-radius: 10px;
+  border: 1px solid violet;
+}
+
+textarea {
+  min-height: 100px;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #9747d9;
+}
+
+button {
+  background-color: violet;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+  padding: 12px;
+}
+
+button:hover {
+  background-color: mediumvioletred;
+}
+
+.error {
+  color: violet;
+  font-weight: 500;
+}

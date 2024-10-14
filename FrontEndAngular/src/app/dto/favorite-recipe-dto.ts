@@ -1,9 +1,14 @@
 export interface FavoriteRecipeDto {
   id: number;
   recipeName: string;
-  value: number;
-  recipeId: number;
-  visiteurId: number;
+  recipe: {
+    id: number;
+    name: string;
+    description: string;
+    image: string;
+    datePublication: string;
+  };
+
 
 
 }
