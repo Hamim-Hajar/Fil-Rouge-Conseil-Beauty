@@ -24,15 +24,15 @@
 <!-- Search Bar -->
 <div class="container d-flex justify-content-center align-items-center mt-5">
   <div class="search-container d-flex align-items-center shadow-lg rounded p-3">
-    <i class="bi bi-search search-icon"></i>
+
     <input
       type="text"
       class="form-control search-input border-0"
       placeholder="Search here"
-      value="hair"
+      value="welcom to our kingdom of beauty"
     />
     <div class="divider mx-3"></div>
-    <button class="btn btn-primary search-button">Search</button>
+    <button class="btn btn-primary search-button">Enjoy </button>
   </div>
 </div>
 
@@ -60,7 +60,7 @@
         Face
       </div>
     </nav>
-    <div class="menu-item" routerLink="/login">Log in</div>
+
 
     <ng-template #noRecipes>
       <p class="text-center text-muted">No recipes found for the selected category.</p>
@@ -78,7 +78,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ recipe.name }}</h5>
             <p class="card-text">{{ recipe.description }}</p>
-            <button (click)="addFavorite(recipe.id)">Add to Favorites</button>
+            <button (click)="addFavorite(recipe.id)" style="color: white;background-color: #8a0f79 ;border-radius: 5px">Add to Favorites</button>
             <button *ngIf="isFavorite(recipe.id)" (click)="removeFavorite(recipe.id)">
               Remove from Favorites
             </button>

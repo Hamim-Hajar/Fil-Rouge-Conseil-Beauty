@@ -5,7 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="653c835f-ee12-4abc-9832-6951c52113b1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/services/FavRcService.java" beforeDir="false" afterPath="$PROJECT_DIR$/conseil/src/main/java/com/example/conseil/services/FavRcService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/articl-list/articl-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/articl-list/articl-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/main/main.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/FrontEndAngular/src/app/component/recipe-list/recipe-list.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,44 +46,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Docker.conseil: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ArticleServiceTest.addArticle.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ArticleServiceTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ArticleServiceTest.getAllArticles.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ArticleServiceTest.testAddArticle_Success.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthenticationServiceTest.authenticate.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthenticationServiceTest.signup.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthenticationServiceTest.testSignup_Visiteur.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.AuthenticationServiceTest.testSignup_VisiteurRole.executor&quot;: &quot;Run&quot;,
-    &quot;Maven.conseil [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.conseil [install].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.ConseilApplication.executor&quot;: &quot;Run&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/user/Desktop/Fil-Rouge-Conseil-Beauty/FrontEndAngular/src/assets/images&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.language&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\user\\Desktop\\Fil-Rouge-Conseil-Beauty\\FrontEndAngular\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Docker.conseil: Compose Deployment.executor": "Run",
+    "JUnit.ArticleServiceTest.addArticle.executor": "Run",
+    "JUnit.ArticleServiceTest.executor": "Run",
+    "JUnit.ArticleServiceTest.getAllArticles.executor": "Run",
+    "JUnit.ArticleServiceTest.testAddArticle_Success.executor": "Run",
+    "JUnit.AuthenticationServiceTest.authenticate.executor": "Run",
+    "JUnit.AuthenticationServiceTest.signup.executor": "Run",
+    "JUnit.AuthenticationServiceTest.testSignup_Visiteur.executor": "Run",
+    "JUnit.AuthenticationServiceTest.testSignup_VisiteurRole.executor": "Run",
+    "Maven.conseil [clean].executor": "Run",
+    "Maven.conseil [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.ConseilApplication.executor": "Run",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/user/Desktop/Fil-Rouge-Conseil-Beauty/FrontEndAngular/src/assets/images",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "settings.sync",
+    "ts.external.directory.path": "C:\\Users\\user\\Desktop\\Fil-Rouge-Conseil-Beauty\\FrontEndAngular\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\user\Desktop\Fil-Rouge-Conseil-Beauty\FrontEndAngular\src\assets\images" />
@@ -248,7 +251,7 @@
       <workItem from="1728863211649" duration="423000" />
       <workItem from="1728863661054" duration="300000" />
       <workItem from="1728864177598" duration="5245000" />
-      <workItem from="1728899348750" duration="22856000" />
+      <workItem from="1728899348750" duration="29648000" />
     </task>
     <servers />
   </component>

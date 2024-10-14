@@ -6,6 +6,8 @@ import {RecipeService} from "../../services/recipe.service";
 import {Router} from "@angular/router";
 import {MatTableDataSource} from "@angular/material/table";
 import {MatPaginator} from "@angular/material/paginator";
+import {ConfirmDialogComponent} from "../confirm-dialog/confirm-dialog.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Component({
   selector: 'app-recipe-list',
@@ -21,7 +23,7 @@ export class RecipeListComponent implements OnInit {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator; // Use ViewChild to access the paginator
 
-  constructor(private recipeservice: RecipeService, private router: Router) {}
+  constructor(private recipeservice: RecipeService, private router: Router, private dialog: MatDialog) {}
 
   ngOnInit(): void {
     this.fetchAllRecipes();
@@ -37,10 +39,18 @@ export class RecipeListComponent implements OnInit {
   }
 
   deleteRecipe(id: number) {
+
+    const dialogRef = this.dialog.open(ConfirmDialogComponent);
+    dialogRef.afterClosed().subscribe(result => {
+
+      if (result === true) {
     this.recipeservice.deleteRecipe(id).subscribe(() => {
       this.fetchAllRecipes();
     });
-  }
+  }else {
+        console.log('Suppression annulée');
+      } });}
+
 
   update(id: number): void {
     this.router.navigate(['/updaterecipe', id]);
