@@ -19,6 +19,7 @@ import {HeaderthreeComponent} from "./component/headerthree/headerthree.componen
 import {UpdaterecipeComponent} from "./component/updaterecipe/updaterecipe.component";
 import {AdmindashboardComponent} from "./admindashboard/admindashboard.component";
 import {FavoritesComponent} from "./favorites/favorites.component";
+import {AuthGuard} from "./auth.guard";
 
 
 const routes: Routes = [
